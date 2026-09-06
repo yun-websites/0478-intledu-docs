@@ -17,7 +17,11 @@ function ArticleRoute() {
                 <Alert>
                     <AlertTitle>Document not found</AlertTitle>
                     <AlertDescription>
-                        No loaded MDX file matches <code>{chapter}/{slug}</code>.
+                        No loaded MDX file matches{" "}
+                        <code>
+                            {chapter}/{slug}
+                        </code>
+                        .
                     </AlertDescription>
                 </Alert>
             </main>

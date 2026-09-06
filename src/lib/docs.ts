@@ -54,8 +54,7 @@ type DocModule = {
     paragraphs?: DocParagraph[];
 };
 
-type DocMetadata = Required<Pick<DocFrontmatter, "title" | "slug" | "chapter">> &
-    Pick<DocFrontmatter, "version" | "updateAt">;
+type DocMetadata = Required<Pick<DocFrontmatter, "title" | "slug" | "chapter">> & Pick<DocFrontmatter, "version" | "updateAt">;
 
 const docModules = import.meta.glob("/src/content/_pages/**/*.mdx", {
     eager: true,

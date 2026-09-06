@@ -16,4 +16,3 @@ function Separator({ className, orientation = "horizontal", ...props }: Separato
 }
 
 export { Separator };
-

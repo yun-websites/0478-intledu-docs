@@ -43,7 +43,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <head>
                 <HeadContent />
             </head>
-            <body className="min-w-dvw min-h-dvh flex flex-col bg-background text-foreground antialiased">
+            <body className="bg-background text-foreground flex min-h-dvh min-w-dvw flex-col antialiased">
                 <ThemeProvider>
                     <TooltipProvider>{children}</TooltipProvider>
                 </ThemeProvider>

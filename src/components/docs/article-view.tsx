@@ -65,4 +65,3 @@ function formatId(id: string, locale: Locale) {
 function getArticleDescription(article: DocArticle) {
     return article.locales.en?.paragraphs[0]?.content ?? article.locales.zh?.paragraphs[0]?.content ?? "";
 }
-

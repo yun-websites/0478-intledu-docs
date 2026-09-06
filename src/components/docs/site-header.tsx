@@ -37,9 +37,7 @@ export function SiteHeader() {
                             <Fragment key={`${item.label}-${index}`}>
                                 <BreadcrumbItem className="min-w-0 shrink-0">
                                     {item.to ? (
-                                        <BreadcrumbLink
-                                            render={<Link to={item.to} />}
-                                            className="max-w-[24ch] truncate">
+                                        <BreadcrumbLink render={<Link to={item.to} />} className="max-w-[24ch] truncate">
                                             {item.label}
                                         </BreadcrumbLink>
                                     ) : (

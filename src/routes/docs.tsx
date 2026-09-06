@@ -13,11 +13,10 @@ function DocsLayout() {
             <SiteSidebar />
             <SidebarInset>
                 <SiteHeader />
-                <div className="flex flex-col h-full max-h-[calc(100vh-4rem)] overflow-hidden">
+                <div className="flex h-full max-h-[calc(100vh-4rem)] flex-col overflow-hidden">
                     <Outlet />
                 </div>
             </SidebarInset>
         </SidebarProvider>
     );
 }
-

@@ -28,8 +28,7 @@ export function CatalogView({ title, description, chapters, backLink, isChapter 
                         {backLink ? (
                             <Link
                                 to={backLink.to}
-                                className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "gap-2 px-2")}
-                            >
+                                className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "gap-2 px-2")}>
                                 <ChevronLeft className="size-4" />
                                 {backLink.label}
                             </Link>
@@ -106,4 +105,3 @@ function CatalogRow({ article }: { article: DocArticle }) {
         </Link>
     );
 }
-
