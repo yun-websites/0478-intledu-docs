@@ -8,59 +8,205 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root"
-import { Route as IndexRouteImport } from "./routes/index"
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as DocsRouteImport } from './routes/docs'
+import { Route as DocsIndexRouteImport } from './routes/docs/index'
+import { Route as DocsChapterRouteImport } from './routes/docs/$chapter'
+import { Route as DocsCatalogRouteImport } from './routes/docs/catalog'
+import { Route as DocsChapterSlugRouteImport } from './routes/docs/$chapter/$slug'
+import { Route as DocsChapterCatalogRouteImport } from './routes/docs/$chapter/catalog'
 
 const IndexRoute = IndexRouteImport.update({
-  id: "/",
-  path: "/",
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const DocsRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsIndexRoute = DocsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DocsRoute,
+} as any)
+const DocsChapterRoute = DocsChapterRouteImport.update({
+  id: '/$chapter',
+  path: '/$chapter',
+  getParentRoute: () => DocsRoute,
+} as any)
+const DocsCatalogRoute = DocsCatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => DocsRoute,
+} as any)
+const DocsChapterSlugRoute = DocsChapterSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DocsChapterRoute,
+} as any)
+const DocsChapterCatalogRoute = DocsChapterCatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => DocsChapterRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/docs': typeof DocsRouteWithChildren
+  '/docs/$chapter': typeof DocsChapterRouteWithChildren
+  '/docs/catalog': typeof DocsCatalogRoute
+  '/docs/': typeof DocsIndexRoute
+  '/docs/$chapter/$slug': typeof DocsChapterSlugRoute
+  '/docs/$chapter/catalog': typeof DocsChapterCatalogRoute
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/docs/$chapter': typeof DocsChapterRouteWithChildren
+  '/docs/catalog': typeof DocsCatalogRoute
+  '/docs': typeof DocsIndexRoute
+  '/docs/$chapter/$slug': typeof DocsChapterSlugRoute
+  '/docs/$chapter/catalog': typeof DocsChapterCatalogRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  "/": typeof IndexRoute
+  '/': typeof IndexRoute
+  '/docs': typeof DocsRouteWithChildren
+  '/docs/$chapter': typeof DocsChapterRouteWithChildren
+  '/docs/catalog': typeof DocsCatalogRoute
+  '/docs/': typeof DocsIndexRoute
+  '/docs/$chapter/$slug': typeof DocsChapterSlugRoute
+  '/docs/$chapter/catalog': typeof DocsChapterCatalogRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: "/"
+  fullPaths:
+    | '/'
+    | '/docs'
+    | '/docs/$chapter'
+    | '/docs/catalog'
+    | '/docs/'
+    | '/docs/$chapter/$slug'
+    | '/docs/$chapter/catalog'
   fileRoutesByTo: FileRoutesByTo
-  to: "/"
-  id: "__root__" | "/"
+  to:
+    | '/'
+    | '/docs/$chapter'
+    | '/docs/catalog'
+    | '/docs'
+    | '/docs/$chapter/$slug'
+    | '/docs/$chapter/catalog'
+  id:
+    | '__root__'
+    | '/'
+    | '/docs'
+    | '/docs/$chapter'
+    | '/docs/catalog'
+    | '/docs/'
+    | '/docs/$chapter/$slug'
+    | '/docs/$chapter/catalog'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DocsRoute: typeof DocsRouteWithChildren
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/"
-      path: "/"
-      fullPath: "/"
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/': {
+      id: '/docs/'
+      path: '/'
+      fullPath: '/docs/'
+      preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/docs/$chapter': {
+      id: '/docs/$chapter'
+      path: '/$chapter'
+      fullPath: '/docs/$chapter'
+      preLoaderRoute: typeof DocsChapterRouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/docs/catalog': {
+      id: '/docs/catalog'
+      path: '/catalog'
+      fullPath: '/docs/catalog'
+      preLoaderRoute: typeof DocsCatalogRouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/docs/$chapter/$slug': {
+      id: '/docs/$chapter/$slug'
+      path: '/$slug'
+      fullPath: '/docs/$chapter/$slug'
+      preLoaderRoute: typeof DocsChapterSlugRouteImport
+      parentRoute: typeof DocsChapterRoute
+    }
+    '/docs/$chapter/catalog': {
+      id: '/docs/$chapter/catalog'
+      path: '/catalog'
+      fullPath: '/docs/$chapter/catalog'
+      preLoaderRoute: typeof DocsChapterCatalogRouteImport
+      parentRoute: typeof DocsChapterRoute
     }
   }
 }
 
+interface DocsChapterRouteChildren {
+  DocsChapterSlugRoute: typeof DocsChapterSlugRoute
+  DocsChapterCatalogRoute: typeof DocsChapterCatalogRoute
+}
+
+const DocsChapterRouteChildren: DocsChapterRouteChildren = {
+  DocsChapterSlugRoute: DocsChapterSlugRoute,
+  DocsChapterCatalogRoute: DocsChapterCatalogRoute,
+}
+
+const DocsChapterRouteWithChildren = DocsChapterRoute._addFileChildren(
+  DocsChapterRouteChildren,
+)
+
+interface DocsRouteChildren {
+  DocsChapterRoute: typeof DocsChapterRouteWithChildren
+  DocsCatalogRoute: typeof DocsCatalogRoute
+  DocsIndexRoute: typeof DocsIndexRoute
+}
+
+const DocsRouteChildren: DocsRouteChildren = {
+  DocsChapterRoute: DocsChapterRouteWithChildren,
+  DocsCatalogRoute: DocsCatalogRoute,
+  DocsIndexRoute: DocsIndexRoute,
+}
+
+const DocsRouteWithChildren = DocsRoute._addFileChildren(DocsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DocsRoute: DocsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from "./router.tsx"
-import type { createStart } from "@tanstack/react-start"
-declare module "@tanstack/react-start" {
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
