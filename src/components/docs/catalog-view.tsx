@@ -35,11 +35,11 @@ export function CatalogView({ title, description, chapters, backLink, isChapter 
                         ) : null}
                         <Badge variant="secondary" className="gap-1">
                             <Layers3 className="size-3.5" />
-                            {chapters.length} chapters
+                            {chapters.length} Chapters
                         </Badge>
                         <Badge variant="outline" className="gap-1">
                             <BookOpenText className="size-3.5" />
-                            {totalArticles} articles
+                            {totalArticles} Articles
                         </Badge>
                     </div>
                     <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h1>
@@ -63,7 +63,7 @@ export function CatalogView({ title, description, chapters, backLink, isChapter 
                                     <Link
                                         to={chapter.path}
                                         className={cn(buttonVariants({ variant: "outline", size: "sm" }), "gap-2")}>
-                                        Open catalog
+                                        Open Chatper Catalog
                                         <ArrowRight className="size-4" />
                                     </Link>
                                 </div>
@@ -73,7 +73,7 @@ export function CatalogView({ title, description, chapters, backLink, isChapter 
                         )}
 
                         <div className="grid gap-3">
-                            {chapter.articles.map((article) => (
+                            {(isChapter ? chapter.articles : chapter.articles.slice(0, 3)).map((article) => (
                                 <CatalogRow key={`${article.chapter}/${article.slug}`} article={article} />
                             ))}
                         </div>
@@ -92,7 +92,7 @@ function CatalogRow({ article }: { article: DocArticle }) {
             <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-2">
                     <h3 className="font-medium">
-                        {article.locales.en?.title ?? "English missing"} · {article.locales.zh?.title ?? "中文缺失"}
+                        {article.locales.en?.title ?? "(??????)"} · {article.locales.zh?.title ?? "(??????)"}
                     </h3>
                 </div>
             </div>
