@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { FolderOpen, LogsIcon } from "lucide-react";
-import { docChapters } from "@/lib/docs";
+import { Folder, FolderOpen, FileText } from "lucide-react";
+import { useState } from "react";
+import { navigationTitle, navigationGroups } from "@/lib/navigation";
 import {
     Sidebar,
     SidebarContent,
@@ -17,6 +18,44 @@ import {
     SidebarMenuSubButton,
     SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+
+import type { NavigationGroup } from "@/lib/navigation";
+
+function ChapterNavigationItem({ group }: { group: NavigationGroup }) {
+    const [open, setOpen] = useState(true);
+
+    return (
+        <Collapsible open={open} onOpenChange={setOpen}>
+            <SidebarMenuItem>
+                <SidebarMenuButton
+                    render={
+                        <Link to="/docs/$chapter/$slug/catalog" params={{ chapter: group.items[0].chapter, slug: group.id }} />
+                    }>
+                    <span>{group.title}</span>
+                </SidebarMenuButton>
+                <CollapsibleTrigger
+                    render={
+                        <SidebarMenuAction aria-label={`${open ? "Collapse" : "Expand"} ${group.title}`}>
+                            {open ? <FolderOpen /> : <Folder />}
+                        </SidebarMenuAction>
+                    }
+                />
+                <CollapsibleContent>
+                    <SidebarMenuSub>
+                        {group.items.map((article) => (
+                            <SidebarMenuSubItem key={article.path}>
+                                <SidebarMenuSubButton render={<Link to={article.path} />}>
+                                    <span>{article.title}</span>
+                                </SidebarMenuSubButton>
+                            </SidebarMenuSubItem>
+                        ))}
+                    </SidebarMenuSub>
+                </CollapsibleContent>
+            </SidebarMenuItem>
+        </Collapsible>
+    );
+}
 
 export function SiteSidebar() {
     return (
@@ -28,39 +67,23 @@ export function SiteSidebar() {
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarMenuButton render={<Link to="/docs/catalog" />}>
-                        <LogsIcon />
-                        <span>Catalog</span>
-                    </SidebarMenuButton>
-                    <SidebarGroupLabel>Chapters</SidebarGroupLabel>
+                    <SidebarGroupLabel>{navigationTitle}</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {docChapters.map((chapter) => (
-                                <SidebarMenuItem key={chapter.chapter}>
-                                    <SidebarMenuButton render={<Link to={chapter.path} />}>
-                                        <FolderOpen />
-                                        <span>{chapter.title}</span>
-                                    </SidebarMenuButton>
-                                    <SidebarMenuAction
-                                        render={<Link to={chapter.path} aria-label={`Open ${chapter.title}`} />}
-                                    />
-                                    <SidebarMenuSub>
-                                        {chapter.articles.map((article) => (
-                                            <SidebarMenuSubItem key={article.path}>
-                                                <SidebarMenuSubButton render={<Link to={article.path} />}>
-                                                    <span>{article.title}</span>
-                                                </SidebarMenuSubButton>
-                                            </SidebarMenuSubItem>
-                                        ))}
-                                    </SidebarMenuSub>
-                                </SidebarMenuItem>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton render={<Link to="/docs/catalog" />}>
+                                    <FileText />
+                                    <span>Catalog</span>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            {navigationGroups.map((group) => (
+                                <ChapterNavigationItem key={group.id} group={group} />
                             ))}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-
-            <SidebarFooter></SidebarFooter>
+            <SidebarFooter />
         </Sidebar>
     );
 }

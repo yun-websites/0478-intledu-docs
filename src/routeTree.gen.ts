@@ -16,6 +16,7 @@ import { Route as DocsChapterRouteImport } from './routes/docs/$chapter'
 import { Route as DocsCatalogRouteImport } from './routes/docs/catalog'
 import { Route as DocsChapterSlugRouteImport } from './routes/docs/$chapter/$slug'
 import { Route as DocsChapterCatalogRouteImport } from './routes/docs/$chapter/catalog'
+import { Route as DocsChapterSlugCatalogRouteImport } from './routes/docs/$chapter/$slug/catalog'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const DocsChapterCatalogRoute = DocsChapterCatalogRouteImport.update({
   path: '/catalog',
   getParentRoute: () => DocsChapterRoute,
 } as any)
+const DocsChapterSlugCatalogRoute = DocsChapterSlugCatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => DocsChapterSlugRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -59,16 +65,18 @@ export interface FileRoutesByFullPath {
   '/docs/$chapter': typeof DocsChapterRouteWithChildren
   '/docs/catalog': typeof DocsCatalogRoute
   '/docs/': typeof DocsIndexRoute
-  '/docs/$chapter/$slug': typeof DocsChapterSlugRoute
+  '/docs/$chapter/$slug': typeof DocsChapterSlugRouteWithChildren
   '/docs/$chapter/catalog': typeof DocsChapterCatalogRoute
+  '/docs/$chapter/$slug/catalog': typeof DocsChapterSlugCatalogRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/docs/$chapter': typeof DocsChapterRouteWithChildren
   '/docs/catalog': typeof DocsCatalogRoute
   '/docs': typeof DocsIndexRoute
-  '/docs/$chapter/$slug': typeof DocsChapterSlugRoute
+  '/docs/$chapter/$slug': typeof DocsChapterSlugRouteWithChildren
   '/docs/$chapter/catalog': typeof DocsChapterCatalogRoute
+  '/docs/$chapter/$slug/catalog': typeof DocsChapterSlugCatalogRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,8 +85,9 @@ export interface FileRoutesById {
   '/docs/$chapter': typeof DocsChapterRouteWithChildren
   '/docs/catalog': typeof DocsCatalogRoute
   '/docs/': typeof DocsIndexRoute
-  '/docs/$chapter/$slug': typeof DocsChapterSlugRoute
+  '/docs/$chapter/$slug': typeof DocsChapterSlugRouteWithChildren
   '/docs/$chapter/catalog': typeof DocsChapterCatalogRoute
+  '/docs/$chapter/$slug/catalog': typeof DocsChapterSlugCatalogRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/docs/'
     | '/docs/$chapter/$slug'
     | '/docs/$chapter/catalog'
+    | '/docs/$chapter/$slug/catalog'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/docs'
     | '/docs/$chapter/$slug'
     | '/docs/$chapter/catalog'
+    | '/docs/$chapter/$slug/catalog'
   id:
     | '__root__'
     | '/'
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/docs/'
     | '/docs/$chapter/$slug'
     | '/docs/$chapter/catalog'
+    | '/docs/$chapter/$slug/catalog'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -165,16 +177,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsChapterCatalogRouteImport
       parentRoute: typeof DocsChapterRoute
     }
+    '/docs/$chapter/$slug/catalog': {
+      id: '/docs/$chapter/$slug/catalog'
+      path: '/catalog'
+      fullPath: '/docs/$chapter/$slug/catalog'
+      preLoaderRoute: typeof DocsChapterSlugCatalogRouteImport
+      parentRoute: typeof DocsChapterSlugRoute
+    }
   }
 }
 
+interface DocsChapterSlugRouteChildren {
+  DocsChapterSlugCatalogRoute: typeof DocsChapterSlugCatalogRoute
+}
+
+const DocsChapterSlugRouteChildren: DocsChapterSlugRouteChildren = {
+  DocsChapterSlugCatalogRoute: DocsChapterSlugCatalogRoute,
+}
+
+const DocsChapterSlugRouteWithChildren = DocsChapterSlugRoute._addFileChildren(
+  DocsChapterSlugRouteChildren,
+)
+
 interface DocsChapterRouteChildren {
-  DocsChapterSlugRoute: typeof DocsChapterSlugRoute
+  DocsChapterSlugRoute: typeof DocsChapterSlugRouteWithChildren
   DocsChapterCatalogRoute: typeof DocsChapterCatalogRoute
 }
 
 const DocsChapterRouteChildren: DocsChapterRouteChildren = {
-  DocsChapterSlugRoute: DocsChapterSlugRoute,
+  DocsChapterSlugRoute: DocsChapterSlugRouteWithChildren,
   DocsChapterCatalogRoute: DocsChapterCatalogRoute,
 }
 
