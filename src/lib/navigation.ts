@@ -9,12 +9,14 @@ type NavigationFile = {
 type NavigationGroupConfig = {
     id: string;
     title: string;
+    catalogSlug: string;
     items: string[];
 };
 
 export type NavigationGroup = {
     id: string;
     title: string;
+    catalogSlug: string;
     items: DocArticle[];
 };
 
@@ -53,6 +55,15 @@ function loadNavigationGroups(navigation: NavigationFile): NavigationGroup[] {
     const referencedSlugs = new Set<string>();
 
     for (const group of navigation.groups) {
+        if (!articlesBySlug.has(group.catalogSlug)) {
+            throw new Error(`Navigation catalog slug "${group.catalogSlug}" does not match a document.`);
+        }
+        if (referencedSlugs.has(group.catalogSlug)) {
+            throw new Error(`Navigation catalog slug "${group.catalogSlug}" is listed more than once.`);
+        }
+
+        referencedSlugs.add(group.catalogSlug);
+
         const items = group.items.map((slug) => {
             const article = articlesBySlug.get(slug);
             if (!article) {
@@ -66,7 +77,7 @@ function loadNavigationGroups(navigation: NavigationFile): NavigationGroup[] {
             return article;
         });
 
-        groups.push({ id: group.id, title: group.title, items });
+        groups.push({ id: group.id, title: group.title, catalogSlug: group.catalogSlug, items });
     }
 
     const missingArticles = docArticles.filter((article) => !referencedSlugs.has(article.slug));
@@ -90,6 +101,7 @@ function parseNavigationFile(source: string, filePath: string): NavigationFile {
             typeof group !== "object" ||
             typeof group.id !== "string" ||
             typeof group.title !== "string" ||
+            typeof group.catalogSlug !== "string" ||
             !Array.isArray(group.items) ||
             group.items.some((item) => typeof item !== "string")
         ) {

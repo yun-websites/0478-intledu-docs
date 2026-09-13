@@ -2,8 +2,8 @@ title: Computer Science
 groups:
   - id: 1-data-representation
     title: 1. Data representation
+    catalogSlug: data-representation
     items:
-      - data-representation
       - 1-1-1-binary-represents-data
       - 1-1-2-binary-denary-and-hexadecimal-systems
       - 1-1-3-use-of-the-hexadecimal-system
@@ -18,8 +18,8 @@ groups:
       - 1-3-4-lossy-and-lossless-file-compression
   - id: 2-data-transmission
     title: 2. Data transmission
+    catalogSlug: data-transmission
     items:
-      - data-transmission
       - 2-1-2-data-transmission
       - 2-2-1-the-need-to-check-for-errors
       - 2-2-3-check-digits
@@ -27,8 +27,8 @@ groups:
       - 2-3-2-symmetric-and-asymmetric-encryption
   - id: 3-hardware
     title: 3. Hardware
+    catalogSlug: hardware
     items:
-      - hardware
       - 3-1-1-the-central-processing-unit-cpu
       - 3-1-2-von-neumann-architecture
       - 3-1-3-cores-cache-and-internal-clock
@@ -46,8 +46,8 @@ groups:
       - 3-4-4-routers
   - id: 4-software
     title: 4. Software
+    catalogSlug: software
     items:
-      - software
       - 4-1-1-system-software-and-application-software
       - 4-1-2-operating-systems
       - 4-1-3-running-of-applications
@@ -58,8 +58,8 @@ groups:
       - 4-2-5-integrated-development-environment-ide
   - id: 5-internet-and-uses
     title: 5. Internet and its uses
+    catalogSlug: internet-and-uses
     items:
-      - internet-and-uses
       - 5-1-1-the-differences-between-the-internet-and-the-world-wide-web-www
       - 5-1-3-http-and-https
       - 5-1-4-web-browsers
@@ -69,8 +69,8 @@ groups:
       - 5-3-2-keeping-data-safe-from-security-threats
   - id: 6-automated-and-emerging-technologies
     title: 6. Automated and emerging technologies
+    catalogSlug: automated-and-emerging-technologies
     items:
-      - automated-and-emerging-technologies
       - 6-1-2-advantages-and-disadvantages-of-automated-systems
       - 6-2-1-what-is-robotics
       - 6-3-1-introduction
@@ -78,8 +78,8 @@ groups:
       - 6-3-3-ai-systems
   - id: 7-algorithm-design-and-problem-solving
     title: 7. Algorithm design and problem solving
+    catalogSlug: algorithm-design-and-problem-solving
     items:
-      - algorithm-design-and-problem-solving
       - 7-1-1-analysis
       - 7-1-2-design
       - 7-1-3-coding-and-iterative-testing
@@ -97,8 +97,8 @@ groups:
       - 7-6-1-how-to-suggest-and-apply-suitable-test-data
   - id: 8-programming
     title: 8. Programming
+    catalogSlug: programming
     items:
-      - programming
       - 8-1-1-variables-and-constants
       - 8-1-2-basic-data-types
       - 8-1-3-input-and-output
@@ -117,15 +117,15 @@ groups:
       - 8-3-2-using-files
   - id: 9-databases
     title: 9. Databases
+    catalogSlug: databases
     items:
-      - databases
       - 9-1-2-basic-data-types
       - 9-1-3-primary-keys
       - 9-1-4-sql
   - id: 10-boolean-logic
     title: 10. Boolean logic
+    catalogSlug: boolean-logic
     items:
-      - boolean-logic
       - 10-1-1-logic-gate-symbols
       - 10-2-1-not-gate
       - 10-2-2-and-gate-note-the-use-of-boolean-algebra-to

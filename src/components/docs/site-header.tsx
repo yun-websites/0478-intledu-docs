@@ -12,6 +12,7 @@ import {
 import { Separator } from "../ui/separator";
 import { SidebarTrigger } from "../ui/sidebar";
 import { docChapters } from "@/lib/docs";
+import { navigationGroups } from "@/lib/navigation";
 
 type BreadcrumbItemData = {
     label: string;
@@ -74,7 +75,8 @@ function getBreadcrumbItems(pathname: string): BreadcrumbItemData[] {
     const chapter = chapterMatch[1];
     const leaf = chapterMatch[2];
     const chapterEntry = docChapters.find((item) => item.chapter === chapter);
-    const chapterLabel = chapterEntry?.title ?? titleCase(chapter);
+    const navigationGroup = navigationGroups.find((group) => group.catalogSlug === chapter);
+    const chapterLabel = navigationGroup?.title ?? chapterEntry?.title ?? titleCase(chapter);
 
     items.push({ label: chapterLabel, to: `/docs/${chapter}/catalog` });
 

@@ -30,7 +30,7 @@ function ChapterNavigationItem({ group }: { group: NavigationGroup }) {
             <SidebarMenuItem>
                 <SidebarMenuButton
                     render={
-                        <Link to="/docs/$chapter/$slug/catalog" params={{ chapter: group.items[0].chapter, slug: group.id }} />
+                        <Link to="/docs/$chapter/catalog" params={{ chapter: group.catalogSlug }} />
                     }>
                     <span>{group.title}</span>
                 </SidebarMenuButton>
