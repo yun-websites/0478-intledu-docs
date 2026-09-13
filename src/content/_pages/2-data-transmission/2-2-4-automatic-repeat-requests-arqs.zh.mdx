@@ -1,20 +1,24 @@
 ---
-title: "第 2.2.4 节：Automatic Repeat Requests (ARQs)"
-description: "简要介绍Automatic Repeat Requests (ARQs)的核心概念。"
+title: "自动重复请求（ARQ）"
+description: "使用确认、否认确认与超时机制检测传输错误。"
 slug: "2-2-4-automatic-repeat-requests-arqs"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "2-2-4-automatic-repeat-requests-arqs",
-        title: "第 2.2.4 节：Automatic Repeat Requests (ARQs)",
-        content: "本页依据课本第 2.2.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWe have already considered parity checks and echo checks as methods to verify\n                                that data has arrived at its destination unchanged. An Automatic Repeat\n                                Request (ARQ) is a third way used to check data following data transmission.\n                                This method can best be summarised as follows:\n\n                                锟� ARQ uses positive and negative acknowledgements (messages sent to\n                                   the receiver indicating that data has/has not been received correctly)\n                                   and timeout (this is the time interval allowed to elapse before an\n                                   acknowledgement is received)\n\n                                锟� the receiving device receives an error detection code as part of the data\n                                   transmission (this is typically a Cyclic Redundancy Check 锟� refer to Section 2.1.1);\n                                   this is used to detect whether the received data contains any transmission errors\n\n                                锟� if no error is detected, a positive acknowledgement is sent back to the\n                                   sending device\n\n                                锟� however, if an error is detected, the receiving device now sends a negative\n                                   acknowledgement to the sending device and requests re-transmission of the data\n\n                                锟� a time-out is used by the sending device by waiting a pre-determined amount\n                                   of time ....\n\n                                锟� ... and if no acknowledgement of any type has been received by the sending\n                                   device within this time limit, it automatically re-sends the data until a\n                                   positive acknowledgement is received ....\n\n                                锟� ... or until a pre-determined number of re-transmissions has taken place\n                                锟� ARQ is often used by mobile phone networks to guarantee data integrity.\n\n62\n                                                                        2.3 Symmetric and asymmetric encryption\n\nLink                             2.3 Symmetric and asymmetric encryption\n\nFor more on cyber                2.3.1 The purpose of encryption\nsecurity see\nChapter 5.                       When data is transmitted over any public network (wired or wireless), there\n                                 is always a risk of it being intercepted by, for example, a hacker. Under\n                      Plaintext  these circumstances, a hacker is often referred to as an eavesdropper. Using\n                                 encryption helps to min",
-    },
-];
+<ParagraphTitle id="2-2-4-automatic-repeat-requests-arqs">自动重复请求（ARQ）</ParagraphTitle>
 
-<ParagraphTitle id="2-2-4-automatic-repeat-requests-arqs">第 2.2.4 节：Automatic Repeat Requests (ARQs)</ParagraphTitle>
+<ParagraphContent id="2-2-4-automatic-repeat-requests-arqs">
+奇偶校验和回声检查都可用于验证数据是否在传输后原样到达目的地。**自动重复请求**（Automatic Repeat Request，ARQ）是另一种传输后差错检测方法，其过程可概括如下：
 
-<ParagraphContent id="2-2-4-automatic-repeat-requests-arqs">{"本页依据课本第 2.2.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWe have already considered parity checks and echo checks as methods to verify\n                                that data has arrived at its destination unchanged. An Automatic Repeat\n                                Request (ARQ) is a third way used to check data following data transmission.\n                                This method can best be summarised as follows:\n\n                                锟� ARQ uses positive and negative acknowledgements (messages sent to\n                                   the receiver indicating that data has/has not been received correctly)\n                                   and timeout (this is the time interval allowed to elapse before an\n                                   acknowledgement is received)\n\n                                锟� the receiving device receives an error detection code as part of the data\n                                   transmission (this is typically a Cyclic Redundancy Check 锟� refer to Section 2.1.1);\n                                   this is used to detect whether the received data contains any transmission errors\n\n                                锟� if no error is detected, a positive acknowledgement is sent back to the\n                                   sending device\n\n                                锟� however, if an error is detected, the receiving device now sends a negative\n                                   acknowledgement to the sending device and requests re-transmission of the data\n\n                                锟� a time-out is used by the sending device by waiting a pre-determined amount\n                                   of time ....\n\n                                锟� ... and if no acknowledgement of any type has been received by the sending\n                                   device within this time limit, it automatically re-sends the data until a\n                                   positive acknowledgement is received ....\n\n                                锟� ... or until a pre-determined number of re-transmissions has taken place\n                                锟� ARQ is often used by mobile phone networks to guarantee data integrity.\n\n62\n                                                                        2.3 Symmetric and asymmetric encryption\n\nLink                             2.3 Symmetric and asymmetric encryption\n\nFor more on cyber                2.3.1 The purpose of encryption\nsecurity see\nChapter 5.                       When data is transmitted over any public network (wired or wireless), there\n                                 is always a risk of it being intercepted by, for example, a hacker. Under\n                      Plaintext  these circumstances, a hacker is often referred to as an eavesdropper. Using\n                                 encryption helps to min"}</ParagraphContent>
+- ARQ 使用**肯定确认**和**否定确认**，即接收设备发送的消息，用于表示数据是否已正确接收；它还使用**超时**，即等待确认消息的时间限制；
+- 接收设备会随传输数据一并收到错误检测代码，通常为循环冗余校验（Cyclic Redundancy Check，CRC）；该代码用于检测接收到的数据是否包含传输错误；
+- 若未检测到错误，接收设备会向发送设备回传肯定确认；
+- 若检测到错误，接收设备会向发送设备回传否定确认，并请求重新传输数据；
+- 发送设备会等待预先设定的一段时间；
+- 若在此时间限制内未收到任何类型的确认，发送设备会自动重新发送数据，直至收到肯定确认；
+- 或者，直到达到预先设定的最大重传次数。
+
+移动电话网络经常使用 ARQ 来保证数据完整性。
+</ParagraphContent>

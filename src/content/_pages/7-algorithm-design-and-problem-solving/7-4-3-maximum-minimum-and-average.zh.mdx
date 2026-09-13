@@ -1,20 +1,52 @@
 ---
-title: "第 7.4.3 节：Maximum, minimum and average"
-description: "简要介绍Maximum, minimum and average的核心概念。"
+title: "最大值、最小值和平均值"
+description: "在列表中查找最大值、最小值并计算平均值。"
 slug: "7-4-3-maximum-minimum-and-average"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-4-3-maximum-minimum-and-average",
-        title: "第 7.4.3 节：Maximum, minimum and average",
-        content: "本页依据课本第 7.4.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nFinding the largest and smallest values in a list are two standard methods that\n                       are frequently found in algorithms, for example, finding the highest and lowest\n                       mark awarded to a class of students.\n\n  Initialising         MaximumMark  0                               Initialising\n  maximum to the       MinimumMark  100                             minimum to the\n  lowest mark          FOR Counter  1 TO ClassSize                  highest possible\n  possible\n                          IF StudentMark[Counter] > MaximumMark     Replacing the\nCalls data from an            THEN                                  maximum mark\narray (see Chapter 8)            MaximumMark  StudentMark[Counter]  with a higher mark\ncalled StudentMark)\n                          ENDIF                                     Replacing the\n                          IF StudentMark[Counter] < MinimumMark     minimum mark\n                                                                    with a lower mark\n                              THEN\n                                 MinimumMark  StudentMark[Counter]\n\n                          ENDIF\n                       NEXT Counter\n\n                                                                                    273\n7 Algorithm design and problem solving\n\n                        If the largest and smallest values are not known, an alternative method is to set\n                        the maximum and minimum values to the first item in the list.\n\n                        For example, using this method to find the highest and lowest mark awarded to a\n                        class of students.\n\n                        MaximumMark  StudentMark[1]                  Initialising minimum\n                        MinimumMark  StudentMark[1]                  and maximum to the\n                        FOR Counter  2 TO ClassSize                  first mark\n\nStarting the loop at       IF StudentMark[Counter] > MaximumMark\nthe second position in         THEN\nthe list.                         MaximumMark  StudentMark[Counter]\n\n                           ENDIF\n                           IF StudentMark[Counter] < MinimumMark\n\n                               THEN\n                                  MinimumMark  StudentMark[Counter]\n\n                           ENDIF\n                        NEXT Counter\n\n                        Calculating the average (mean) of all the values in a list is an extension of the\n                        totalling method, for example, calculating the average mark for a class of students.\n\n                        Total  0                                     Calculating the\n                        FOR Counter  1 TO ClassSize                  average from the total",
-    },
-];
+<ParagraphTitle id="7-4-3-maximum-minimum-and-average">最大值、最小值和平均值</ParagraphTitle>
 
-<ParagraphTitle id="7-4-3-maximum-minimum-and-average">第 7.4.3 节：Maximum, minimum and average</ParagraphTitle>
+<ParagraphContent id="7-4-3-maximum-minimum-and-average">
+在列表中查找最大值和最小值是算法中常用的标准方法，例如查找班级学生的最高分和最低分。
 
-<ParagraphContent id="7-4-3-maximum-minimum-and-average">{"本页依据课本第 7.4.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nFinding the largest and smallest values in a list are two standard methods that\n                       are frequently found in algorithms, for example, finding the highest and lowest\n                       mark awarded to a class of students.\n\n  Initialising         MaximumMark  0                               Initialising\n  maximum to the       MinimumMark  100                             minimum to the\n  lowest mark          FOR Counter  1 TO ClassSize                  highest possible\n  possible\n                          IF StudentMark[Counter] > MaximumMark     Replacing the\nCalls data from an            THEN                                  maximum mark\narray (see Chapter 8)            MaximumMark  StudentMark[Counter]  with a higher mark\ncalled StudentMark)\n                          ENDIF                                     Replacing the\n                          IF StudentMark[Counter] < MinimumMark     minimum mark\n                                                                    with a lower mark\n                              THEN\n                                 MinimumMark  StudentMark[Counter]\n\n                          ENDIF\n                       NEXT Counter\n\n                                                                                    273\n7 Algorithm design and problem solving\n\n                        If the largest and smallest values are not known, an alternative method is to set\n                        the maximum and minimum values to the first item in the list.\n\n                        For example, using this method to find the highest and lowest mark awarded to a\n                        class of students.\n\n                        MaximumMark  StudentMark[1]                  Initialising minimum\n                        MinimumMark  StudentMark[1]                  and maximum to the\n                        FOR Counter  2 TO ClassSize                  first mark\n\nStarting the loop at       IF StudentMark[Counter] > MaximumMark\nthe second position in         THEN\nthe list.                         MaximumMark  StudentMark[Counter]\n\n                           ENDIF\n                           IF StudentMark[Counter] < MinimumMark\n\n                               THEN\n                                  MinimumMark  StudentMark[Counter]\n\n                           ENDIF\n                        NEXT Counter\n\n                        Calculating the average (mean) of all the values in a list is an extension of the\n                        totalling method, for example, calculating the average mark for a class of students.\n\n                        Total  0                                     Calculating the\n                        FOR Counter  1 TO ClassSize                  average from the total"}</ParagraphContent>
+```text
+MaximumMark <- 0
+MinimumMark <- 100
+FOR Counter <- 1 TO ClassSize
+    IF StudentMark[Counter] > MaximumMark THEN
+        MaximumMark <- StudentMark[Counter]
+    ENDIF
+    IF StudentMark[Counter] < MinimumMark THEN
+        MinimumMark <- StudentMark[Counter]
+    ENDIF
+NEXT Counter
+```
+
+如果事先不知道可能的最大值和最小值，可以把列表的第一个元素同时作为初始最大值和最小值，然后从第二个元素开始比较：
+
+```text
+MaximumMark <- StudentMark[1]
+MinimumMark <- StudentMark[1]
+FOR Counter <- 2 TO ClassSize
+    IF StudentMark[Counter] > MaximumMark THEN
+        MaximumMark <- StudentMark[Counter]
+    ENDIF
+    IF StudentMark[Counter] < MinimumMark THEN
+        MinimumMark <- StudentMark[Counter]
+    ENDIF
+NEXT Counter
+```
+
+计算列表中所有值的平均值是累计方法的延伸：先把所有值相加，再用总和除以值的数量。
+
+```text
+Total <- 0
+FOR Counter <- 1 TO ClassSize
+    Total <- Total + StudentMark[Counter]
+NEXT Counter
+Average <- Total / ClassSize
+```
+</ParagraphContent>

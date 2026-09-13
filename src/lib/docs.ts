@@ -14,7 +14,6 @@ export type DocFrontmatter = {
 export type DocParagraph = {
     id: string;
     title: string;
-    content: string;
 };
 
 export type DocEntry = Required<Pick<DocFrontmatter, "title" | "slug" | "chapter">> &
@@ -52,7 +51,6 @@ export type DocChapter = {
 
 type DocModule = {
     default: React.ComponentType<Record<string, unknown>>;
-    paragraphs?: DocParagraph[];
 };
 
 type DocMetadata = Required<Pick<DocFrontmatter, "title" | "slug" | "chapter">> &
@@ -2038,7 +2036,7 @@ const entries = Object.entries(docModules).flatMap(([path, module]) => {
             locale: getLocale(path) as Locale,
             path,
             component: module.default,
-            paragraphs: module.paragraphs ?? [],
+            paragraphs: [{ id: meta.slug, title: meta.title }],
         } satisfies DocEntry,
     ];
 });

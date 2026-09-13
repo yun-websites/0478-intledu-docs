@@ -1,20 +1,26 @@
 ---
-title: "第 3.3.4 节：Virtual memory"
-description: "简要介绍Virtual memory的核心概念。"
+title: "虚拟内存"
+description: "使用交换空间扩展 RAM 的虚拟内存机制。"
 slug: "3-3-4-virtual-memory"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-3-4-virtual-memory",
-        title: "第 3.3.4 节：Virtual memory",
-        content: "本页依据课本第 3.3.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nOne of the problems associated with memory management is the case when\n                             processes run out of RAM. If the amount of available RAM is exceeded due to\n                             multiple programs running, it is likely to cause a system crash. This can be solved\n                             by utilising the hard disk drive (or SSD) if we need more memory. This is the basis\n                             behind virtual memory. Essentially RAM is the physical memory, while virtual\n                             memory is RAM + swap space on the hard disk or SSD.\n\n                             To execute a program, data is loaded into memory from HDD (or SSD) whenever\n                             required. It is possible to show the differences between using normal memory\n                             management and virtual memory management in two simple diagrams.\n\n                             Without virtual memory\n\n                             Suppose we have five programs (numbered 0 to 4) that are in memory, all\n                             requiring access to RAM. The first diagram shows what would happen without\n                             virtual memory being used (i.e. the computer would run out of RAM memory\n                             space):\n\n                             32-bit program address space           32-bit RAM address space\n\n                             0                                      0\n\n                             1                                      1\n\n                             2                                      2\n\n                             3                                      3\n\n                             4\n\n                                                                    When program 4 tries to access\n\n                                                                    RAM there is no available\n\n                                                                    memory, causing a system crash\n\n                              Figure 3.68 Normal memory management\n\n128\n                                                              3.3 Data storage\n\nWith virtual memory\n\nWe will now consider what happens if the CPU uses virtual memory to allow all five\nprograms to access RAM as required. This will require moving data out of RAM into\nHDD/SSD and then allowing other data to be moved out of HDD/SSD into RAM:\n\n32-bit program address space  32-bit map         32-bit RAM address space\n\n0                                                   0\n1                                                   1\n2                                                   2\n3                                                   3\n4\n                                                 Notice the use of the 32-bit\nprogram 0 maps to",
-    },
-];
+<ParagraphTitle id="3-3-4-virtual-memory">虚拟内存</ParagraphTitle>
 
-<ParagraphTitle id="3-3-4-virtual-memory">第 3.3.4 节：Virtual memory</ParagraphTitle>
+<ParagraphContent id="3-3-4-virtual-memory">
+内存管理的一个问题是运行中的进程耗尽 RAM。当多个程序同时运行而超出可用 RAM 时，系统可能崩溃。解决方法是利用硬盘驱动器或 SSD 提供额外空间，这就是**虚拟内存**的基础。
 
-<ParagraphContent id="3-3-4-virtual-memory">{"本页依据课本第 3.3.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nOne of the problems associated with memory management is the case when\n                             processes run out of RAM. If the amount of available RAM is exceeded due to\n                             multiple programs running, it is likely to cause a system crash. This can be solved\n                             by utilising the hard disk drive (or SSD) if we need more memory. This is the basis\n                             behind virtual memory. Essentially RAM is the physical memory, while virtual\n                             memory is RAM + swap space on the hard disk or SSD.\n\n                             To execute a program, data is loaded into memory from HDD (or SSD) whenever\n                             required. It is possible to show the differences between using normal memory\n                             management and virtual memory management in two simple diagrams.\n\n                             Without virtual memory\n\n                             Suppose we have five programs (numbered 0 to 4) that are in memory, all\n                             requiring access to RAM. The first diagram shows what would happen without\n                             virtual memory being used (i.e. the computer would run out of RAM memory\n                             space):\n\n                             32-bit program address space           32-bit RAM address space\n\n                             0                                      0\n\n                             1                                      1\n\n                             2                                      2\n\n                             3                                      3\n\n                             4\n\n                                                                    When program 4 tries to access\n\n                                                                    RAM there is no available\n\n                                                                    memory, causing a system crash\n\n                              Figure 3.68 Normal memory management\n\n128\n                                                              3.3 Data storage\n\nWith virtual memory\n\nWe will now consider what happens if the CPU uses virtual memory to allow all five\nprograms to access RAM as required. This will require moving data out of RAM into\nHDD/SSD and then allowing other data to be moved out of HDD/SSD into RAM:\n\n32-bit program address space  32-bit map         32-bit RAM address space\n\n0                                                   0\n1                                                   1\n2                                                   2\n3                                                   3\n4\n                                                 Notice the use of the 32-bit\nprogram 0 maps to"}</ParagraphContent>
+RAM 是物理内存；虚拟内存则是 RAM 与硬盘或 SSD 上的**交换空间**（swap space）的组合。程序执行时，所需数据会从 HDD 或 SSD 加载到内存；当 RAM 空间不足时，暂时不需要的数据会被移出到交换空间，其他所需数据再被加载到 RAM。
+
+### 不使用虚拟内存
+
+假设内存中有编号为 `0` 至 `4` 的五个程序，都需要访问 RAM。如果不使用虚拟内存，前四个程序占满 RAM 后，程序 `4` 无法获得可用空间，从而导致系统崩溃。
+
+### 使用虚拟内存
+
+使用虚拟内存时，CPU 可以把 RAM 中暂时不需要的数据移到 HDD 或 SSD，再把当前需要的数据移入 RAM。程序地址空间通过映射关系对应到物理 RAM 地址，因此所有程序都可以在需要时使用 RAM，而不必同时完整驻留在 RAM 中。
+
+虚拟内存能够让计算机运行需要较大内存空间的多个程序，但由于 HDD 或 SSD 的访问速度低于 RAM，频繁交换数据会降低系统性能。
+</ParagraphContent>

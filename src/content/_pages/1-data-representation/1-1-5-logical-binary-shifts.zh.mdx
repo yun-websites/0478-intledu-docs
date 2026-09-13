@@ -1,20 +1,66 @@
 ---
-title: "第 1.1.5 节：Logical binary shifts"
-description: "简要介绍Logical binary shifts的核心概念。"
+title: "逻辑二进制移位"
+description: "二进制数的逻辑左移和右移。"
 slug: "1-1-5-logical-binary-shifts"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "1-1-5-logical-binary-shifts",
-        title: "第 1.1.5 节：Logical binary shifts",
-        content: "本页依据课本第 1.1.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nComputers can carry out a logical shift on a sequence of binary numbers. The\nlogical shift means moving the binary number to the left or to the right. Each\nshift left is equivalent to multiplying the binary number by 2 and each shift\nright is equivalent to dividing the binary number by 2.\n\nAs bits are shifted, any empty positions are replaced with a zero 锟� see examples\nbelow. There is clearly a limit to the number of shifts which can be carried out\nif the binary number is stored in an 8-bit register. Eventually after a number of\nshifts the register would only contain zeros. For example, if we shift 01110000\n(denary value 112) five places left (the equivalent to multiplying by 25, i.e. 32), in\nan 8-bit register we would end up with 00000000. This makes it seem as though\n112 锟� 32 = 0! This would result in the generation of an error message.\n\n                                                                                                                                            17\n1 Data representation\n\n                       Example 1\n\n                       The denary number 21 is 00010101 in binary. If we put this into an 8-bit register:\n\n                       128 64 32 16  8  4  2  1\n\nThe left-most bit is   00010101\noften referred to\nas the MOST            If we now shift the bits in this register one place to the left, we obtain:\nSIGNIFICANT BIT\n                       128 64 32 16  8  4  2  1                                           Note how the empty\nThe left-most bit is                                                                      right-most bit position\nnow lost following a   00101010                                                           is now filled with a 0\nleft shift\n                       The value of the binary bits is now 21 锟� 21 i.e. 42. We can see this is correct if we\n                       calculate the denary value of the new binary number 101010 (i.e. 32 + 8 + 2).\n\n                       Suppose we now shift the original number two places left:\n\n                       128 64 32 16  8  4  2  1\n\n                       01010100\n\n                       The binary number 1010100 is 84 in denary 锟� this is 21 锟� 22.\n                       And now suppose we shift the original number three places left:\n\n                       10101000\n\n                       The binary number 10101000 is 168 in denary 锟� this is 21 锟� 23.\n\n                       So, let us consider what happens if we shift the original binary number 00010101\n                       four places left:\n\n                       128 64 32 16  8  4  2  1\n\nLosing 1 bit           01010000\nfollowing a shift\noperation will         The left-most 1-bit has been lost. In our 8-bit register the result of 21 锟� 24 is 80\ncause an error         which is clearly incorrect. T",
-    },
-];
+<ParagraphTitle id="1-1-5-logical-binary-shifts">逻辑二进制移位</ParagraphTitle>
 
-<ParagraphTitle id="1-1-5-logical-binary-shifts">第 1.1.5 节：Logical binary shifts</ParagraphTitle>
+<ParagraphContent id="1-1-5-logical-binary-shifts">
 
-<ParagraphContent id="1-1-5-logical-binary-shifts">{"本页依据课本第 1.1.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nComputers can carry out a logical shift on a sequence of binary numbers. The\nlogical shift means moving the binary number to the left or to the right. Each\nshift left is equivalent to multiplying the binary number by 2 and each shift\nright is equivalent to dividing the binary number by 2.\n\nAs bits are shifted, any empty positions are replaced with a zero 锟� see examples\nbelow. There is clearly a limit to the number of shifts which can be carried out\nif the binary number is stored in an 8-bit register. Eventually after a number of\nshifts the register would only contain zeros. For example, if we shift 01110000\n(denary value 112) five places left (the equivalent to multiplying by 25, i.e. 32), in\nan 8-bit register we would end up with 00000000. This makes it seem as though\n112 锟� 32 = 0! This would result in the generation of an error message.\n\n                                                                                                                                            17\n1 Data representation\n\n                       Example 1\n\n                       The denary number 21 is 00010101 in binary. If we put this into an 8-bit register:\n\n                       128 64 32 16  8  4  2  1\n\nThe left-most bit is   00010101\noften referred to\nas the MOST            If we now shift the bits in this register one place to the left, we obtain:\nSIGNIFICANT BIT\n                       128 64 32 16  8  4  2  1                                           Note how the empty\nThe left-most bit is                                                                      right-most bit position\nnow lost following a   00101010                                                           is now filled with a 0\nleft shift\n                       The value of the binary bits is now 21 锟� 21 i.e. 42. We can see this is correct if we\n                       calculate the denary value of the new binary number 101010 (i.e. 32 + 8 + 2).\n\n                       Suppose we now shift the original number two places left:\n\n                       128 64 32 16  8  4  2  1\n\n                       01010100\n\n                       The binary number 1010100 is 84 in denary 锟� this is 21 锟� 22.\n                       And now suppose we shift the original number three places left:\n\n                       10101000\n\n                       The binary number 10101000 is 168 in denary 锟� this is 21 锟� 23.\n\n                       So, let us consider what happens if we shift the original binary number 00010101\n                       four places left:\n\n                       128 64 32 16  8  4  2  1\n\nLosing 1 bit           01010000\nfollowing a shift\noperation will         The left-most 1-bit has been lost. In our 8-bit register the result of 21 锟� 24 is 80\ncause an error         which is clearly incorrect. T"}</ParagraphContent>
+计算机可以对一串二进制数执行逻辑移位。逻辑移位是将二进制数向左或向右移动。每左移一位，相当于将该二进制数乘以 `2`；每右移一位，相当于将其除以 `2`。
+
+位移动时，所有空出的位都用 `0` 补充，如下例所示。若二进制数存储在 8 位寄存器中，能够执行的移位次数显然有限。经过若干次移位后，寄存器最终只会包含 `0`。例如，将 `01110000`（十进制值 `112`）向左移动 5 位，相当于乘以 `2^5`，即 `32`；但在 8 位寄存器中，结果会是 `00000000`。这看起来就像 `112 × 32 = 0`，会导致产生错误信息。
+
+**示例 1**
+
+十进制数 `21` 的二进制表示为 `00010101`。将它放入 8 位寄存器：
+
+```text
+128 64 32 16 8 4 2 1
+00010101
+```
+
+最左边的位通常称为**最高有效位**（most significant bit）。
+
+若将寄存器中的各位向左移动一位，得到：
+
+```text
+128 64 32 16 8 4 2 1
+00101010
+```
+
+注意，空出的最右位现在以 `0` 填充；左移后原先最左的位会丢失。
+
+此时二进制位的值为 `21 × 2`，即 `42`。计算新的二进制数 `101010` 的十进制值（`32 + 8 + 2`）即可验证。
+
+现在把原数向左移动两位：
+
+```text
+128 64 32 16 8 4 2 1
+01010100
+```
+
+二进制数 `1010100` 的十进制值为 `84`，即 `21 × 2^2`。
+
+若把原数向左移动三位：
+
+```text
+10101000
+```
+
+二进制数 `10101000` 的十进制值为 `168`，即 `21 × 2^3`。
+
+再考虑把原二进制数 `00010101` 向左移动四位：
+
+```text
+128 64 32 16 8 4 2 1
+01010000
+```
+
+最左边的 `1` 位已经丢失。在 8 位寄存器中，`21 × 2^4` 的结果变成 `80`，显然不正确。移位操作中丢失一个 `1` 位会导致错误。
+
+</ParagraphContent>

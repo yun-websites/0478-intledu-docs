@@ -1,20 +1,45 @@
 ---
-title: "第 3.1.2 节：Von Neumann architecture"
-description: "简要介绍Von Neumann architecture的核心概念。"
+title: "冯·诺依曼体系结构"
+description: "存储程序计算机、CPU 组件、寄存器和系统总线。"
 slug: "3-1-2-von-neumann-architecture"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-1-2-von-neumann-architecture",
-        title: "第 3.1.2 节：Von Neumann architecture",
-        content: "本页依据课本第 3.1.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nEarly computers were fed data while the machines were actually running; it wasn't\n   possible to store programs or data, which meant they couldn't operate without\n\n                                                                                                                                               75\n3 Hardware\n\n                     considerable human intervention. In the mid-1940s, John von Neumann developed\n                     the concept of the `stored program computer', which has been the basis of computer\n                     architecture ever since. The von Neumann architecture had the following main novel\n                     features (none of which were available in computers prior to the mid-1940s):\n\n                     锟� the concept of a central processing unit (CPU or processor)\n                     锟� the CPU was able to access the memory directly\n                     锟� computer memories could store programs as well as data\n                     锟� stored programs were made up of instructions which could be executed in\n\n                        sequential order.\n\n                     There are many diagrams of von Neumann CPU architecture in other textbooks\n                     and on the internet. The following diagram is one example of a simple\n                     representation of von Neumann architecture:\n\n                                                       Address bus                       Data bus\n\n                              Memory address\n                               register (MAR)\n\n                              Program counter                                            Memory data register\n                                      (PC)                                                         (MDR)\n\n                     Control  System                                Current instruction\n                       bus    clock                                    register (CIR)\n\n                                    CONTROL UNIT (CU)\n\n                              ARITHMETIC & LOGIC                    Accumulator (ACC)\n                                    UNIT (ALU)\n\n                                                                                         CPU\n\nLink                  Figure 3.1 Von Neumann architecture\n\nFor more arithmetic  Components of the central processing unit (CPU)\noperations, please\nrefer to Chapter 1.  The main components of the CPU are the Control Unit (CU), Arithmetic & Logic\n                     Unit (ALU) and system clock.\n76\n                     Arithmetic & Logic Unit (ALU)\n                     The Arithmetic & Logic Unit (ALU) allows the required arithmetic (e.g. +, - and\n                     shifting) or logic (e.g. AND, OR) operations to be carried out while a program is\n                     being",
-    },
-];
+<ParagraphTitle id="3-1-2-von-neumann-architecture">冯·诺依曼体系结构</ParagraphTitle>
 
-<ParagraphTitle id="3-1-2-von-neumann-architecture">第 3.1.2 节：Von Neumann architecture</ParagraphTitle>
+<ParagraphContent id="3-1-2-von-neumann-architecture">
+早期计算机在运行时才输入数据，不能存储程序或数据，因此需要大量人工干预。20 世纪 40 年代中期，John von Neumann 提出了**存储程序计算机**的概念，此后一直是计算机体系结构的基础。
 
-<ParagraphContent id="3-1-2-von-neumann-architecture">{"本页依据课本第 3.1.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nEarly computers were fed data while the machines were actually running; it wasn't\n   possible to store programs or data, which meant they couldn't operate without\n\n                                                                                                                                               75\n3 Hardware\n\n                     considerable human intervention. In the mid-1940s, John von Neumann developed\n                     the concept of the `stored program computer', which has been the basis of computer\n                     architecture ever since. The von Neumann architecture had the following main novel\n                     features (none of which were available in computers prior to the mid-1940s):\n\n                     锟� the concept of a central processing unit (CPU or processor)\n                     锟� the CPU was able to access the memory directly\n                     锟� computer memories could store programs as well as data\n                     锟� stored programs were made up of instructions which could be executed in\n\n                        sequential order.\n\n                     There are many diagrams of von Neumann CPU architecture in other textbooks\n                     and on the internet. The following diagram is one example of a simple\n                     representation of von Neumann architecture:\n\n                                                       Address bus                       Data bus\n\n                              Memory address\n                               register (MAR)\n\n                              Program counter                                            Memory data register\n                                      (PC)                                                         (MDR)\n\n                     Control  System                                Current instruction\n                       bus    clock                                    register (CIR)\n\n                                    CONTROL UNIT (CU)\n\n                              ARITHMETIC & LOGIC                    Accumulator (ACC)\n                                    UNIT (ALU)\n\n                                                                                         CPU\n\nLink                  Figure 3.1 Von Neumann architecture\n\nFor more arithmetic  Components of the central processing unit (CPU)\noperations, please\nrefer to Chapter 1.  The main components of the CPU are the Control Unit (CU), Arithmetic & Logic\n                     Unit (ALU) and system clock.\n76\n                     Arithmetic & Logic Unit (ALU)\n                     The Arithmetic & Logic Unit (ALU) allows the required arithmetic (e.g. +, - and\n                     shifting) or logic (e.g. AND, OR) operations to be carried out while a program is\n                     being"}</ParagraphContent>
+冯·诺依曼体系结构的主要新特征包括：
+
+- 引入中央处理器（CPU 或处理器）；
+- CPU 可以直接访问内存；
+- 内存既可存储程序，也可存储数据；
+- 存储的程序由可按顺序执行的指令组成。
+
+CPU 主要包括控制单元（CU）、算术逻辑单元（ALU）和系统时钟。ALU 执行算术运算，例如加、减和移位，也执行逻辑运算，例如 `AND` 和 `OR`。乘法和除法可由一系列加法、减法和逻辑左移或右移操作完成。
+
+控制单元从内存读取指令。程序计数器（program counter，PC）存储下一条指令所在的内存地址。控制单元通过“取指、译码、执行”循环解释指令，并沿控制总线发送信号，指示其他部件执行相应操作。系统时钟在控制总线上产生时序信号，确保数据流和程序指令在整个计算机中同步；没有时钟，计算机将无法正常工作。
+
+RAM 保存 CPU 需要访问的程序和数据，也称为**即时访问存储器**（Immediate Access Store，IAS）。CPU 会把后备存储器（例如硬盘驱动器）中的程序和数据暂时放入 RAM，因为 RAM 的读写速度远快于后备存储器。
+
+### 专用寄存器
+
+| 寄存器 | 缩写 | 用途 |
+| --- | --- | --- |
+| 当前指令寄存器 | CIR | 保存当前正在译码和执行的指令。 |
+| 累加器 | ACC | 在 ALU 进行计算时临时保存数据。 |
+| 内存地址寄存器 | MAR | 保存当前要读取或写入的内存位置地址。 |
+| 内存数据寄存器/缓冲寄存器 | MDR | 保存刚从内存读取的数据，或即将写入内存的数据。 |
+| 程序计数器 | PC | 保存下一条要读取的指令所在地址。 |
+
+### 系统总线
+
+系统总线连接 CPU、内存和输入/输出设备，由三类总线组成：
+
+- **控制总线**：传送控制和时序信号；
+- **地址总线**：传送要访问的内存位置地址；
+- **数据总线**：传送数据和指令。
+</ParagraphContent>

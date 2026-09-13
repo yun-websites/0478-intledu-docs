@@ -1,20 +1,23 @@
 ---
-title: "第 3.1.4 节：Instruction set"
-description: "简要介绍Instruction set的核心概念。"
+title: "指令集"
+description: "操作码、操作数和 CPU 指令集。"
 slug: "3-1-4-instruction-set"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-1-4-instruction-set",
-        title: "第 3.1.4 节：Instruction set",
-        content: "本页依据课本第 3.1.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn a computer system, instructions are a set of operations which are decoded in\n                       sequence. Each operation will instruct the ALU and CU (which are part of the\n                       CPU). An operation is made up of an opcode and an operand.\n\n                       The opcode informs the CPU what  The operand is the data which needs\n                       operation needs to be done       to be acted on or it can refer to a\n                                                        register in the memory\n\nLink                   Since the computer needs to understand the operation to be carried out, there\n                       is actually a limited number of opcodes that can be used; this is known as the\nSee Section 4.2.2 for  instruction set. All software running on a computer will contain a set of instructions\nexamples of opcodes    (which need to be converted into binary). The Fetch锟紻ecode锟紼xecute cycle is the\nand operands in        sequence of steps used by the CPU to process each instruction in sequence.\nassembly language.\n                       One example of an instruction set is the X86, a common CPU standard used in\nLink                   many modern computers. Although different computer manufacturers will adopt\n                       their own internal electronic design, if the computer is based on the X86 CPU\nFor more on            then all designs will share almost identical instruction sets. For example, Intel\ninterpreters and       Pentium and AMD Athlon CPUs use almost identical X86 instruction sets even\ncompilers see          though they are based on very different electronic designs.\nSection 4.2.3.\n                       (Note of caution: do not confuse instruction sets with programming code;\n                       instruction sets are the low-level language instructions that instruct the CPU\n                       how to carry out an operation. Program code needs interpreters or compilers\n                       to convert the code into the instruction set understood by the computer. Some\n                       examples of instruction set operations include: ADD, JMP, LDA, and so on.)\n\n82\n                                         3.1 Computer architecture",
-    },
-];
+<ParagraphTitle id="3-1-4-instruction-set">指令集</ParagraphTitle>
 
-<ParagraphTitle id="3-1-4-instruction-set">第 3.1.4 节：Instruction set</ParagraphTitle>
+<ParagraphContent id="3-1-4-instruction-set">
+在计算机系统中，指令是一组按顺序译码的操作。每项操作都会向 CPU 中的 ALU 和 CU 发出指示。一项操作由**操作码**（opcode）和**操作数**（operand）组成：
 
-<ParagraphContent id="3-1-4-instruction-set">{"本页依据课本第 3.1.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn a computer system, instructions are a set of operations which are decoded in\n                       sequence. Each operation will instruct the ALU and CU (which are part of the\n                       CPU). An operation is made up of an opcode and an operand.\n\n                       The opcode informs the CPU what  The operand is the data which needs\n                       operation needs to be done       to be acted on or it can refer to a\n                                                        register in the memory\n\nLink                   Since the computer needs to understand the operation to be carried out, there\n                       is actually a limited number of opcodes that can be used; this is known as the\nSee Section 4.2.2 for  instruction set. All software running on a computer will contain a set of instructions\nexamples of opcodes    (which need to be converted into binary). The Fetch锟紻ecode锟紼xecute cycle is the\nand operands in        sequence of steps used by the CPU to process each instruction in sequence.\nassembly language.\n                       One example of an instruction set is the X86, a common CPU standard used in\nLink                   many modern computers. Although different computer manufacturers will adopt\n                       their own internal electronic design, if the computer is based on the X86 CPU\nFor more on            then all designs will share almost identical instruction sets. For example, Intel\ninterpreters and       Pentium and AMD Athlon CPUs use almost identical X86 instruction sets even\ncompilers see          though they are based on very different electronic designs.\nSection 4.2.3.\n                       (Note of caution: do not confuse instruction sets with programming code;\n                       instruction sets are the low-level language instructions that instruct the CPU\n                       how to carry out an operation. Program code needs interpreters or compilers\n                       to convert the code into the instruction set understood by the computer. Some\n                       examples of instruction set operations include: ADD, JMP, LDA, and so on.)\n\n82\n                                         3.1 Computer architecture"}</ParagraphContent>
+- 操作码告诉 CPU 要执行什么操作；
+- 操作数是要处理的数据，或者指向内存中的某个寄存器。
+
+计算机能够理解和执行的操作码数量有限，这组操作码称为**指令集**。在计算机上运行的所有软件都包含一组指令，且这些指令必须转换为二进制。CPU 通过“取指、译码、执行”循环依次处理每条指令。
+
+X86 是一种常见的 CPU 指令集标准，广泛用于现代计算机。不同制造商可以采用不同的内部电子设计，但只要基于 X86 CPU，指令集就几乎相同。例如，Intel Pentium 和 AMD Athlon CPU 虽然内部电子设计不同，却使用几乎相同的 X86 指令集。
+
+不要把指令集与程序代码混淆。指令集是指导 CPU 执行操作的低级语言指令；程序代码需要通过解释器或编译器转换为计算机能理解的指令集。常见指令包括 `ADD`、`JMP` 和 `LDA`。
+</ParagraphContent>

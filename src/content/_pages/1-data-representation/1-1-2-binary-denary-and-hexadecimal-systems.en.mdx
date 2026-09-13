@@ -7,14 +7,72 @@ version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "1-1-2-binary-denary-and-hexadecimal-systems",
-        title: "Binary, denary and hexadecimal systems",
-        content: "The binary system\n\nWe are all familiar with the denary number system which counts in multiples of 10.\nThis gives us the well-known headings of units, 10s, 100s, 1000s, and so on:\n\n (104)        (103)        (102)        (101)                          (100)\n10 000        1000         100           10                              1\n                                          7                              7\n   2            5            1\n\nDenary uses ten separate digits, 0-9, to represent all values. Denary is known as\na base 10 number system.\n\nThe binary number system is a base 2 number system. It is based on the number 2.\nThus, only the two `values' 0 and 1 can be used in this system to represent all\nvalues. Using the same method as denary, this gives the headings 20, 21, 22, 23,\nand so on. The typical headings for a binary number with eight digits would be:\n\n(27)    (26)         (25)  (24)   (23)  (22)                     (21)  (20)\n\n128     64           32    16     8     4                        2            1\n\n1       1            1     0      1     1                        1            0\n\nA typical binary number would be: 11101110.\n\nConverting from binary to denary\n\nThe conversion from binary to denary is a relatively straightforward process. Each\ntime a 1-value appears in a binary number column, the column value (heading)\nis added to a total. This is best shown by three examples which use 8-bit, 12-bit\nand 16-bit binary numbers:\n\n      Example 1\n\nConvert the binary number, 11101110, into a denary number.\n128 64 32 16 8 4 2 1\n\n  11101110\nThe equivalent denary number is 128 + 64 + 32 + 8 + 4 + 2 = 238\n\n      Example 2\n\nConvert the following binary number, 011110001011, into a denary number.\n2048 1024 512 256 128 64 32 16 8 4 2 1\n\n  011110001011\nThe equivalent denary number is 1024 + 512 + 256 + 128 + 8 + 2 + 1 = 1931\n\n                                                                                                                                             3\n1 Data representation\n\n                             Example 3\n\n                       Convert the following binary number, 0011000111100110, into a denary number.\n\n                       32768 16384 8192 4096 2048 1024 512 256 128 64 32 16 8 4 2 1\n\n                          0 0 1 1 0 0 011 1 1 0 0 1 1 0\n\n                       As with the two examples above, to convert this number to denary, each time a 1\n                       appears in a column the column value is added to the total:\n                       8192 + 4096 + 256 + 128 + 64 + 32 + 4 + 2 = 12 774\n                       The same method can be used for a binary number of any size.\n\n                       Activity 1.1\n\n                       Convert the following binary numbers into denary:\n\n                       a 00110011",
-    },
-];
-
 <ParagraphTitle id="1-1-2-binary-denary-and-hexadecimal-systems">Binary, denary and hexadecimal systems</ParagraphTitle>
 
-<ParagraphContent id="1-1-2-binary-denary-and-hexadecimal-systems">{"The binary system\n\nWe are all familiar with the denary number system which counts in multiples of 10.\nThis gives us the well-known headings of units, 10s, 100s, 1000s, and so on:\n\n (104)        (103)        (102)        (101)                          (100)\n10 000        1000         100           10                              1\n                                          7                              7\n   2            5            1\n\nDenary uses ten separate digits, 0-9, to represent all values. Denary is known as\na base 10 number system.\n\nThe binary number system is a base 2 number system. It is based on the number 2.\nThus, only the two `values' 0 and 1 can be used in this system to represent all\nvalues. Using the same method as denary, this gives the headings 20, 21, 22, 23,\nand so on. The typical headings for a binary number with eight digits would be:\n\n(27)    (26)         (25)  (24)   (23)  (22)                     (21)  (20)\n\n128     64           32    16     8     4                        2            1\n\n1       1            1     0      1     1                        1            0\n\nA typical binary number would be: 11101110.\n\nConverting from binary to denary\n\nThe conversion from binary to denary is a relatively straightforward process. Each\ntime a 1-value appears in a binary number column, the column value (heading)\nis added to a total. This is best shown by three examples which use 8-bit, 12-bit\nand 16-bit binary numbers:\n\n      Example 1\n\nConvert the binary number, 11101110, into a denary number.\n128 64 32 16 8 4 2 1\n\n  11101110\nThe equivalent denary number is 128 + 64 + 32 + 8 + 4 + 2 = 238\n\n      Example 2\n\nConvert the following binary number, 011110001011, into a denary number.\n2048 1024 512 256 128 64 32 16 8 4 2 1\n\n  011110001011\nThe equivalent denary number is 1024 + 512 + 256 + 128 + 8 + 2 + 1 = 1931\n\n                                                                                                                                             3\n1 Data representation\n\n                             Example 3\n\n                       Convert the following binary number, 0011000111100110, into a denary number.\n\n                       32768 16384 8192 4096 2048 1024 512 256 128 64 32 16 8 4 2 1\n\n                          0 0 1 1 0 0 011 1 1 0 0 1 1 0\n\n                       As with the two examples above, to convert this number to denary, each time a 1\n                       appears in a column the column value is added to the total:\n                       8192 + 4096 + 256 + 128 + 64 + 32 + 4 + 2 = 12 774\n                       The same method can be used for a binary number of any size.\n\n                       Activity 1.1\n\n                       Convert the following binary numbers into denary:\n\n                       a 00110011"}</ParagraphContent>
+<ParagraphContent id="1-1-2-binary-denary-and-hexadecimal-systems">
+
+### The binary system
+
+We are all familiar with the denary number system which counts in multiples of 10. This gives us the well-known headings of units, 10s, 100s, 1000s, and so on:
+
+(104) (103) (102) (101) (100) 10 000 1000 100 10 1 7 7 2 5 1
+
+Denary uses ten separate digits, 0-9, to represent all values. Denary is known as a base 10 number system.
+
+The binary number system is a base 2 number system. It is based on the number 2. Thus, only the two `values' 0 and 1 can be used in this system to represent all values. Using the same method as denary, this gives the headings 20, 21, 22, 23, and so on. The typical headings for a binary number with eight digits would be:
+
+(27) (26) (25) (24) (23) (22) (21) (20)
+
+128 64 32 16 8 4 2 1
+
+1 1 1 0 1 1 1 0
+
+A typical binary number would be: 11101110.
+
+### Converting from binary to denary
+
+The conversion from binary to denary is a relatively straightforward process. Each time a 1-value appears in a binary number column, the column value (heading) is added to a total. This is best shown by three examples which use 8-bit, 12-bit and 16-bit binary numbers:
+
+### Example 1
+
+Convert the binary number, 11101110, into a denary number. 128 64 32 16 8 4 2 1
+
+11101110
+
+```text
+The equivalent denary number is 128 + 64 + 32 + 8 + 4 + 2 = 238
+```
+
+### Example 2
+
+Convert the following binary number, 011110001011, into a denary number. 2048 1024 512 256 128 64 32 16 8 4 2 1
+
+011110001011
+
+```text
+The equivalent denary number is 1024 + 512 + 256 + 128 + 8 + 2 + 1 = 1931
+```
+
+### Example 3
+
+Convert the following binary number, 0011000111100110, into a denary number.
+
+32768 16384 8192 4096 2048 1024 512 256 128 64 32 16 8 4 2 1
+
+0 0 1 1 0 0 011 1 1 0 0 1 1 0
+
+As with the two examples above, to convert this number to denary, each time a 1 appears in a column the column value is added to the total:
+
+```text
+8192 + 4096 + 256 + 128 + 64 + 32 + 4 + 2 = 12 774
+```
+
+The same method can be used for a binary number of any size.
+
+### Activity 1.1
+
+Convert the following binary numbers into denary:
+
+a 00110011
+
+</ParagraphContent>

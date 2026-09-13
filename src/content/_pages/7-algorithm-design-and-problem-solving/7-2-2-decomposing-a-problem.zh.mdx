@@ -1,20 +1,32 @@
 ---
-title: "第 7.2.2 节：Decomposing a problem"
-description: "简要介绍Decomposing a problem的核心概念。"
+title: "分解问题"
+description: "把计算机系统问题分为输入、处理、输出和存储。"
 slug: "7-2-2-decomposing-a-problem"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-2-2-decomposing-a-problem",
-        title: "第 7.2.2 节：Decomposing a problem",
-        content: "本页依据课本第 7.2.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAny problem that uses a computer system for its solution needs to be\n                             decomposed into its component parts. The component parts of any computer\n                             system are:\n\n                             锟� inputs 锟� the data used by the system that needs to be entered while the\n                                system is active\n\n                             锟� processes 锟� the tasks that need to be performed using the input data and any\n                                other previously stored data\n\n                             锟� outputs 锟� information that needs to be displayed or printed for the users of\n                                the system\n\n                             锟� storage 锟� data that needs to be stored in files on an appropriate medium for\n                                use in the future.\n                                             7.2 Computer systems, sub-systems and decomposition\n\n      Example 1: An alarm app\n\nFor example, the alarm app can be decomposed into:\n锟� inputs 锟� time to set the alarm, remove a previously set alarm time, switch an\n\n    alarm off, press snooze button\n锟� processes 锟� continuously check if the current time matches an alarm time that has\n\n    been set, storage and removal of alarm times, management of snooze\n锟� outputs 锟� continuous sound/tune (at alarm time or after snooze time expired)\n锟� storage 锟� time(s) for alarms set.\n\n Activity 7.1\n\n  Using one of the computer systems that you identified, decompose it into its\n  component parts of inputs, processes, outputs and storage.",
-    },
-];
+<ParagraphTitle id="7-2-2-decomposing-a-problem">分解问题</ParagraphTitle>
 
-<ParagraphTitle id="7-2-2-decomposing-a-problem">第 7.2.2 节：Decomposing a problem</ParagraphTitle>
+<ParagraphContent id="7-2-2-decomposing-a-problem">
+使用计算机系统解决问题时，需要把问题分解为组成部分：
 
-<ParagraphContent id="7-2-2-decomposing-a-problem">{"本页依据课本第 7.2.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAny problem that uses a computer system for its solution needs to be\n                             decomposed into its component parts. The component parts of any computer\n                             system are:\n\n                             锟� inputs 锟� the data used by the system that needs to be entered while the\n                                system is active\n\n                             锟� processes 锟� the tasks that need to be performed using the input data and any\n                                other previously stored data\n\n                             锟� outputs 锟� information that needs to be displayed or printed for the users of\n                                the system\n\n                             锟� storage 锟� data that needs to be stored in files on an appropriate medium for\n                                use in the future.\n                                             7.2 Computer systems, sub-systems and decomposition\n\n      Example 1: An alarm app\n\nFor example, the alarm app can be decomposed into:\n锟� inputs 锟� time to set the alarm, remove a previously set alarm time, switch an\n\n    alarm off, press snooze button\n锟� processes 锟� continuously check if the current time matches an alarm time that has\n\n    been set, storage and removal of alarm times, management of snooze\n锟� outputs 锟� continuous sound/tune (at alarm time or after snooze time expired)\n锟� storage 锟� time(s) for alarms set.\n\n Activity 7.1\n\n  Using one of the computer systems that you identified, decompose it into its\n  component parts of inputs, processes, outputs and storage."}</ParagraphContent>
+- **输入**：系统运行期间需要输入的数据；
+- **处理**：使用输入数据和其他已存储数据执行的任务；
+- **输出**：需要向系统用户显示或打印的信息；
+- **存储**：需要保存在合适介质的文件中，以便将来使用的数据。
+
+### 示例：闹钟应用
+
+闹钟应用可以分解为：
+
+- 输入：设置闹钟时间、删除已设置的时间、关闭闹钟、按下贪睡按钮；
+- 处理：持续检查当前时间是否与已设置的闹钟时间匹配，保存和删除闹钟时间，管理贪睡功能；
+- 输出：在闹钟时间或贪睡时间结束后持续播放声音或铃声；
+- 存储：已设置的闹钟时间。
+
+### 活动 7.1
+
+选择一个你经常使用的计算机系统，将它分解为输入、处理、输出和存储。
+</ParagraphContent>

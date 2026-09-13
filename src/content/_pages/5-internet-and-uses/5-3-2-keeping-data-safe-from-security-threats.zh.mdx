@@ -1,20 +1,31 @@
 ---
-title: "第 5.3.2 节：Keeping data safe from security threats"
-description: "简要介绍Keeping data safe from security threats的核心概念。"
+title: "保护数据免受安全威胁"
+description: "访问级别、反恶意软件和隐私控制等数据保护措施。"
 slug: "5-3-2-keeping-data-safe-from-security-threats"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "5-3-2-keeping-data-safe-from-security-threats",
-        title: "第 5.3.2 节：Keeping data safe from security threats",
-        content: "本页依据课本第 5.3.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAccess levels\n\n                    In many computer systems, user accounts control a user's rights. This often\n                    involves having different levels of access for different people. For example, in\n                    a hospital it would not be appropriate for a cleaner to have access to medical\n                    data about a patient. However, a consultant would need access to this vital data.\n                    Therefore, most systems have a hierarchy of access levels depending on a person's\n                    level of security; this is usually achieved using a user name and password as\n                    shown in Figure 5.13.\n\nLink                 Figure 5.13 Access level log in screen\n\nSee Chapter 9 for   When using databases, levels of access are particularly important; it is essential\nmore details about  to determine who has the right to read, write and delete data, for example. By\ndatabases.          having different views of data tables, it is possible for different users to only\n                    have access to certain data.\n\n198\n                        5.3 Cyber security\n\nLink                    Another area where access levels are very important is in social networks (such as\n                        Facebook); with this type of application, there are usually four access levels:\nFor more on anti-virus\nsoftware see            1 public access (this refers to the data anyone from the general public can\nSection 4.1.               access)\n\n                        2 friends (only people identified as `friends' by the owner of the data can see\n                           certain data)\n\n                        3 custom (this allows the user to further refine what data can be seen by\n                           `friends' allowing them to exclude certain content from selected people)\n\n                        4 data owner (this is data only the owner of the data can see).\n\n                        In this type of application, users are allowed to use privacy settings rather\n                        than passwords to decide the level of access (for more on this see later in this\n                        section).\n\n                        Anti-malware\n\n                        The two most common types of anti-malware are anti-virus and anti-spyware.\n\n                        Anti-virus\n                        Anti-virus has already been described in great detail in Chapter 4.\n\n                        Anti-spyware\n                        Anti-spyware software detects and removes spyware programs installed illegally\n                        on a user's computer system. The software is based on one of the following\n                        methods:\n\n                        锟� rules 锟� in this case, the software looks for typical features which",
-    },
-];
+<ParagraphTitle id="5-3-2-keeping-data-safe-from-security-threats">保护数据免受安全威胁</ParagraphTitle>
 
-<ParagraphTitle id="5-3-2-keeping-data-safe-from-security-threats">第 5.3.2 节：Keeping data safe from security threats</ParagraphTitle>
+<ParagraphContent id="5-3-2-keeping-data-safe-from-security-threats">
+### 访问级别
 
-<ParagraphContent id="5-3-2-keeping-data-safe-from-security-threats">{"本页依据课本第 5.3.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAccess levels\n\n                    In many computer systems, user accounts control a user's rights. This often\n                    involves having different levels of access for different people. For example, in\n                    a hospital it would not be appropriate for a cleaner to have access to medical\n                    data about a patient. However, a consultant would need access to this vital data.\n                    Therefore, most systems have a hierarchy of access levels depending on a person's\n                    level of security; this is usually achieved using a user name and password as\n                    shown in Figure 5.13.\n\nLink                 Figure 5.13 Access level log in screen\n\nSee Chapter 9 for   When using databases, levels of access are particularly important; it is essential\nmore details about  to determine who has the right to read, write and delete data, for example. By\ndatabases.          having different views of data tables, it is possible for different users to only\n                    have access to certain data.\n\n198\n                        5.3 Cyber security\n\nLink                    Another area where access levels are very important is in social networks (such as\n                        Facebook); with this type of application, there are usually four access levels:\nFor more on anti-virus\nsoftware see            1 public access (this refers to the data anyone from the general public can\nSection 4.1.               access)\n\n                        2 friends (only people identified as `friends' by the owner of the data can see\n                           certain data)\n\n                        3 custom (this allows the user to further refine what data can be seen by\n                           `friends' allowing them to exclude certain content from selected people)\n\n                        4 data owner (this is data only the owner of the data can see).\n\n                        In this type of application, users are allowed to use privacy settings rather\n                        than passwords to decide the level of access (for more on this see later in this\n                        section).\n\n                        Anti-malware\n\n                        The two most common types of anti-malware are anti-virus and anti-spyware.\n\n                        Anti-virus\n                        Anti-virus has already been described in great detail in Chapter 4.\n\n                        Anti-spyware\n                        Anti-spyware software detects and removes spyware programs installed illegally\n                        on a user's computer system. The software is based on one of the following\n                        methods:\n\n                        锟� rules 锟� in this case, the software looks for typical features which"}</ParagraphContent>
+许多计算机系统通过用户账户控制用户权限，并为不同人员设置不同的访问级别。例如，医院清洁人员不应访问患者医疗数据，而专科医生需要访问这些重要数据。大多数系统使用用户名和密码建立访问级别层次。
+
+数据库尤其需要访问级别控制，必须明确谁有权读取、写入和删除数据。通过为不同用户提供不同的数据表视图，可以限制用户只能访问所需数据。
+
+社交网络通常提供以下访问级别：
+
+1. **公开访问**：任何公众都可以访问；
+2. **朋友**：只有数据所有者标记为朋友的人可以查看；
+3. **自定义**：用户可以进一步限制朋友可见的内容，排除特定人员；
+4. **数据所有者**：只有数据所有者本人可以查看。
+
+这类应用通常允许用户使用隐私设置决定访问级别，而不一定依靠密码。
+
+### 反恶意软件
+
+最常见的两类反恶意软件是反病毒软件和反间谍软件。反病毒软件用于检测和删除病毒；反间谍软件用于检测和删除未经许可安装在计算机系统中的间谍软件。反间谍软件通常根据已知规则或特征识别恶意程序，并将其删除或隔离。
+</ParagraphContent>

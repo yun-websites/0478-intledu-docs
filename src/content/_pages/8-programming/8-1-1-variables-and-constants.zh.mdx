@@ -1,20 +1,27 @@
 ---
-title: "第 8.1.1 节：Variables and constants"
-description: "简要介绍Variables and constants的核心概念。"
+title: "变量和常量"
+description: "变量和常量的定义、命名和声明。"
 slug: "8-1-1-variables-and-constants"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "8-1-1-variables-and-constants",
-        title: "第 8.1.1 节：Variables and constants",
-        content: "本页依据课本第 8.1.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn a program, any data used can have a fixed value that does not change while\n                                the program is running.\n                                A variable in a computer program is a named data store than contains a value\n                                that may change during the execution of a program. In order to make programs\n                                understandable to others, variables should be given meaningful names.\n                                A constant in a computer program is a named data store than contains a value\n                                that does not change during the execution of a program. As with variables,\n\n302\n                                                   8.1 Programming concepts\n\nin order to make programs understandable to others, constants should also be\ngiven meaningful names.\n\nNot all programming languages explicitly differentiate between constants and\nvariables, but programmers should be clear which data stores can be changed and\nwhich cannot be changed. There are several ways of highlighting a constant, for\nexample:\n\nUse of capital letters                  PI = 3.142\nMeaningful names that begin with Const  ConstPi = 3.142\n\nIt is considered good practice to declare the constants and variables to be used in\nthat program. Some languages require explicit declarations, which specifically state\nwhat type of data the variable or constant will hold. Other languages require implicit\ndeclarations, where the data type is based on the value assigned. Declarations can\nbe at the start of a program or just before the data is used for the first time.\n\nHere are some sample declaration statements in pseudocode and programming\ncode 锟� just look at the sections for pseudocode and the programming language\nyou are using.\n\n Table 8.1 How to declare variables and constants\n\nDeclarations of constants and variables            Language\nDECLARE FirstVar : INTEGER                         Pseudocode declarations, variables\nDECLARE SecondVar : INTEGER                        are explicit but constants are implicit.\nCONSTANT FirstConst 锟� 500\nCONSTANT SecondConst 锟� 100                         Python does not require any separate\nFirstVar = 20                                      declarations and does not differentiate\nSecondVar = 30                                     between constants and variables.\nFIRSTCONST = 500                                   Programmers need to keep track of and\nSECONDCONST = 100                                  manage these differences instead.\nor\nFirstVar, SecondVar = 20, 30                       In Visual Basic variables are explicitly\nFirstConst, SecondConst = 500,100                  declared as particular data types\nDim FirstVar As Integer                            before use. Decla",
-    },
-];
+<ParagraphTitle id="8-1-1-variables-and-constants">变量和常量</ParagraphTitle>
 
-<ParagraphTitle id="8-1-1-variables-and-constants">第 8.1.1 节：Variables and constants</ParagraphTitle>
+<ParagraphContent id="8-1-1-variables-and-constants">
+程序使用的数据可能有固定值，也可能在程序运行期间改变。**变量**是保存数据的命名存储位置，其值可以改变；**常量**也是命名存储位置，但其值在程序运行期间不会改变。变量和常量都应使用有意义的名称，以便他人理解程序。
 
-<ParagraphContent id="8-1-1-variables-and-constants">{"本页依据课本第 8.1.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn a program, any data used can have a fixed value that does not change while\n                                the program is running.\n                                A variable in a computer program is a named data store than contains a value\n                                that may change during the execution of a program. In order to make programs\n                                understandable to others, variables should be given meaningful names.\n                                A constant in a computer program is a named data store than contains a value\n                                that does not change during the execution of a program. As with variables,\n\n302\n                                                   8.1 Programming concepts\n\nin order to make programs understandable to others, constants should also be\ngiven meaningful names.\n\nNot all programming languages explicitly differentiate between constants and\nvariables, but programmers should be clear which data stores can be changed and\nwhich cannot be changed. There are several ways of highlighting a constant, for\nexample:\n\nUse of capital letters                  PI = 3.142\nMeaningful names that begin with Const  ConstPi = 3.142\n\nIt is considered good practice to declare the constants and variables to be used in\nthat program. Some languages require explicit declarations, which specifically state\nwhat type of data the variable or constant will hold. Other languages require implicit\ndeclarations, where the data type is based on the value assigned. Declarations can\nbe at the start of a program or just before the data is used for the first time.\n\nHere are some sample declaration statements in pseudocode and programming\ncode 锟� just look at the sections for pseudocode and the programming language\nyou are using.\n\n Table 8.1 How to declare variables and constants\n\nDeclarations of constants and variables            Language\nDECLARE FirstVar : INTEGER                         Pseudocode declarations, variables\nDECLARE SecondVar : INTEGER                        are explicit but constants are implicit.\nCONSTANT FirstConst 锟� 500\nCONSTANT SecondConst 锟� 100                         Python does not require any separate\nFirstVar = 20                                      declarations and does not differentiate\nSecondVar = 30                                     between constants and variables.\nFIRSTCONST = 500                                   Programmers need to keep track of and\nSECONDCONST = 100                                  manage these differences instead.\nor\nFirstVar, SecondVar = 20, 30                       In Visual Basic variables are explicitly\nFirstConst, SecondConst = 500,100                  declared as particular data types\nDim FirstVar As Integer                            before use. Decla"}</ParagraphContent>
+并非所有编程语言都明确区分常量和变量，但程序员应清楚哪些存储位置可以修改、哪些不能修改。常见的常量命名方式包括使用大写字母，例如 `PI = 3.142`，或使用以 `Const` 开头的有意义名称，例如 `ConstPi = 3.142`。
+
+良好做法是在程序中声明要使用的变量和常量。有些语言要求显式声明数据类型；另一些语言根据赋给变量的值隐式确定数据类型。声明可以放在程序开头，也可以放在数据第一次使用之前。
+
+```text
+DECLARE FirstVar : INTEGER
+DECLARE SecondVar : INTEGER
+CONSTANT FirstConst <- 500
+CONSTANT SecondConst <- 100
+```
+
+在 Python 中通常不需要单独声明，也不明确区分常量和变量；程序员需要自行遵守命名约定并管理这种差异。Visual Basic 等语言则通常要求在使用前显式声明变量的数据类型。
+</ParagraphContent>

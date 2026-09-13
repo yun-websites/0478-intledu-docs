@@ -1,20 +1,26 @@
 ---
-title: "第 3.1.3 节：Cores, cache and internal clock"
-description: "简要介绍Cores, cache and internal clock的核心概念。"
+title: "核心、缓存和内部时钟"
+description: "时钟速度、总线宽度、缓存和多核 CPU 对性能的影响。"
 slug: "3-1-3-cores-cache-and-internal-clock"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-1-3-cores-cache-and-internal-clock",
-        title: "第 3.1.3 节：Cores, cache and internal clock",
-        content: "本页依据课本第 3.1.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWe will now consider the factors that determine the performance of a CPU. The\n                                first thing to consider is the role of the system clock. The clock defines the\n                                clock cycle that synchronises all computer operations. As mentioned earlier, the\n                                control bus transmits timing signals ensuring everything is fully synchronised. By\n                                increasing clock speed, the processing speed of the computer is also increased (a\n                                typical current value is 3.5GHz 锟� which means 3.5 billion clock cycles a second).\n                                Although the speed of the computer may have been increased, it isn't possible\n                                to say that a computer's overall performance is necessarily increased by using a\n                                higher clock speed. Other factors need to be considered, for example:\n\n                                1 The width of the address bus and data bus (as mentioned earlier) can also\n                                   affect computer performance and needs to be taken into account.\n\n80\n                              3.1 Computer architecture\n\n2 Overclocking is a factor to consider. The clock speed can be changed by\n   accessing the BIOS (Basic Input/Output System) and altering the settings.\n   However, using a clock speed higher than the computer was designed for can\n   lead to problems, for example:\n   i execution of instructions outside design limits can lead to seriously\n        unsynchronised operations (i.e. an instruction is unable to complete in\n        time before the next one is due to be executed) 锟� the computer would\n        frequently crash and become unstable\n   ii overclocking can lead to serious overheating of the CPU again leading to\n        unreliable performance.\n\n3 The use of cache memories can also improve CPU performance. Unlike RAM,\n   cache memory is located within the CPU itself, which means it has much\n   faster data access times than RAM. Cache memory stores frequently used\n   instructions and data that need to be accessed faster, which improves CPU\n   performance. When a CPU wishes to read memory, it will first check out the\n   cache and then move on to main memory/RAM if the required data isn't there.\n   The larger the cache memory size the better the CPU performance.\n\n4 The use of a different number of cores can improve computer performance.\n   One core is made up of an ALU, a control unit and the registers. Many\n   computers are dual core (the CPU is made up of two cores) or quad core (the\n   CPU is made up of four cores). The idea of using more cores alleviates the need\n   to continually increase clock speeds. However, doubling the number of",
-    },
-];
+<ParagraphTitle id="3-1-3-cores-cache-and-internal-clock">核心、缓存和内部时钟</ParagraphTitle>
 
-<ParagraphTitle id="3-1-3-cores-cache-and-internal-clock">第 3.1.3 节：Cores, cache and internal clock</ParagraphTitle>
+<ParagraphContent id="3-1-3-cores-cache-and-internal-clock">
+CPU 性能受多个因素影响。系统时钟定义**时钟周期**，使计算机的各项操作同步。控制总线传送时序信号来保证同步。提高时钟频率会提高处理速度；例如 `3.5 GHz` 表示每秒 35 亿个时钟周期。但更高的时钟频率不必然意味着整体性能更高，还要考虑其他因素。
 
-<ParagraphContent id="3-1-3-cores-cache-and-internal-clock">{"本页依据课本第 3.1.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWe will now consider the factors that determine the performance of a CPU. The\n                                first thing to consider is the role of the system clock. The clock defines the\n                                clock cycle that synchronises all computer operations. As mentioned earlier, the\n                                control bus transmits timing signals ensuring everything is fully synchronised. By\n                                increasing clock speed, the processing speed of the computer is also increased (a\n                                typical current value is 3.5GHz 锟� which means 3.5 billion clock cycles a second).\n                                Although the speed of the computer may have been increased, it isn't possible\n                                to say that a computer's overall performance is necessarily increased by using a\n                                higher clock speed. Other factors need to be considered, for example:\n\n                                1 The width of the address bus and data bus (as mentioned earlier) can also\n                                   affect computer performance and needs to be taken into account.\n\n80\n                              3.1 Computer architecture\n\n2 Overclocking is a factor to consider. The clock speed can be changed by\n   accessing the BIOS (Basic Input/Output System) and altering the settings.\n   However, using a clock speed higher than the computer was designed for can\n   lead to problems, for example:\n   i execution of instructions outside design limits can lead to seriously\n        unsynchronised operations (i.e. an instruction is unable to complete in\n        time before the next one is due to be executed) 锟� the computer would\n        frequently crash and become unstable\n   ii overclocking can lead to serious overheating of the CPU again leading to\n        unreliable performance.\n\n3 The use of cache memories can also improve CPU performance. Unlike RAM,\n   cache memory is located within the CPU itself, which means it has much\n   faster data access times than RAM. Cache memory stores frequently used\n   instructions and data that need to be accessed faster, which improves CPU\n   performance. When a CPU wishes to read memory, it will first check out the\n   cache and then move on to main memory/RAM if the required data isn't there.\n   The larger the cache memory size the better the CPU performance.\n\n4 The use of a different number of cores can improve computer performance.\n   One core is made up of an ALU, a control unit and the registers. Many\n   computers are dual core (the CPU is made up of two cores) or quad core (the\n   CPU is made up of four cores). The idea of using more cores alleviates the need\n   to continually increase clock speeds. However, doubling the number of"}</ParagraphContent>
+- 地址总线和数据总线的宽度会影响性能；更宽的总线可在一次传输中处理更多地址或数据。
+- **超频**可通过修改 BIOS（基本输入/输出系统）设置来改变时钟频率。频率超过设计限制可能导致指令无法在下一条指令执行前完成，从而造成不同步、频繁崩溃和不稳定；超频还可能使 CPU 严重过热，导致性能不可靠。
+- **缓存**位于 CPU 内部，数据访问速度远快于 RAM。它保存常用的指令和数据；CPU 读取内存时会先检查缓存，未找到才访问主存/RAM。缓存容量越大，CPU 性能通常越好。
+- 一个**核心**由 ALU、控制单元和寄存器组成。双核 CPU 有两个核心，四核 CPU 有四个核心。更多核心可减少单纯提高时钟频率的需求，但核心数加倍不一定使性能加倍，因为 CPU 仍需与各核心通信，这会产生额外开销。
+
+因此，提高数据和地址总线宽度、适当提高时钟频率、使用缓存和多核 CPU 都可能提高计算机性能。
+
+### 活动 3.1
+
+1. 说明冯·诺依曼体系结构使用的三种总线及其功能，并解释总线宽度和时钟频率如何影响性能。
+2. 使用本节术语补全 CPU 取指、译码和执行过程的描述。
+</ParagraphContent>

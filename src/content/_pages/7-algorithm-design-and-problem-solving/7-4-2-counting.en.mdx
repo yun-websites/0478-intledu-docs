@@ -7,14 +7,52 @@ version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-4-2-counting",
-        title: "Counting",
-        content: "Keeping a count of the number of times an action is performed is another\n     standard method. For example, counting the number of students that were\n     awarded a pass mark:\n\n     PassCount  0                                   Initialising\n     FOR Counter  1 TO ClassSize                    PassCount to\n                                                    zero\n            INPUT StudentMark\n            IF StudentMark > 50\n\n                   THEN                             Counting the\n                          PassCount  PassCount + 1  number of passes\n\n     NEXT Counter\n     Count  Count + 1\n\n272\n                                                         7.4 Standard methods of solution\n\n                       Counting is also used to count down until a certain value is reached, for example,\n                       checking the number of items in stock in a supermarket:\n\n                       :                                            Counting down\n                       NumberInStock  NumberInStock - 1             items in stock\n                       IF NumberInStock < 20\n\n                              THEN\n                                     CALL Reorder()\n\n                       :",
-    },
-];
-
 <ParagraphTitle id="7-4-2-counting">Counting</ParagraphTitle>
 
-<ParagraphContent id="7-4-2-counting">{"Keeping a count of the number of times an action is performed is another\n     standard method. For example, counting the number of students that were\n     awarded a pass mark:\n\n     PassCount  0                                   Initialising\n     FOR Counter  1 TO ClassSize                    PassCount to\n                                                    zero\n            INPUT StudentMark\n            IF StudentMark > 50\n\n                   THEN                             Counting the\n                          PassCount  PassCount + 1  number of passes\n\n     NEXT Counter\n     Count  Count + 1\n\n272\n                                                         7.4 Standard methods of solution\n\n                       Counting is also used to count down until a certain value is reached, for example,\n                       checking the number of items in stock in a supermarket:\n\n                       :                                            Counting down\n                       NumberInStock  NumberInStock - 1             items in stock\n                       IF NumberInStock < 20\n\n                              THEN\n                                     CALL Reorder()\n\n                       :"}</ParagraphContent>
+<ParagraphContent id="7-4-2-counting">
+
+Keeping a count of the number of times an action is performed is another standard method. For example, counting the number of students that were awarded a pass mark:
+
+### PassCount 0 Initialising
+
+```text
+FOR Counter 1 TO ClassSize PassCount to
+```
+
+zero
+
+```text
+INPUT StudentMark
+IF StudentMark &gt; 50
+```
+
+```text
+THEN Counting the
+```
+
+PassCount PassCount + 1 number of passes
+
+```text
+NEXT Counter
+```
+
+Count Count + 1
+
+Counting is also used to count down until a certain value is reached, for example, checking the number of items in stock in a supermarket:
+
+: Counting down
+
+### NumberInStock NumberInStock - 1 items in stock
+
+```text
+IF NumberInStock &lt; 20
+```
+
+```text
+THEN
+CALL Reorder()
+```
+
+:
+
+</ParagraphContent>

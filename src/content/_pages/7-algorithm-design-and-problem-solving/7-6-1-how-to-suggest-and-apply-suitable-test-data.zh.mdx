@@ -1,20 +1,32 @@
 ---
-title: "第 7.6.1 节：How to suggest and apply suitable test data"
-description: "简要介绍How to suggest and apply suitable test data的核心概念。"
+title: "如何提出和应用合适的测试数据"
+description: "使用正常、异常、边界和极限数据测试算法。"
 slug: "7-6-1-how-to-suggest-and-apply-suitable-test-data"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-6-1-how-to-suggest-and-apply-suitable-test-data",
-        title: "第 7.6.1 节：How to suggest and apply suitable test data",
-        content: "本页依据课本第 7.6.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn order to determine whether a solution is working as it should, it needs to\nbe tested. Usually before a whole system is tested each sub-system is tested\nseparately.\nAlgorithms written in pseudocode or as flowcharts can be tested by a person\nworking through them using any data that is required and seeing what the result\nis. Computer programs can be tested by running them on a computer using any\ndata that is required and seeing what result is output. However, in order to\ntest a solution thoroughly it may need to be worked through several times with\ndifferent sets of test data.\nA set of test data is all the items of data required to work through a solution.\nFor instance, the set of test data used for Activity 7.6 was 7 and 18.\nIn order to prove that program or algorithm solutions do what they are supposed\nto do, a set of test data should be used that the program would normally be\nexpected to work with, together with the result(s) that are expected from that\ndata. The type of test data used to do this is called normal data. Normal data\nshould be used to work through the solution to find the actual result(s) and see\nif they are the same as the expected result(s).\nFor example, consider an algorithm that records the percentage marks, entered\nin whole numbers, from ten end-of-term examinations for a pupil, and then finds\nthe average mark. A set of normal test data for this purpose could be:\nNormal test data: 50, 50, 50, 50, 50, 50 50, 50, 50, 50\nExpected result: 50\n\n Activity 7.9\n\n  Provide a more realistic set of test data and its expected result.\n\nSolutions also need to be tested to prove that they do not do what they are\nsupposed not to do. In order to do this, test data should be chosen that would\nbe rejected by the solution as not suitable, if the solution is working properly.\nThis type of test data is called abnormal test data. (It is also sometimes called\nerroneous test data.)\n\n                                                                                                                                           281\n7 Algorithm design and problem solving\n\n                                 For example, erroneous/abnormal data for our algorithm to find the average\n                                 percentage marks from ten end of term examinations could be:\n                                 Erroneous/abnormal data: -12, eleven\n                                 Expected results: both of these values should be rejected\n\n                             Activity 7.10\n\n                                        Provide some more erroneous/abnormal data and its expected results.\n\n                                 When testing algorithms with numerical values, sometimes only a given range\n                                 of values should be allowed. For example, perc",
-    },
-];
+<ParagraphTitle id="7-6-1-how-to-suggest-and-apply-suitable-test-data">如何提出和应用合适的测试数据</ParagraphTitle>
 
-<ParagraphTitle id="7-6-1-how-to-suggest-and-apply-suitable-test-data">第 7.6.1 节：How to suggest and apply suitable test data</ParagraphTitle>
+<ParagraphContent id="7-6-1-how-to-suggest-and-apply-suitable-test-data">
+为了判断解决方案是否按预期工作，需要对它进行测试。通常在测试整个系统前，会先分别测试各个子系统。伪代码或流程图算法可以由人员使用所需数据逐步执行；计算机程序则可以在计算机上运行并检查输出。要彻底测试解决方案，通常需要使用多组不同的测试数据反复运行。
 
-<ParagraphContent id="7-6-1-how-to-suggest-and-apply-suitable-test-data">{"本页依据课本第 7.6.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn order to determine whether a solution is working as it should, it needs to\nbe tested. Usually before a whole system is tested each sub-system is tested\nseparately.\nAlgorithms written in pseudocode or as flowcharts can be tested by a person\nworking through them using any data that is required and seeing what the result\nis. Computer programs can be tested by running them on a computer using any\ndata that is required and seeing what result is output. However, in order to\ntest a solution thoroughly it may need to be worked through several times with\ndifferent sets of test data.\nA set of test data is all the items of data required to work through a solution.\nFor instance, the set of test data used for Activity 7.6 was 7 and 18.\nIn order to prove that program or algorithm solutions do what they are supposed\nto do, a set of test data should be used that the program would normally be\nexpected to work with, together with the result(s) that are expected from that\ndata. The type of test data used to do this is called normal data. Normal data\nshould be used to work through the solution to find the actual result(s) and see\nif they are the same as the expected result(s).\nFor example, consider an algorithm that records the percentage marks, entered\nin whole numbers, from ten end-of-term examinations for a pupil, and then finds\nthe average mark. A set of normal test data for this purpose could be:\nNormal test data: 50, 50, 50, 50, 50, 50 50, 50, 50, 50\nExpected result: 50\n\n Activity 7.9\n\n  Provide a more realistic set of test data and its expected result.\n\nSolutions also need to be tested to prove that they do not do what they are\nsupposed not to do. In order to do this, test data should be chosen that would\nbe rejected by the solution as not suitable, if the solution is working properly.\nThis type of test data is called abnormal test data. (It is also sometimes called\nerroneous test data.)\n\n                                                                                                                                           281\n7 Algorithm design and problem solving\n\n                                 For example, erroneous/abnormal data for our algorithm to find the average\n                                 percentage marks from ten end of term examinations could be:\n                                 Erroneous/abnormal data: -12, eleven\n                                 Expected results: both of these values should be rejected\n\n                             Activity 7.10\n\n                                        Provide some more erroneous/abnormal data and its expected results.\n\n                                 When testing algorithms with numerical values, sometimes only a given range\n                                 of values should be allowed. For example, perc"}</ParagraphContent>
+一组测试数据包含执行解决方案所需的全部数据。例如，某活动使用的测试数据可能是 `7` 和 `18`。
+
+**正常数据**是程序通常应能处理的数据。测试时要记录预期结果，再将实际结果与预期结果比较。例如，输入十次考试的百分制整数分数：
+
+```text
+正常测试数据：50, 50, 50, 50, 50, 50, 50, 50, 50, 50
+预期结果：50
+```
+
+**异常数据**（erroneous data）是程序应拒绝的数据，用于证明程序不会接受不合适的输入。例如：
+
+```text
+异常数据：-12, eleven
+预期结果：两个值都应被拒绝
+```
+
+如果数据有允许范围，还应测试范围边界。例如测试允许范围为 `0` 至 `100` 的分数时，应使用范围内的值、刚好在边界上的值，以及刚好超出边界的值。
+</ParagraphContent>

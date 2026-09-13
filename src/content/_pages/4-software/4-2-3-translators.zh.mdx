@@ -1,20 +1,42 @@
 ---
-title: "第 4.2.3 节：Translators"
-description: "简要介绍Translators的核心概念。"
+title: "翻译程序"
+description: "编译器、解释器和汇编器的作用。"
 slug: "4-2-3-translators"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "4-2-3-translators",
-        title: "第 4.2.3 节：Translators",
-        content: "本页依据课本第 4.2.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nComputer programs can exist in several forms.\n\n            Programs are written by humans in a form that people who are trained as\n            computer programmers can understand. In order to be used by a computer,\n            programs need to be translated into the binary instructions, machine code, that\n            the computer understands. Humans find it very difficult to read binary, but\n            computers can only perform operations written in binary.\n\n            I will ask the name then store it as name$   Please enter your name _\n                  But first I must clear the screen.\n\n                         CLS\n                         Print \"Please enter your name\"\n                         Input Name$\n\n            translation  0100110011010100010\n\n             Figure 4.15  Translation\n\n            A program must be translated into binary before a computer can use it; this\n            is done by a utility program called a translator. There are several types of\n            translator program in use; each one performs a different task.\n\n            Compilers\n            A compiler is a computer program that translates an entire program written in a high-\n            level language (HLL) into machine code all in one go so that it can be directly used by\n            a computer to perform a required task. Once a program is compiled the machine code\n            can be used again and again to perform the same task without re-compilation. If errors\n            are detected, then an error report is produced instead of a compiled program.\n\n            The high-level program statement:\n\n              Sum := FirstNumber + SecondNumber\n4.2 Types of programming language, translators and integrated development environments (IDEs)\n\nbecomes the following machine code instructions when translated:\n\n0001               00010010\n0100               00010011\n0000               00011010\n\nInterpreters\nAn interpreter is a computer program that reads a statement from a program\nwritten in a high-level language, translates it, performs the action specified and\nthen does the same with the next statement and so on. If there is an error in the\nstatement then execution ceases and an error message is output, sometimes with\na suggested correction.\n\nA program needs to be interpreted again each time it is run.\n\nAssemblers\nAn assembler is a computer program that translates a program written in\nan assembly language into machine code so that it can be directly used by a\ncomputer to perform a required task. Once a program is assembled the machine\ncode can be used again and again to perform the same task without re-assembly.\n\nThe assembly language program statements:\n\nLDA                First\nADD                Second\nSTO                Sum\n\nbecome the following machine code instr",
-    },
-];
+<ParagraphTitle id="4-2-3-translators">翻译程序</ParagraphTitle>
 
-<ParagraphTitle id="4-2-3-translators">第 4.2.3 节：Translators</ParagraphTitle>
+<ParagraphContent id="4-2-3-translators">
+计算机程序由人类使用人能理解的形式编写，但计算机只能执行二进制机器码。因此，程序必须先转换为机器码，才能被计算机使用；执行转换的实用程序称为**翻译程序**。
 
-<ParagraphContent id="4-2-3-translators">{"本页依据课本第 4.2.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nComputer programs can exist in several forms.\n\n            Programs are written by humans in a form that people who are trained as\n            computer programmers can understand. In order to be used by a computer,\n            programs need to be translated into the binary instructions, machine code, that\n            the computer understands. Humans find it very difficult to read binary, but\n            computers can only perform operations written in binary.\n\n            I will ask the name then store it as name$   Please enter your name _\n                  But first I must clear the screen.\n\n                         CLS\n                         Print \"Please enter your name\"\n                         Input Name$\n\n            translation  0100110011010100010\n\n             Figure 4.15  Translation\n\n            A program must be translated into binary before a computer can use it; this\n            is done by a utility program called a translator. There are several types of\n            translator program in use; each one performs a different task.\n\n            Compilers\n            A compiler is a computer program that translates an entire program written in a high-\n            level language (HLL) into machine code all in one go so that it can be directly used by\n            a computer to perform a required task. Once a program is compiled the machine code\n            can be used again and again to perform the same task without re-compilation. If errors\n            are detected, then an error report is produced instead of a compiled program.\n\n            The high-level program statement:\n\n              Sum := FirstNumber + SecondNumber\n4.2 Types of programming language, translators and integrated development environments (IDEs)\n\nbecomes the following machine code instructions when translated:\n\n0001               00010010\n0100               00010011\n0000               00011010\n\nInterpreters\nAn interpreter is a computer program that reads a statement from a program\nwritten in a high-level language, translates it, performs the action specified and\nthen does the same with the next statement and so on. If there is an error in the\nstatement then execution ceases and an error message is output, sometimes with\na suggested correction.\n\nA program needs to be interpreted again each time it is run.\n\nAssemblers\nAn assembler is a computer program that translates a program written in\nan assembly language into machine code so that it can be directly used by a\ncomputer to perform a required task. Once a program is assembled the machine\ncode can be used again and again to perform the same task without re-assembly.\n\nThe assembly language program statements:\n\nLDA                First\nADD                Second\nSTO                Sum\n\nbecome the following machine code instr"}</ParagraphContent>
+### 编译器
+
+编译器一次性把整个高级语言程序转换为机器码。编译后的机器码可以反复运行而无需重新编译；如果发现错误，则输出错误报告，而不是生成可运行的编译程序。
+
+例如，高级语言语句：
+
+```text
+Sum := FirstNumber + SecondNumber
+```
+
+会被转换为机器码指令。
+
+### 解释器
+
+解释器逐条读取高级语言语句，翻译并执行当前语句，然后处理下一条语句。如果当前语句有错误，执行会停止并输出错误消息，有时还会给出修改建议。程序每次运行时都必须重新解释。
+
+### 汇编器
+
+汇编器把汇编语言程序转换为机器码，使计算机能够直接执行。汇编完成后，机器码可以反复运行而无需重新汇编。例如：
+
+```text
+LDA  First
+ADD  Second
+STO  Sum
+```
+
+会被转换为相应的机器码指令。
+</ParagraphContent>

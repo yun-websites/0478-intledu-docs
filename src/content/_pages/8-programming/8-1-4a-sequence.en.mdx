@@ -7,14 +7,82 @@ version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "8-1-4a-sequence",
-        title: "Sequence",
-        content: "The ordering of the steps in an algorithm is very important. An incorrect order\n                      can lead to incorrect results and/or extra steps that are not required by the task.\n\n                                                                                            307\n8 Programming\n\nLink                        Worked example\n\n For more on          For example, the following pseudocode algorithm uses a REPEAT...UNTIL loop to\n REPEAT...UNTIL       calculate and output total marks, average marks and the number of marks entered.\n loops in pseudocode\n see Section 7.2.3.     DECLARE, Total, Average : REAL\n                        DECLARE Mark, Counter : INTEGER\n308                     Total  0\n                        Mark  0\n                        Counter  0\n                        OUTPUT \"Enter marks, 999 to finish \"\n                        REPEAT\n\n                           INPUT Mark\n                           Total  Total + Mark\n                           IF Mark = 999\n\n                               THEN\n                                   Average  Total / Counter\n\n                           ENDIF\n                           Counter  Counter + 1\n                        UNTIL Mark = 999\n                        OUTPUT \"The total mark is \", Total\n                        OUTPUT \"The average mark is \", Average\n                        OUTPUT \"The number of marks is \", Counter\n\n                      A trace table is completed using this test data:\n\n                      25, 27, 23, 999\n\n                       Table 8.5 Trace table of dry run for algorithm with an incorrect sequence\n\n                      Total  Average   Counter  Mark                    OUTPUT\n                        0        0         0                            Enter marks, 999 to finish\n                       25                  1     25\n                       52       358        2     27                     The total mark is 1074\n                       75                  3     23                     The average mark is 358\n                                           4     999                    The number of marks is 4\n                      1074\n\n                      As you can see all the outputs are incorrect.\n\n                      However if the order of the steps is changed, and the unnecessary test removed, the\n                      algorithm now works.\n                                                      8.1 Programming concepts\n\nDECLARE, Total, Average : REAL                                           Counter starts at\nDECLARE Mark, Counter : INTEGER                                          -1 to allow the\nTotal  0                                                                 extra mark of 999\nMark  0",
-    },
-];
-
 <ParagraphTitle id="8-1-4a-sequence">Sequence</ParagraphTitle>
 
-<ParagraphContent id="8-1-4a-sequence">{"The ordering of the steps in an algorithm is very important. An incorrect order\n                      can lead to incorrect results and/or extra steps that are not required by the task.\n\n                                                                                            307\n8 Programming\n\nLink                        Worked example\n\n For more on          For example, the following pseudocode algorithm uses a REPEAT...UNTIL loop to\n REPEAT...UNTIL       calculate and output total marks, average marks and the number of marks entered.\n loops in pseudocode\n see Section 7.2.3.     DECLARE, Total, Average : REAL\n                        DECLARE Mark, Counter : INTEGER\n308                     Total  0\n                        Mark  0\n                        Counter  0\n                        OUTPUT \"Enter marks, 999 to finish \"\n                        REPEAT\n\n                           INPUT Mark\n                           Total  Total + Mark\n                           IF Mark = 999\n\n                               THEN\n                                   Average  Total / Counter\n\n                           ENDIF\n                           Counter  Counter + 1\n                        UNTIL Mark = 999\n                        OUTPUT \"The total mark is \", Total\n                        OUTPUT \"The average mark is \", Average\n                        OUTPUT \"The number of marks is \", Counter\n\n                      A trace table is completed using this test data:\n\n                      25, 27, 23, 999\n\n                       Table 8.5 Trace table of dry run for algorithm with an incorrect sequence\n\n                      Total  Average   Counter  Mark                    OUTPUT\n                        0        0         0                            Enter marks, 999 to finish\n                       25                  1     25\n                       52       358        2     27                     The total mark is 1074\n                       75                  3     23                     The average mark is 358\n                                           4     999                    The number of marks is 4\n                      1074\n\n                      As you can see all the outputs are incorrect.\n\n                      However if the order of the steps is changed, and the unnecessary test removed, the\n                      algorithm now works.\n                                                      8.1 Programming concepts\n\nDECLARE, Total, Average : REAL                                           Counter starts at\nDECLARE Mark, Counter : INTEGER                                          -1 to allow the\nTotal  0                                                                 extra mark of 999\nMark  0"}</ParagraphContent>
+<ParagraphContent id="8-1-4a-sequence">
+
+The ordering of the steps in an algorithm is very important. An incorrect order can lead to incorrect results and/or extra steps that are not required by the task.
+
+### Link Worked example
+
+For more on For example, the following pseudocode algorithm uses a REPEAT...UNTIL loop to REPEAT...UNTIL calculate and output total marks, average marks and the number of marks entered. loops in pseudocode see Section 7.2.3. DECLARE, Total, Average : REAL
+
+```text
+DECLARE Mark, Counter : INTEGER
+```
+
+308 Total 0
+
+### Mark 0
+
+### Counter 0
+
+```text
+OUTPUT "Enter marks, 999 to finish "
+REPEAT
+```
+
+```text
+INPUT Mark
+```
+
+Total Total + Mark
+
+```text
+IF Mark = 999
+```
+
+```text
+THEN
+```
+
+### Average Total / Counter
+
+```text
+ENDIF
+```
+
+Counter Counter + 1
+
+```text
+UNTIL Mark = 999
+OUTPUT "The total mark is ", Total
+OUTPUT "The average mark is ", Average
+OUTPUT "The number of marks is ", Counter
+```
+
+A trace table is completed using this test data:
+
+25, 27, 23, 999
+
+the table Trace table of dry run for algorithm with an incorrect sequence
+
+### Total Average Counter Mark OUTPUT
+
+0 0 0 Enter marks, 999 to finish 25 1 25 52 358 2 27 The total mark is 1074 75 3 23 The average mark is 358 4 999 The number of marks is 4 1074
+
+As you can see all the outputs are incorrect.
+
+However if the order of the steps is changed, and the unnecessary test removed, the algorithm now works.
+
+DECLARE, Total, Average : REAL Counter starts at
+
+```text
+DECLARE Mark, Counter : INTEGER -1 to allow the
+```
+
+### Total 0 extra mark of 999
+
+### Mark 0
+
+</ParagraphContent>

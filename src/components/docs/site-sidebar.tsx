@@ -28,10 +28,7 @@ function ChapterNavigationItem({ group }: { group: NavigationGroup }) {
     return (
         <Collapsible open={open} onOpenChange={setOpen}>
             <SidebarMenuItem>
-                <SidebarMenuButton
-                    render={
-                        <Link to="/docs/$chapter/catalog" params={{ chapter: group.catalogSlug }} />
-                    }>
+                <SidebarMenuButton render={<Link to="/docs/$chapter/catalog" params={{ chapter: group.catalogSlug }} />}>
                     <span>{group.title}</span>
                 </SidebarMenuButton>
                 <CollapsibleTrigger

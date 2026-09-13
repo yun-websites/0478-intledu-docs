@@ -1,20 +1,28 @@
 ---
-title: "第 8.1.6 节：Procedures and functions"
-description: "简要介绍Procedures and functions的核心概念。"
+title: "过程和函数"
+description: "子程序、过程、函数和参数的定义与使用。"
 slug: "8-1-6-procedures-and-functions"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "8-1-6-procedures-and-functions",
-        title: "第 8.1.6 节：Procedures and functions",
-        content: "本页依据课本第 8.1.6 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWhen writing an algorithm, there are often similar tasks to perform that make\nuse of the same groups of statements. Instead of repeating these statements\nand writing new code every time they are required, many programming languages\nmake use of subroutines, also known as named procedures or functions. These\nare defined once and can be called many times within a program.\nProcedures, functions and parameters\nA procedure is a set of programming statements grouped together under a single\nname that can be called to perform a task at any point in a program.\nA function is a set of programming statements grouped together under a single\nname that can be called to perform a task at any point in a program. In contrast\nto a procedure, a function will return a value back to the main program.\nParameters are the variables that store the values of the arguments passed to\na procedure or function. Some but not all procedures and functions will have\nparameters.\n\n                                                                                                                                           321\n8 Programming  Definition and use of procedures and functions, with or without\n               parameters\n 322           Procedures without parameters\n               Here is an example of a procedure without parameters in pseudocode:\n\n                 PROCEDURE Stars\n                        OUTPUT\"************\"\n\n                 ENDPROCEDURE\n\n               The procedure can then be called in the main part of the program as many times\n               as is required in the following way:\n\n                 CALL Stars\n\n               Instead of calling them procedures, different terminology is used by each\n               programming language. Procedures are known as:\n\n               锟� void functions in Python\n               锟� subroutines in VB\n               锟� methods in Java.\n\n                Table 8.22  Procedure calls\n\n               Procedure Stars 锟� definition               Call      Language\n               def Stars():                               Stars()   Python\n\n                           print(\"************\")          Stars()   Visual Basic\n               Sub Stars()\n                                                          Stars();  Java\n                      Console.WriteLine(\"************\")\n               End Sub\n               static void Stars()\n               {\n\n                      System.out.println(\"***********\");\n               }\n\n                Activity 8.14\n\n                 Write a short program in your chosen programming language to define and use a\n                 procedure to display three lines of stars.\n\n               It is often useful to pass a value to a procedure that can be used to modify the\n               action(s) taken. For example",
-    },
-];
+<ParagraphTitle id="8-1-6-procedures-and-functions">过程和函数</ParagraphTitle>
 
-<ParagraphTitle id="8-1-6-procedures-and-functions">第 8.1.6 节：Procedures and functions</ParagraphTitle>
+<ParagraphContent id="8-1-6-procedures-and-functions">
+算法中常有需要重复执行的相似任务。许多编程语言使用子程序，也称为命名过程或函数，把这些语句定义一次，再在程序中多次调用。
 
-<ParagraphContent id="8-1-6-procedures-and-functions">{"本页依据课本第 8.1.6 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWhen writing an algorithm, there are often similar tasks to perform that make\nuse of the same groups of statements. Instead of repeating these statements\nand writing new code every time they are required, many programming languages\nmake use of subroutines, also known as named procedures or functions. These\nare defined once and can be called many times within a program.\nProcedures, functions and parameters\nA procedure is a set of programming statements grouped together under a single\nname that can be called to perform a task at any point in a program.\nA function is a set of programming statements grouped together under a single\nname that can be called to perform a task at any point in a program. In contrast\nto a procedure, a function will return a value back to the main program.\nParameters are the variables that store the values of the arguments passed to\na procedure or function. Some but not all procedures and functions will have\nparameters.\n\n                                                                                                                                           321\n8 Programming  Definition and use of procedures and functions, with or without\n               parameters\n 322           Procedures without parameters\n               Here is an example of a procedure without parameters in pseudocode:\n\n                 PROCEDURE Stars\n                        OUTPUT\"************\"\n\n                 ENDPROCEDURE\n\n               The procedure can then be called in the main part of the program as many times\n               as is required in the following way:\n\n                 CALL Stars\n\n               Instead of calling them procedures, different terminology is used by each\n               programming language. Procedures are known as:\n\n               锟� void functions in Python\n               锟� subroutines in VB\n               锟� methods in Java.\n\n                Table 8.22  Procedure calls\n\n               Procedure Stars 锟� definition               Call      Language\n               def Stars():                               Stars()   Python\n\n                           print(\"************\")          Stars()   Visual Basic\n               Sub Stars()\n                                                          Stars();  Java\n                      Console.WriteLine(\"************\")\n               End Sub\n               static void Stars()\n               {\n\n                      System.out.println(\"***********\");\n               }\n\n                Activity 8.14\n\n                 Write a short program in your chosen programming language to define and use a\n                 procedure to display three lines of stars.\n\n               It is often useful to pass a value to a procedure that can be used to modify the\n               action(s) taken. For example"}</ParagraphContent>
+**过程**是一组以名称组织起来的程序语句，可在程序的任意位置调用来完成任务。**函数**也完成一组任务，但与过程不同，函数会向主程序返回一个值。**参数**是保存传给过程或函数的实参值的变量；并非所有过程和函数都需要参数。
+
+无参数过程示例：
+
+```text
+PROCEDURE Stars
+    OUTPUT "************"
+ENDPROCEDURE
+
+CALL Stars
+```
+
+不同语言的术语可能不同：Python 中常称为无返回值函数，Visual Basic 中称为子程序，Java 中称为方法。过程也可以接收参数，用参数值改变其执行行为。
+</ParagraphContent>

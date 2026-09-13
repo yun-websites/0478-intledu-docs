@@ -1,20 +1,35 @@
 ---
-title: "第 3.2.2 节：Output devices"
-description: "简要介绍Output devices的核心概念。"
+title: "输出设备"
+description: "执行器和数字光投影设备的工作原理。"
 slug: "3-2-2-output-devices"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-2-2-output-devices",
-        title: "第 3.2.2 节：Output devices",
-        content: "本页依据课本第 3.2.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nActuators\n\nWhen a computer is used to control devices, such as a conveyer belt or a valve, it\nis usually necessary to use an actuator to, for example, start/stop the conveyer\nbelt or open/close the valve. An actuator is a mechanical or electromechanical\ndevice such as a relay, solenoid or motor. We will consider a solenoid as the\nexample; this converts an electrical signal into a magnetic field producing linear\nmotion:\n\n               electromagnetic field\n\nsolenoid coil\n\ncurrent out                         current in\n\n Figure 3.36 A solenoid\n\nIf a plunger (for example, a magnetised metal bar) is placed inside the coil, it\nwill move when a current is applied to the coil (see Figure 3.36). This would allow\nthe solenoid to operate a valve or a switch, for example. There are also examples\nof rotary solenoids where a cylindrical coil is used. In this case, when a current is\nsupplied to the coil, it would cause a rotational movement of the plunger.\n\n                                                                                               101\n3 Hardware  Light projectors\n\n 102        There are two common types of light projector:\n\n            锟� digital light projector (DLP)\n            锟� liquid crystal display (LCD) projector.\n\n            Projectors are used to project computer output onto larger screens or even onto\n            interactive whiteboards. They are often used in presentations and in multimedia\n            applications. The next section compares the basic operation of the two projector\n            technologies.\n\n            Digital light projectors (DLP)\n            The use of millions of micro mirrors on a small digital micromirror device (DMD\n            chip) is the key to how these devices work.\n\n            The number of micro mirrors and the way they are arranged on the DMD chip\n            determines the resolution of the digital image. When the micro mirrors tilt\n            towards the light source, they are ON. When the micro mirrors tilt away from the\n            light source, they are OFF. This creates a light or dark pixel on the projection\n            screen. The micro mirrors can switch on or off several thousand times a second\n            creating various grey shades 锟� typically 1024 grey shades can be produced (for\n            example, if the mirror switches on more often than it switches off, it will produce\n            a lighter shade of grey). This is known as a greyscale image.\n\n            A bright white light source (for example, from a xenon bulb) passes through a\n            colour filter on its way to the DMD chip. The white light is split into the primary\n            colours: red, green and blue 锟� the DLP projector can create over 16 million\n            different colours. The ON and OFF states of each micro",
-    },
-];
+<ParagraphTitle id="3-2-2-output-devices">输出设备</ParagraphTitle>
 
-<ParagraphTitle id="3-2-2-output-devices">第 3.2.2 节：Output devices</ParagraphTitle>
+<ParagraphContent id="3-2-2-output-devices">
+### 执行器
 
-<ParagraphContent id="3-2-2-output-devices">{"本页依据课本第 3.2.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nActuators\n\nWhen a computer is used to control devices, such as a conveyer belt or a valve, it\nis usually necessary to use an actuator to, for example, start/stop the conveyer\nbelt or open/close the valve. An actuator is a mechanical or electromechanical\ndevice such as a relay, solenoid or motor. We will consider a solenoid as the\nexample; this converts an electrical signal into a magnetic field producing linear\nmotion:\n\n               electromagnetic field\n\nsolenoid coil\n\ncurrent out                         current in\n\n Figure 3.36 A solenoid\n\nIf a plunger (for example, a magnetised metal bar) is placed inside the coil, it\nwill move when a current is applied to the coil (see Figure 3.36). This would allow\nthe solenoid to operate a valve or a switch, for example. There are also examples\nof rotary solenoids where a cylindrical coil is used. In this case, when a current is\nsupplied to the coil, it would cause a rotational movement of the plunger.\n\n                                                                                               101\n3 Hardware  Light projectors\n\n 102        There are two common types of light projector:\n\n            锟� digital light projector (DLP)\n            锟� liquid crystal display (LCD) projector.\n\n            Projectors are used to project computer output onto larger screens or even onto\n            interactive whiteboards. They are often used in presentations and in multimedia\n            applications. The next section compares the basic operation of the two projector\n            technologies.\n\n            Digital light projectors (DLP)\n            The use of millions of micro mirrors on a small digital micromirror device (DMD\n            chip) is the key to how these devices work.\n\n            The number of micro mirrors and the way they are arranged on the DMD chip\n            determines the resolution of the digital image. When the micro mirrors tilt\n            towards the light source, they are ON. When the micro mirrors tilt away from the\n            light source, they are OFF. This creates a light or dark pixel on the projection\n            screen. The micro mirrors can switch on or off several thousand times a second\n            creating various grey shades 锟� typically 1024 grey shades can be produced (for\n            example, if the mirror switches on more often than it switches off, it will produce\n            a lighter shade of grey). This is known as a greyscale image.\n\n            A bright white light source (for example, from a xenon bulb) passes through a\n            colour filter on its way to the DMD chip. The white light is split into the primary\n            colours: red, green and blue 锟� the DLP projector can create over 16 million\n            different colours. The ON and OFF states of each micro"}</ParagraphContent>
+当计算机用于控制传送带、阀门等设备时，通常需要使用**执行器**（actuator）来启动或停止传送带，或打开和关闭阀门。执行器是继电器、电磁螺线管或电动机等机械或机电设备。
+
+电磁螺线管可把电信号转换为磁场，从而产生直线运动。线圈中放入柱塞，例如磁化金属棒后，向线圈通电会使柱塞移动，因此可用来操作阀门或开关。旋转式螺线管使用圆柱形线圈，通电后会使柱塞旋转。
+
+### 光投影仪
+
+常见的光投影仪有两种：
+
+- 数字光处理投影仪（digital light projector，DLP）；
+- 液晶显示投影仪（liquid crystal display，LCD）。
+
+投影仪可将计算机输出投射到更大的屏幕或交互式白板上，常用于演示和多媒体应用。
+
+### 数字光处理投影仪（DLP）
+
+DLP 使用数字微镜器件（digital micromirror device，DMD）芯片上的数百万个微型反射镜。微镜的数量和在 DMD 芯片上的排列方式决定数字图像的分辨率。
+
+微镜向光源倾斜时处于开启状态；微镜背向光源倾斜时处于关闭状态。这会在投影屏幕上形成亮或暗的像素。微镜每秒可开关数千次，产生不同灰度，通常可生成 1024 种灰度。例如，反射镜开启的时间较长时，会形成较浅的灰色，这称为**灰度图像**。
+
+明亮白光通过颜色滤光片后到达 DMD 芯片，被分解为红、绿、蓝三原色；DLP 投影仪可由此产生超过 1600 万种颜色。
+</ParagraphContent>

@@ -1,20 +1,21 @@
 ---
-title: "第 10.2.1 节：NOT gate"
-description: "简要介绍NOT gate的核心概念。"
+title: "NOT 门"
+description: "NOT 门反转输入的逻辑值。"
 slug: "10-2-1-not-gate"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "10-2-1-not-gate",
-        title: "第 10.2.1 节：NOT gate",
-        content: "本页依据课本第 10.2.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nDescription:                   Truth table:                            How to write this:\n                  X\n  A                                                      Table 10.2                      X = NOT A (logic notation)\n Figure 10.2                The output, X, is 1 if:                                      X = --A (Boolean algebra)\n                                                        Input      Output\n                            the input, A, is 0            A           X\n                                                          0           1\n                                                          1           0",
-    },
-];
+<ParagraphTitle id="10-2-1-not-gate">NOT 门</ParagraphTitle>
 
-<ParagraphTitle id="10-2-1-not-gate">第 10.2.1 节：NOT gate</ParagraphTitle>
+<ParagraphContent id="10-2-1-not-gate">
+NOT 门只有一个输入 `A`。当输入 `A` 为 `0` 时，输出 `X` 为 `1`；当输入 `A` 为 `1` 时，输出 `X` 为 `0`。
 
-<ParagraphContent id="10-2-1-not-gate">{"本页依据课本第 10.2.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nDescription:                   Truth table:                            How to write this:\n                  X\n  A                                                      Table 10.2                      X = NOT A (logic notation)\n Figure 10.2                The output, X, is 1 if:                                      X = --A (Boolean algebra)\n                                                        Input      Output\n                            the input, A, is 0            A           X\n                                                          0           1\n                                                          1           0"}</ParagraphContent>
+| A | X |
+| --- | --- |
+| 0 | 1 |
+| 1 | 0 |
+
+逻辑记法：`X = NOT A`。布尔代数记法：`X = A̅`。
+</ParagraphContent>

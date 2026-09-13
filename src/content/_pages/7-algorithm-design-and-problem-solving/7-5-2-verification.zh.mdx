@@ -1,20 +1,29 @@
 ---
-title: "第 7.5.2 节：Verification"
-description: "简要介绍Verification的核心概念。"
+title: "确认"
+description: "确认数据是否从一个来源准确复制到另一个来源。"
 slug: "7-5-2-verification"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-5-2-verification",
-        title: "第 7.5.2 节：Verification",
-        content: "本页依据课本第 7.5.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nVerification is checking that data has been accurately copied from one source to\n                                 another 锟� for instance, input into a computer or transferred from one part of a\n                                 computer system to another.\n                                 Verification methods for input data include:\n                                 锟� Double entry\n                                 锟� Screen/visual check.\n\n                                 For double entry the data is entered twice, sometimes by different operators.\n                                 The computer system compares both entries and if they are different outputs an\n                                 error message requesting that the data is entered again.\n\nLink                    Figure 7.14 Double entry\n\n Parity checks and     A screen/visual check is a manual check completed by the user who is entering\n checksums are         the data. When the data entry is complete the data is displayed on the screen\n used when data is     and the user is asked to confirm that it is correct before continuing. The user\n transferred from one  either checks the data on the screen against a paper document that is being\n part of a computer    used as an input form or, confirms whether it is correct from their own\n system to another,    knowledge.\n or across a network,\n and are discussed in\n Chapter 2.\n\n280\n                                                                                                    7.6 Test data\n\n Activity 7.8\n\n  Explain why the following input data also needs to be verified:\n  锟� Entering a telephone number\n  锟� Entering a pupil's name\n  锟� Entering a part number in the form XXX999, when X must be a letter and\n\n      9 must be a digit.\n\n7.6 Test data",
-    },
-];
+<ParagraphTitle id="7-5-2-verification">确认</ParagraphTitle>
 
-<ParagraphTitle id="7-5-2-verification">第 7.5.2 节：Verification</ParagraphTitle>
+<ParagraphContent id="7-5-2-verification">
+**确认**（verification）是检查数据是否从一个来源准确复制到另一个来源，例如输入计算机，或从计算机系统的一部分传输到另一部分。
 
-<ParagraphContent id="7-5-2-verification">{"本页依据课本第 7.5.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nVerification is checking that data has been accurately copied from one source to\n                                 another 锟� for instance, input into a computer or transferred from one part of a\n                                 computer system to another.\n                                 Verification methods for input data include:\n                                 锟� Double entry\n                                 锟� Screen/visual check.\n\n                                 For double entry the data is entered twice, sometimes by different operators.\n                                 The computer system compares both entries and if they are different outputs an\n                                 error message requesting that the data is entered again.\n\nLink                    Figure 7.14 Double entry\n\n Parity checks and     A screen/visual check is a manual check completed by the user who is entering\n checksums are         the data. When the data entry is complete the data is displayed on the screen\n used when data is     and the user is asked to confirm that it is correct before continuing. The user\n transferred from one  either checks the data on the screen against a paper document that is being\n part of a computer    used as an input form or, confirms whether it is correct from their own\n system to another,    knowledge.\n or across a network,\n and are discussed in\n Chapter 2.\n\n280\n                                                                                                    7.6 Test data\n\n Activity 7.8\n\n  Explain why the following input data also needs to be verified:\n  锟� Entering a telephone number\n  锟� Entering a pupil's name\n  锟� Entering a part number in the form XXX999, when X must be a letter and\n\n      9 must be a digit.\n\n7.6 Test data"}</ParagraphContent>
+输入数据的确认方法包括：
+
+- **双重输入**：数据输入两次，有时由不同操作员输入。计算机系统比较两次输入；如果不同，就显示错误消息并要求重新输入；
+- **屏幕/目视检查**：输入完成后，系统在屏幕上显示数据，用户在继续前确认数据正确。用户可以把屏幕内容与纸质输入表比较，也可以根据自己的知识判断。
+
+奇偶校验和校验和也可用于确认从一个计算机系统传输到另一个系统，或跨网络传输的数据。
+
+### 活动 7.8
+
+解释以下输入数据为什么也需要确认：
+
+- 输入电话号码；
+- 输入学生姓名；
+- 输入格式为 `XXX999` 的零件号，其中 `X` 必须是字母，`9` 必须是数字。
+</ParagraphContent>

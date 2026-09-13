@@ -1,20 +1,33 @@
 ---
-title: "第 3.3.5 节：Cloud storage"
-description: "简要介绍Cloud storage的核心概念。"
+title: "云存储"
+description: "公有云、私有云和混合云存储的特点。"
 slug: "3-3-5-cloud-storage"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-3-5-cloud-storage",
-        title: "第 3.3.5 节：Cloud storage",
-        content: "本页依据课本第 3.3.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nPublic and private cloud computing\n\n            Cloud storage is a method of data storage where data is stored on remote\n            servers. The same data is stored on more than one server in case of maintenance\n            or repair, allowing clients to access data at any time. This is known as data\n            redundancy. The physical environment is owned and managed by a hosting\n            company and may include hundreds of servers in many locations.\n\n            There are three common systems:\n\n            锟� Public cloud 锟� this is a storage environment where the customer/client and\n               cloud storage provider are different companies\n\n            锟� Private cloud 锟� this is storage provided by a dedicated environment behind a\n               company firewall; customer/client and cloud storage provider are integrated\n               and operate as a single entity\n\n            锟� Hybrid cloud 锟� this is a combination of the two above environments; some\n               data resides in the private cloud and less sensitive/less commercial data can\n               be accessed from a public cloud storage provider.\n\n            Instead of saving data on a local hard disk or other storage device, a user can\n            save their data `in the cloud'. The benefits and drawbacks of using cloud storage\n            are shown in Table 3.12.\n                                                                                                  3.3 Data storage\n\n Table 3.12 Benefits and drawbacks of cloud storage\n\nBenefits of using cloud storage                                 Drawbacks of using cloud storage\n\ncustomer/client files stored on the cloud can be accessed       if the customer/client has a slow or unstable internet\nat any time from any device anywhere in the world provided      connection, they would have many problems accessing or\ninternet access is available                                    downloading their data/files\n\nthere is no need for a customer/client to carry an external     costs can be high if large storage capacity is required; it\nstorage device with them, or even use the same computer to      can also be expensive to pay for high download/upload data\nstore and retrieve information                                  transfer limits with the customer/client internet service\n                                                                provider (ISP)\n\nthe cloud provides the user with remote back-up of data with the potential failure of the cloud storage company is always\n\nobvious benefits to alleviate data loss/disaster recovery       possible 锟� this poses a risk of loss of all back-up data\n\nif a customer/client has a failure of their hard disk or back-\nup device, cloud storage will allow recovery of their data\n\nthe cloud system off",
-    },
-];
+<ParagraphTitle id="3-3-5-cloud-storage">云存储</ParagraphTitle>
 
-<ParagraphTitle id="3-3-5-cloud-storage">第 3.3.5 节：Cloud storage</ParagraphTitle>
+<ParagraphContent id="3-3-5-cloud-storage">
+### 公有云和私有云计算
 
-<ParagraphContent id="3-3-5-cloud-storage">{"本页依据课本第 3.3.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nPublic and private cloud computing\n\n            Cloud storage is a method of data storage where data is stored on remote\n            servers. The same data is stored on more than one server in case of maintenance\n            or repair, allowing clients to access data at any time. This is known as data\n            redundancy. The physical environment is owned and managed by a hosting\n            company and may include hundreds of servers in many locations.\n\n            There are three common systems:\n\n            锟� Public cloud 锟� this is a storage environment where the customer/client and\n               cloud storage provider are different companies\n\n            锟� Private cloud 锟� this is storage provided by a dedicated environment behind a\n               company firewall; customer/client and cloud storage provider are integrated\n               and operate as a single entity\n\n            锟� Hybrid cloud 锟� this is a combination of the two above environments; some\n               data resides in the private cloud and less sensitive/less commercial data can\n               be accessed from a public cloud storage provider.\n\n            Instead of saving data on a local hard disk or other storage device, a user can\n            save their data `in the cloud'. The benefits and drawbacks of using cloud storage\n            are shown in Table 3.12.\n                                                                                                  3.3 Data storage\n\n Table 3.12 Benefits and drawbacks of cloud storage\n\nBenefits of using cloud storage                                 Drawbacks of using cloud storage\n\ncustomer/client files stored on the cloud can be accessed       if the customer/client has a slow or unstable internet\nat any time from any device anywhere in the world provided      connection, they would have many problems accessing or\ninternet access is available                                    downloading their data/files\n\nthere is no need for a customer/client to carry an external     costs can be high if large storage capacity is required; it\nstorage device with them, or even use the same computer to      can also be expensive to pay for high download/upload data\nstore and retrieve information                                  transfer limits with the customer/client internet service\n                                                                provider (ISP)\n\nthe cloud provides the user with remote back-up of data with the potential failure of the cloud storage company is always\n\nobvious benefits to alleviate data loss/disaster recovery       possible 锟� this poses a risk of loss of all back-up data\n\nif a customer/client has a failure of their hard disk or back-\nup device, cloud storage will allow recovery of their data\n\nthe cloud system off"}</ParagraphContent>
+**云存储**是把数据保存在远程服务器上的存储方式。为便于维护或修理，同一数据会保存在多台服务器上，这称为**数据冗余**。物理环境由托管公司拥有和管理，可能包含分布在多个地点的数百台服务器。
+
+常见的云存储系统有三种：
+
+- **公有云**：客户与云存储提供商是不同的公司；
+- **私有云**：存储环境专门为某家公司提供，位于公司防火墙之后；客户与提供商整合为一个实体运营；
+- **混合云**：结合公有云和私有云，部分数据保存在私有云，敏感性或商业性较低的数据可放在公有云中。
+
+用户不必把数据保存到本地硬盘或其他存储设备，而可以将数据保存“在云端”。
+
+### 云存储的优点和缺点
+
+| 优点 | 缺点 |
+| --- | --- |
+| 只要能上网，客户可以随时随地从任意设备访问云端文件 | 网络连接缓慢或不稳定时，访问和下载数据会遇到问题 |
+| 不需要随身携带外部存储设备，也不必使用同一台计算机保存和读取数据 | 大容量存储可能费用较高；互联网服务提供商的上传和下载流量限制也可能收费 |
+| 云端提供远程备份，有助于减少数据丢失并进行灾难恢复 | 云存储公司可能发生故障，存在丢失全部备份数据的风险 |
+| 本地硬盘或备份设备损坏时，可以从云端恢复数据 | 使用云存储依赖网络连接和服务提供商的持续可用性 |
+</ParagraphContent>

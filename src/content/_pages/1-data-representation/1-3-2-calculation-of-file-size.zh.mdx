@@ -1,20 +1,68 @@
 ---
-title: "第 1.3.2 节：Calculation of file size"
-description: "简要介绍Calculation of file size的核心概念。"
+title: "文件大小的计算"
+description: "位图图像和声音样本的文件大小计算。"
 slug: "1-3-2-calculation-of-file-size"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "1-3-2-calculation-of-file-size",
-        title: "第 1.3.2 节：Calculation of file size",
-        content: "本页依据课本第 1.3.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn this section we will look at the calculation of the file size required to hold a\nbitmap image and a sound sample.\nThe file size of an image is calculated as:\n\n image resolution (in pixels) 锟� colour depth (in bits)\n\nThe size of a mono sound file is calculated as:\n\n sample rate (in Hz) 锟� sample resolution (in bits) 锟� length of sample (in seconds)\n\nFor a stereo sound file, you would then multiply the result by two.\n\n      Example 1\n\nA photograph is 1024 锟� 1080 pixels and uses a colour depth of 32 bits. How many\nphotographs of this size would fit onto a memory stick of 64GiB?\n1 Multiply number of pixels in vertical and horizontal directions to find total number\n\n    of pixels = (1024 锟� 1080) = 1105920pixels\n2 Now multiply number of pixels by colour depth then divide by 8 to give the number\n\n    of bytes = 1105920 锟� 32 = 35389440/8 bytes = 4423680 bytes\n3 64 GiB = 64 锟� 1024 锟� 1024 锟� 1024 = 68719476736 bytes\n4 Finally divide the memory stick size by the files size = 68719476736/4423680\n\n    = 15534 photos.\n\n      Example 2\n\nA camera detector has an array of 2048 by 2048 pixels and uses a colour depth of 16.\nFind the size of an image taken by this camera in MiB.\n1 Multiply number of pixels in vertical and horizontal directions to find total number\n\n    of pixels = (2048 锟� 2048) = 4194304pixels\n2 Now multiply number of pixels by colour depth = 4194304 锟� 16 = 67108864bits\n3 Now divide number of bits by 8 to find the number of bytes in the file\n\n    = (67108864)/8 = 8388608bytes\n4 Now divide by 1024 锟� 1024 to convert to MiB = (8388608)/(1048576) = 8MiB.\n\n      Example 3\n\nAn audio CD has a sample rate of 44100 and a sample resolution of 16bits. The music\nbeing sampled uses two channels to allow for stereo recording. Calculate the file size\nfor a 60-minute recording.\n1 Size of file =\n\n sample rate (in Hz) 锟� sample resolution (in bits) 锟� length of sample (in seconds)\n\n2 Size of sample = (44100 锟� 16 锟� (60 锟� 60)) = 2540160000bits\n3 Multiply by 2 since there are two channels being used = 5080320000bits\n4 Divide by 8 to find number of bytes = (5080320000)/8 = 635040000\n5 Divide by 1024 锟� 1024 to convert to MiB = 635 040 000 / 1 048 576 = 605MiB.\n\n                                                                                                                                            33\n1 Data representation\n\n                             Activity 1.16\n\n                                        1 A camera detector has an array of 1920 by 1536 pixels. A colour depth of 16bits\n                                             is used. Calculate the size of a photograph taken by this camera, giving your\n                                             answer in MiB.\n\n                                        2 Photographs have been taken by a smartphone which use",
-    },
-];
+<ParagraphTitle id="1-3-2-calculation-of-file-size">文件大小的计算</ParagraphTitle>
 
-<ParagraphTitle id="1-3-2-calculation-of-file-size">第 1.3.2 节：Calculation of file size</ParagraphTitle>
+<ParagraphContent id="1-3-2-calculation-of-file-size">
 
-<ParagraphContent id="1-3-2-calculation-of-file-size">{"本页依据课本第 1.3.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nIn this section we will look at the calculation of the file size required to hold a\nbitmap image and a sound sample.\nThe file size of an image is calculated as:\n\n image resolution (in pixels) 锟� colour depth (in bits)\n\nThe size of a mono sound file is calculated as:\n\n sample rate (in Hz) 锟� sample resolution (in bits) 锟� length of sample (in seconds)\n\nFor a stereo sound file, you would then multiply the result by two.\n\n      Example 1\n\nA photograph is 1024 锟� 1080 pixels and uses a colour depth of 32 bits. How many\nphotographs of this size would fit onto a memory stick of 64GiB?\n1 Multiply number of pixels in vertical and horizontal directions to find total number\n\n    of pixels = (1024 锟� 1080) = 1105920pixels\n2 Now multiply number of pixels by colour depth then divide by 8 to give the number\n\n    of bytes = 1105920 锟� 32 = 35389440/8 bytes = 4423680 bytes\n3 64 GiB = 64 锟� 1024 锟� 1024 锟� 1024 = 68719476736 bytes\n4 Finally divide the memory stick size by the files size = 68719476736/4423680\n\n    = 15534 photos.\n\n      Example 2\n\nA camera detector has an array of 2048 by 2048 pixels and uses a colour depth of 16.\nFind the size of an image taken by this camera in MiB.\n1 Multiply number of pixels in vertical and horizontal directions to find total number\n\n    of pixels = (2048 锟� 2048) = 4194304pixels\n2 Now multiply number of pixels by colour depth = 4194304 锟� 16 = 67108864bits\n3 Now divide number of bits by 8 to find the number of bytes in the file\n\n    = (67108864)/8 = 8388608bytes\n4 Now divide by 1024 锟� 1024 to convert to MiB = (8388608)/(1048576) = 8MiB.\n\n      Example 3\n\nAn audio CD has a sample rate of 44100 and a sample resolution of 16bits. The music\nbeing sampled uses two channels to allow for stereo recording. Calculate the file size\nfor a 60-minute recording.\n1 Size of file =\n\n sample rate (in Hz) 锟� sample resolution (in bits) 锟� length of sample (in seconds)\n\n2 Size of sample = (44100 锟� 16 锟� (60 锟� 60)) = 2540160000bits\n3 Multiply by 2 since there are two channels being used = 5080320000bits\n4 Divide by 8 to find number of bytes = (5080320000)/8 = 635040000\n5 Divide by 1024 锟� 1024 to convert to MiB = 635 040 000 / 1 048 576 = 605MiB.\n\n                                                                                                                                            33\n1 Data representation\n\n                             Activity 1.16\n\n                                        1 A camera detector has an array of 1920 by 1536 pixels. A colour depth of 16bits\n                                             is used. Calculate the size of a photograph taken by this camera, giving your\n                                             answer in MiB.\n\n                                        2 Photographs have been taken by a smartphone which use"}</ParagraphContent>
+本节讨论存储位图图像和声音样本所需的文件大小。
+
+图像文件大小的计算式为：
+
+```text
+图像分辨率（像素）× 色彩深度（位）
+```
+
+单声道声音文件大小的计算式为：
+
+```text
+采样率（Hz）× 采样分辨率（位）× 样本长度（秒）
+```
+
+立体声声音文件还需要将结果乘以 `2`。
+
+**示例 1**
+
+一张照片为 `1024 × 1080` 像素，使用 32 位色彩深度。一个 `64 GiB` 的 U 盘可存放多少张这种尺寸的照片？
+
+1. 将垂直和水平方向的像素数相乘，得到像素总数：`1024 × 1080 = 1105920 pixels`。
+2. 将像素总数乘以色彩深度，再除以 `8`，得到字节数：`1105920 × 32 = 35389440 bits`；`35389440 / 8 = 4423680 bytes`。
+3. `64 GiB = 64 × 1024 × 1024 × 1024 = 68719476736 bytes`。
+4. 用 U 盘容量除以文件大小：`68719476736 / 4423680 = 15534 photos`。
+
+**示例 2**
+
+一台相机的传感器阵列为 `2048 × 2048` 像素，使用 16 位色彩深度。求该相机拍摄图像的大小，单位为 MiB。
+
+1. 将垂直和水平方向的像素数相乘：`2048 × 2048 = 4194304 pixels`。
+2. 将像素总数乘以色彩深度：`4194304 × 16 = 67108864 bits`。
+3. 将位数除以 `8`，得到文件的字节数：`67108864 / 8 = 8388608 bytes`。
+4. 除以 `1024 × 1024` 转换为 MiB：`8388608 / 1048576 = 8 MiB`。
+
+**示例 3**
+
+一张音频 CD 的采样率为 `44100`，采样分辨率为 `16 bits`。采样音乐使用两个声道，以实现立体声录音。计算 60 分钟录音的文件大小。
+
+1. 文件大小：
+
+   ```text
+   采样率（Hz）× 采样分辨率（位）× 样本长度（秒）
+   ```
+
+2. 样本大小：`44100 × 16 × (60 × 60) = 2540160000 bits`。
+3. 使用两个声道，因此乘以 `2`：`5080320000 bits`。
+4. 除以 `8` 得到字节数：`5080320000 / 8 = 635040000 bytes`。
+5. 除以 `1024 × 1024` 转换为 MiB：`635040000 / 1048576 = 605 MiB`。
+
+### 活动 1.16
+
+1. 一台相机的传感器阵列为 `1920 × 1536` 像素，使用 16 位色彩深度。计算该相机所拍照片的大小，答案以 MiB 表示。
+2. 智能手机拍摄的照片使用……
+
+</ParagraphContent>

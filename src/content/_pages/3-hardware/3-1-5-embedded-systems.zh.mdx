@@ -1,20 +1,39 @@
 ---
-title: "第 3.1.5 节：Embedded systems"
-description: "简要介绍Embedded systems的核心概念。"
+title: "嵌入式系统"
+description: "嵌入式系统的组成、工作方式、优缺点和应用。"
 slug: "3-1-5-embedded-systems"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-1-5-embedded-systems",
-        title: "第 3.1.5 节：Embedded systems",
-        content: "本页依据课本第 3.1.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAn embedded system is a combination of hardware and software which is\ndesigned to carry out a specific set of functions. The hardware is electronic,\nelectrical or electro-mechanical. Embedded systems can be based on:\n\nmicrocontrollers:       this has a CPU in addition to some RAM and ROM and\nmicroprocessor:         other peripherals all embedded onto one single chip\nsystem on chips (SoC):  (together they carry out a specific task)\n\n                        integrated circuit which only has a CPU on the chip\n                        (there is no RAM, ROM or peripherals 锟� these need to\n                        be added)\n\n                        this may contain a microcontroller as one of its\n                        components (they almost always will include CPU,\n                        memory, input/output (I/O) ports and secondary\n                        storage on a single microchip)\n\nAn embedded system will have a specific set of tasks; Figure 3.6 summarises how\nembedded systems work in general:\n\nThey are feedback       User interface\norientated systems\n\nAnalogue or                Software and  Some form\ndigital input            hardware on an   of output\n                        embedded system\n\nEmbedded systems can contain          Some of the latest embedded systems\nsensor input, mechanical components,  use very powerful dual and quad CPUs\nactuators and software                and a variety of I/O connections leading\n                                      to a number of applications\n\n Figure 3.6 Embedded systems\n\nWhen installed in a device, either an operator can input data manually (for\nexample, select a temperature from a keypad or turn a dial on an oven control\npanel) or the data will come from an automatic source, such as a sensor. This\nsensor input will be analogue or digital in nature, for example, inputs such as\noxygen levels or fuel pressure in a car's engine management system. The output\nwill then carry out the function of the embedded system by sending signals to\nthe components that are being controlled (for example, increase the power to the\nheating elements in an oven or reduce fuel levels in the engine).\n\nDepending on the device, embedded systems are either programmable or non-\nprogrammable. Non-programmable devices need, in general, to be replaced if they\nrequire a software upgrade. Programmable devices permit upgrading by two methods:\n\n锟� connecting the device to a computer and allowing the download of updates to\n   the software (for example, this is used to update the maps on a GPS system\n   used in a vehicle)\n\n                                                                                83\n3 Hardware\n\n            锟� automatic updates via a Wi-Fi, satellite or cellular (mobile phone network) link\n               (for example, many",
-    },
-];
+<ParagraphTitle id="3-1-5-embedded-systems">嵌入式系统</ParagraphTitle>
 
-<ParagraphTitle id="3-1-5-embedded-systems">第 3.1.5 节：Embedded systems</ParagraphTitle>
+<ParagraphContent id="3-1-5-embedded-systems">
+**嵌入式系统**是为执行一组特定功能而设计的硬件和软件组合；其硬件可以是电子、电气或机电设备。嵌入式系统可基于：
 
-<ParagraphContent id="3-1-5-embedded-systems">{"本页依据课本第 3.1.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAn embedded system is a combination of hardware and software which is\ndesigned to carry out a specific set of functions. The hardware is electronic,\nelectrical or electro-mechanical. Embedded systems can be based on:\n\nmicrocontrollers:       this has a CPU in addition to some RAM and ROM and\nmicroprocessor:         other peripherals all embedded onto one single chip\nsystem on chips (SoC):  (together they carry out a specific task)\n\n                        integrated circuit which only has a CPU on the chip\n                        (there is no RAM, ROM or peripherals 锟� these need to\n                        be added)\n\n                        this may contain a microcontroller as one of its\n                        components (they almost always will include CPU,\n                        memory, input/output (I/O) ports and secondary\n                        storage on a single microchip)\n\nAn embedded system will have a specific set of tasks; Figure 3.6 summarises how\nembedded systems work in general:\n\nThey are feedback       User interface\norientated systems\n\nAnalogue or                Software and  Some form\ndigital input            hardware on an   of output\n                        embedded system\n\nEmbedded systems can contain          Some of the latest embedded systems\nsensor input, mechanical components,  use very powerful dual and quad CPUs\nactuators and software                and a variety of I/O connections leading\n                                      to a number of applications\n\n Figure 3.6 Embedded systems\n\nWhen installed in a device, either an operator can input data manually (for\nexample, select a temperature from a keypad or turn a dial on an oven control\npanel) or the data will come from an automatic source, such as a sensor. This\nsensor input will be analogue or digital in nature, for example, inputs such as\noxygen levels or fuel pressure in a car's engine management system. The output\nwill then carry out the function of the embedded system by sending signals to\nthe components that are being controlled (for example, increase the power to the\nheating elements in an oven or reduce fuel levels in the engine).\n\nDepending on the device, embedded systems are either programmable or non-\nprogrammable. Non-programmable devices need, in general, to be replaced if they\nrequire a software upgrade. Programmable devices permit upgrading by two methods:\n\n锟� connecting the device to a computer and allowing the download of updates to\n   the software (for example, this is used to update the maps on a GPS system\n   used in a vehicle)\n\n                                                                                83\n3 Hardware\n\n            锟� automatic updates via a Wi-Fi, satellite or cellular (mobile phone network) link\n               (for example, many"}</ParagraphContent>
+- **微控制器**：在单个芯片上集成 CPU、部分 RAM、ROM 和其他外设；
+- **微处理器**：芯片上只有 CPU，RAM、ROM 和外设需要另外添加；
+- **片上系统**（system on a chip，SoC）：通常在单一微芯片上集成 CPU、内存、输入/输出端口和辅助存储器，并可能包含微控制器。
+
+嵌入式系统具有专门任务，通常是反馈导向的系统。它可接收模拟或数字输入、运行嵌入式软件和硬件，并产生输出；其中可包括传感器、机械部件、执行器和软件。
+
+设备安装嵌入式系统后，操作员可以手动输入数据，例如在烤箱控制面板上通过键盘选择温度或转动旋钮；输入也可来自传感器等自动来源，例如汽车发动机管理系统中的氧气浓度或燃油压力。系统会向受控部件发送信号完成任务，例如提高烤箱加热元件的功率，或降低发动机中的燃油水平。
+
+嵌入式系统可以是可编程或不可编程的。不可编程设备需要软件升级时通常必须更换；可编程设备可通过连接计算机下载安装更新，或经 Wi-Fi、卫星或蜂窝网络自动更新。
+
+### 优点和缺点
+
+| 优点 | 缺点 |
+| --- | --- |
+| 体积小，易于装入设备 | 某些设备难以升级以利用新技术 |
+| 制造成本相对较低 | 故障排查需要专业人员 |
+| 通常专用于一项任务，界面简单，往往不需要操作系统 | 看似简单的界面可能反而难用，例如设置炊具时钟需要多个步骤 |
+| 功耗很低 | 可通过互联网访问的设备也面临黑客和病毒风险 |
+| 可用手机远程控制 | 因升级和维修困难，设备常被丢弃而非修理，造成浪费 |
+| 对输入变化反应快，可实时运行 | 设备过时即丢弃会增加一次性消费问题 |
+
+由于可以连接互联网，嵌入式系统可通过智能手机或计算机远程控制，例如离家时开关中央供暖，或远程指示机顶盒录制节目。工程师可针对专用任务优化设计，以减小设备体积和成本。应用范围从 MP3 播放器中的单个微控制器，到医疗成像系统中的多个复杂单元。
+
+通用计算机不是嵌入式系统，因为计算机是多功能设备，能够通过不同软件执行许多不同任务。
+</ParagraphContent>

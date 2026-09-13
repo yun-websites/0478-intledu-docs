@@ -1,20 +1,33 @@
 ---
-title: "第 2.2.1 节：The need to check for errors"
-description: "简要介绍The need to check for errors的核心概念。"
+title: "检查错误的必要性"
+description: "数据传输错误的原因及差错检测的重要性。"
 slug: "2-2-1-the-need-to-check-for-errors"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "2-2-1-the-need-to-check-for-errors",
-        title: "第 2.2.1 节：The need to check for errors",
-        content: "本页依据课本第 2.2.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWhen data is transmitted, there is always a risk that it may be corrupted, lost or\n                                 even gained.\n                                 Errors can occur during data transmission due to:\n                                 锟� interference (all types of cable can suffer from electrical interference, which\n\n                                     can cause data to be corrupted or even lost)\n                                 锟� problems during packet switching (this can lead to data loss 锟� or it is even\n\n                                     possible to gain data!)\n                                 锟� skewing of data (this occurs during parallel data transmission and can cause\n\n                                     data corruption if the bits arrive out of synchronisation).\n\n                                 Checking for errors is important since computers are unable to understand text,\n                                 for example, if the words are not recognised by its built-in dictionary. Look at the\n                                 following example of some corrupted text:\n\n                                   Can you raed tihs?\n\n                                   \"I cnduo't bvleiee taht I culod aulaclty uesdtannrd waht I was rdnaieg.\n                                   Unisg the icndeblire pweor of the hmuan mnid, aocdcrnig to rseecrah at\n                                   Cmabridge Uinervtisy, it dseno't mttaer in waht oderr the lterets in a\n                                   wrod are, the olny irpoamtnt tihng is taht the frsit and lsat ltteer be in the\n                                   rhgit pclae. The rset can be a taotl mses and you can sitll raed it whoutit a\n                                   pboerlm.\n\n                                   Tihs is bucseae the huamn mnid deos not raed ervey ltteer by istlef, but\n                                   the wrod as a wlohe.\n\n                                   Aaznmig, huh? Yeah and I awlyas tghhuot slelinpg was ipmorantt! See if\n                                   yuor fdreins can raed tihs too\"\n\n                                   (from an unknown source at Cambridge University)\n\n                                           Figure 2.13 Example of data corruption on a message\n\n                                 Whilst you probably had little problem understanding this text, a computer\n                                 would be unable to make any sense of it. Data corruption is therefore a very real\n                                 problem to a computer. Figure 2.13 could be the result of some data corruption\n                                 following transmission which would make the text unintelligible to a computer.\n                                 This is why error checking is such an important",
-    },
-];
+<ParagraphTitle id="2-2-1-the-need-to-check-for-errors">检查错误的必要性</ParagraphTitle>
 
-<ParagraphTitle id="2-2-1-the-need-to-check-for-errors">第 2.2.1 节：The need to check for errors</ParagraphTitle>
+<ParagraphContent id="2-2-1-the-need-to-check-for-errors">
+传输数据时，数据始终有被损坏、丢失，甚至意外增加的风险。数据传输中可能出错的原因包括：
 
-<ParagraphContent id="2-2-1-the-need-to-check-for-errors">{"本页依据课本第 2.2.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nWhen data is transmitted, there is always a risk that it may be corrupted, lost or\n                                 even gained.\n                                 Errors can occur during data transmission due to:\n                                 锟� interference (all types of cable can suffer from electrical interference, which\n\n                                     can cause data to be corrupted or even lost)\n                                 锟� problems during packet switching (this can lead to data loss 锟� or it is even\n\n                                     possible to gain data!)\n                                 锟� skewing of data (this occurs during parallel data transmission and can cause\n\n                                     data corruption if the bits arrive out of synchronisation).\n\n                                 Checking for errors is important since computers are unable to understand text,\n                                 for example, if the words are not recognised by its built-in dictionary. Look at the\n                                 following example of some corrupted text:\n\n                                   Can you raed tihs?\n\n                                   \"I cnduo't bvleiee taht I culod aulaclty uesdtannrd waht I was rdnaieg.\n                                   Unisg the icndeblire pweor of the hmuan mnid, aocdcrnig to rseecrah at\n                                   Cmabridge Uinervtisy, it dseno't mttaer in waht oderr the lterets in a\n                                   wrod are, the olny irpoamtnt tihng is taht the frsit and lsat ltteer be in the\n                                   rhgit pclae. The rset can be a taotl mses and you can sitll raed it whoutit a\n                                   pboerlm.\n\n                                   Tihs is bucseae the huamn mnid deos not raed ervey ltteer by istlef, but\n                                   the wrod as a wlohe.\n\n                                   Aaznmig, huh? Yeah and I awlyas tghhuot slelinpg was ipmorantt! See if\n                                   yuor fdreins can raed tihs too\"\n\n                                   (from an unknown source at Cambridge University)\n\n                                           Figure 2.13 Example of data corruption on a message\n\n                                 Whilst you probably had little problem understanding this text, a computer\n                                 would be unable to make any sense of it. Data corruption is therefore a very real\n                                 problem to a computer. Figure 2.13 could be the result of some data corruption\n                                 following transmission which would make the text unintelligible to a computer.\n                                 This is why error checking is such an important"}</ParagraphContent>
+- **干扰**：所有类型的电缆都可能受到电气干扰，导致数据损坏或丢失；
+- **分组交换问题**：这可能导致数据丢失，甚至额外收到数据；
+- **数据时序偏斜**：这发生在并行数据传输中；如果各位到达时不同步，数据可能损坏。
+
+检查错误很重要，因为计算机不能像人一样根据上下文理解损坏的文本。例如，若单词无法被其内置词典识别，计算机就无法理解文本。
+
+```text
+Can you raed tihs?
+
+"I cnduo't bvleiee taht I culod aulaclty uesdtannrd waht I was rdnaieg.
+Unisg the icndeblire pweor of the hmuan mnid, aocdcrnig to rseecrah at
+Cmabridge Uinervtisy, it dseno't mttaer in waht oderr the lterets in a
+wrod are, the olny irpoamtnt tihng is taht the frsit and lsat ltteer be in the
+rhgit pclae. The rset can be a taotl mses and you can sitll raed it whoutit a
+pboerlm."
+```
+
+人可能仍能理解这段损坏的文字，但计算机无法从中获得有意义的信息。数据损坏对计算机而言是实际存在的问题：传输后发生的数据损坏会使文本无法被计算机理解，因此必须进行差错检测。
+</ParagraphContent>

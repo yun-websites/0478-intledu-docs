@@ -1,20 +1,34 @@
 ---
-title: "第 4.1.2 节：Operating systems"
-description: "简要介绍Operating systems的核心概念。"
+title: "操作系统"
+description: "操作系统的作用、人机界面和系统管理功能。"
 slug: "4-1-2-operating-systems"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "4-1-2-operating-systems",
-        title: "第 4.1.2 节：Operating systems",
-        content: "本页依据课本第 4.1.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nTo enable computer systems to function correctly and allow users to communicate\nwith computer systems, software known as an operating system needs to\nbe installed. An operating system provides both the environment in which\napplications can be run and a useable interface between humans and computer.\nAn operating system also disguises the complexity of computer software and\nhardware. Common examples of operating systems include: Microsoft Windows,\nApple Mac OS, Google Android and Apple IOS (the latter two being used primarily\non tablets and smartphones).\n\nMost computers store the operating system on a hard disk drive (HDD) or solid\nstate drive (SSD) since they tend to be very large programs. Mobile phones and\ntablets store the operating system on a solid state device since they are too\nsmall to accommodate an HDD.\n\nFigure 4.7 summarises some of the functions in a typical operating system.\n\n                    Human computer\n                      interface (HCI)\n\nSecurity (manages                                          Multitasking\nlog on, passwords)\n\nInterrupt handling                              Operating  Platform for running of\n      routines                                    system    application software\n\n         Memory                                             Management of\n      management                                             user accounts\n\n                         Hardware peripheral               Managing files\n                              management\n\n                           (including drivers)\n\n Figure 4.7  Operating system functions\n\n                                                                           155\n4 Software\n\n Figure 4.8  GUI icons on  The next section describes each of the nine functions shown in Figure 4.7.\n    a mobile phone\n                           Human computer interface (HCI)\n\n                           The human computer interface (HCI) is in the form of a Command Line\n                           Interface (CLI) or a Graphical User Interface (GUI).\n\n                           A CLI requires a user to type in instructions in order to choose options from\n                           menus, open software, etc. There are often a number of commands that need to\n                           be typed in, for example, to save or load a file. The user has to therefore learn a\n                           number of commands just to carry out basic operations. It is also slow having to\n                           key in these commands every time an operation has to be carried out. However,\n                           the advantage of CLI is that the user is in direct communication with the\n                           computer and is not restricted to a number of pre-determined options.\n\n                           A GUI a",
-    },
-];
+<ParagraphTitle id="4-1-2-operating-systems">操作系统</ParagraphTitle>
 
-<ParagraphTitle id="4-1-2-operating-systems">第 4.1.2 节：Operating systems</ParagraphTitle>
+<ParagraphContent id="4-1-2-operating-systems">
+要使计算机系统正常工作并让用户与计算机通信，必须安装**操作系统**。操作系统提供运行应用程序的环境和可用的人机界面，也隐藏了软硬件的复杂性。常见操作系统包括 Microsoft Windows、Apple macOS、Google Android 和 Apple iOS。
 
-<ParagraphContent id="4-1-2-operating-systems">{"本页依据课本第 4.1.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nTo enable computer systems to function correctly and allow users to communicate\nwith computer systems, software known as an operating system needs to\nbe installed. An operating system provides both the environment in which\napplications can be run and a useable interface between humans and computer.\nAn operating system also disguises the complexity of computer software and\nhardware. Common examples of operating systems include: Microsoft Windows,\nApple Mac OS, Google Android and Apple IOS (the latter two being used primarily\non tablets and smartphones).\n\nMost computers store the operating system on a hard disk drive (HDD) or solid\nstate drive (SSD) since they tend to be very large programs. Mobile phones and\ntablets store the operating system on a solid state device since they are too\nsmall to accommodate an HDD.\n\nFigure 4.7 summarises some of the functions in a typical operating system.\n\n                    Human computer\n                      interface (HCI)\n\nSecurity (manages                                          Multitasking\nlog on, passwords)\n\nInterrupt handling                              Operating  Platform for running of\n      routines                                    system    application software\n\n         Memory                                             Management of\n      management                                             user accounts\n\n                         Hardware peripheral               Managing files\n                              management\n\n                           (including drivers)\n\n Figure 4.7  Operating system functions\n\n                                                                           155\n4 Software\n\n Figure 4.8  GUI icons on  The next section describes each of the nine functions shown in Figure 4.7.\n    a mobile phone\n                           Human computer interface (HCI)\n\n                           The human computer interface (HCI) is in the form of a Command Line\n                           Interface (CLI) or a Graphical User Interface (GUI).\n\n                           A CLI requires a user to type in instructions in order to choose options from\n                           menus, open software, etc. There are often a number of commands that need to\n                           be typed in, for example, to save or load a file. The user has to therefore learn a\n                           number of commands just to carry out basic operations. It is also slow having to\n                           key in these commands every time an operation has to be carried out. However,\n                           the advantage of CLI is that the user is in direct communication with the\n                           computer and is not restricted to a number of pre-determined options.\n\n                           A GUI a"}</ParagraphContent>
+由于操作系统通常很大，多数计算机将其存储在 HDD 或 SSD 上；手机和平板电脑通常把操作系统存储在固态设备上，因为设备太小，无法安装 HDD。
+
+典型操作系统的功能包括：
+
+- 人机界面（HCI）；
+- 多任务处理；
+- 应用软件运行平台；
+- 用户账户管理；
+- 文件管理；
+- 硬件外设管理，包括设备驱动程序；
+- 内存管理；
+- 中断处理；
+- 安全管理，例如登录和密码。
+
+### 人机界面
+
+命令行界面（CLI）要求用户输入命令来选择菜单选项、打开软件或保存文件。用户必须学习许多命令，操作速度也可能较慢；但 CLI 让用户直接与计算机通信，不局限于预先设定的选项。
+
+图形用户界面（GUI）使用窗口、图标、菜单和指针等图形元素，用户可以通过鼠标、触摸屏或其他设备选择操作，通常比 CLI 更容易学习和使用。
+</ParagraphContent>

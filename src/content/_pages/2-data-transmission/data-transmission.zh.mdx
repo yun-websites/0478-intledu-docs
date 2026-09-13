@@ -1,44 +1,28 @@
 ---
 title: "数据传输"
-description: "简要介绍数据传输的核心概念。"
+description: "数据传输的类型、方式、差错检测与加密。"
 slug: "data-transmission"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "methods-of-transmission",
-        title: "传输类型与方式",
-        content: "本节围绕 传输类型与方式 展开，说明它在 数据传输 中的作用。 重点是把核心概念讲清楚，方便快速复习，并直接用于考试题中的判断。",
-    },
-    {
-        id: "error-detection",
-        title: "错误检测方法",
-        content: "本节围绕 错误检测方法 展开，说明它在 数据传输 中的作用。 重点是把核心概念讲清楚，方便快速复习，并直接用于考试题中的判断。",
-    },
-    {
-        id: "encryption",
-        title: "对称与非对称加密",
-        content: "本节围绕 对称与非对称加密 展开，说明它在 数据传输 中的作用。 重点是把核心概念讲清楚，方便快速复习，并直接用于考试题中的判断。",
-    }
-];
-
-<ParagraphTitle id="methods-of-transmission">传输类型与方式</ParagraphTitle>
+<ParagraphTitle id="methods-of-transmission">数据传输的类型与方式</ParagraphTitle>
 
 <ParagraphContent id="methods-of-transmission">
-    本节围绕 传输类型与方式 展开，说明它在 数据传输 中的作用。 重点是把核心概念讲清楚，方便快速复习，并直接用于考试题中的判断。
+数据传输可以在短距离内进行，例如从计算机传输到打印机；也可以跨越较长距离，例如在全球网络中的两台计算机之间传输。传输数据时，需要考虑三个因素：传输方向、传输方法，以及如何使数据同步并保持正确顺序。这些因素通常由通信协议规定。
+
+本章介绍单工、半双工和全双工传输，以及串行和并行传输。
 </ParagraphContent>
 
-<ParagraphTitle id="error-detection">错误检测方法</ParagraphTitle>
+<ParagraphTitle id="error-detection">差错检测方法</ParagraphTitle>
 
 <ParagraphContent id="error-detection">
-    本节围绕 错误检测方法 展开，说明它在 数据传输 中的作用。 重点是把核心概念讲清楚，方便快速复习，并直接用于考试题中的判断。
+数据在传输过程中可能被损坏、丢失，甚至被意外增加。本章介绍奇偶校验、校验和、回声检查、校验数字和自动重复请求（ARQ）等差错检测方法。
 </ParagraphContent>
 
 <ParagraphTitle id="encryption">对称与非对称加密</ParagraphTitle>
 
 <ParagraphContent id="encryption">
-    本节围绕 对称与非对称加密 展开，说明它在 数据传输 中的作用。 重点是把核心概念讲清楚，方便快速复习，并直接用于考试题中的判断。
+加密会把明文转换为未经授权者无法理解的密文。对称加密使用同一个密钥进行加密和解密；非对称加密使用数学上相关的公钥和私钥，可以降低安全传输密钥时的风险。
 </ParagraphContent>

@@ -7,14 +7,32 @@ version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "2-2-3-check-digits",
-        title: "Check digits",
-        content: "A check digit is the final digit included in a code; it is calculated from all the\nother digits in the code. Check digits are used for barcodes on products, such as\nInternational Standard Book Numbers (ISBN) and Vehicle Identification Numbers\n\n                                                                                                                                            59\n2 Data transmission\n\n                                 (VIN). Check digits are used to identify errors in data entry caused by mis-typing\n                                 or mis-scanning a barcode. They can usually detect the following types of error:\n                                 锟� an incorrect digit entered, for example 5327 entered instead of 5307\n                                 锟� transposition errors where two numbers have changed order, for example 5037\n\n                                     instead of 5307\n                                 锟� omitted or extra digits, for example 537 instead of 5307 or 53107 instead\n\n                                     of 5307\n                                 锟� phonetic errors, for example 13 (thirteen), instead of 30 (thirty).\n\n                                                      I S B N 978 -0-34 0- 98 382-9\n\n                                                     9 780340 983829\n\n                                           Figure 2.15 Sample barcode (ISBN 13 code with check digit)\n\n                                 There are a number of different methods used to generate a check digit. Two\n                                 common methods will be considered here:\n                                 锟� ISBN 13\n                                 锟� Modulo-11\n\n                                  Example 1: ISBN 13\n\n                                      The check digit in ISBN 13 is the thirteenth digit in the number. We will now consider\n                                      two different calculations. The first calculation is the generation of the check digit.\n                                      The second calculation is a verification of the check digit (that is, a recalculation).\n\n                                      Calculation 1 锟� Generation of the check digit from the other 12 digits in a number\n                                      The following algorithm generates the check digit from the 12 other digits:\n                                      1 add all the odd numbered digits together\n                                      2 add all the even numbered digits together and multiply the result by 3\n                                      3 add the results from 1 and 2 together and divide by 10\n                                      4 take the remainder, if it is zero then use this value, otherwise subtract the",
-    },
-];
-
 <ParagraphTitle id="2-2-3-check-digits">Check digits</ParagraphTitle>
 
-<ParagraphContent id="2-2-3-check-digits">{"A check digit is the final digit included in a code; it is calculated from all the\nother digits in the code. Check digits are used for barcodes on products, such as\nInternational Standard Book Numbers (ISBN) and Vehicle Identification Numbers\n\n                                                                                                                                            59\n2 Data transmission\n\n                                 (VIN). Check digits are used to identify errors in data entry caused by mis-typing\n                                 or mis-scanning a barcode. They can usually detect the following types of error:\n                                 锟� an incorrect digit entered, for example 5327 entered instead of 5307\n                                 锟� transposition errors where two numbers have changed order, for example 5037\n\n                                     instead of 5307\n                                 锟� omitted or extra digits, for example 537 instead of 5307 or 53107 instead\n\n                                     of 5307\n                                 锟� phonetic errors, for example 13 (thirteen), instead of 30 (thirty).\n\n                                                      I S B N 978 -0-34 0- 98 382-9\n\n                                                     9 780340 983829\n\n                                           Figure 2.15 Sample barcode (ISBN 13 code with check digit)\n\n                                 There are a number of different methods used to generate a check digit. Two\n                                 common methods will be considered here:\n                                 锟� ISBN 13\n                                 锟� Modulo-11\n\n                                  Example 1: ISBN 13\n\n                                      The check digit in ISBN 13 is the thirteenth digit in the number. We will now consider\n                                      two different calculations. The first calculation is the generation of the check digit.\n                                      The second calculation is a verification of the check digit (that is, a recalculation).\n\n                                      Calculation 1 锟� Generation of the check digit from the other 12 digits in a number\n                                      The following algorithm generates the check digit from the 12 other digits:\n                                      1 add all the odd numbered digits together\n                                      2 add all the even numbered digits together and multiply the result by 3\n                                      3 add the results from 1 and 2 together and divide by 10\n                                      4 take the remainder, if it is zero then use this value, otherwise subtract the"}</ParagraphContent>
+<ParagraphContent id="2-2-3-check-digits">
+
+A check digit is the final digit included in a code; it is calculated from all the other digits in the code. Check digits are used for barcodes on products, such as International Standard Book Numbers (ISBN) and Vehicle Identification Numbers
+
+(VIN). Check digits are used to identify errors in data entry caused by mis-typing or mis-scanning a barcode. They can usually detect the following types of error: an incorrect digit entered, for example 5327 entered instead of 5307 transposition errors where two numbers have changed order, for example 5037
+
+instead of 5307 omitted or extra digits, for example 537 instead of 5307 or 53107 instead
+
+of 5307 phonetic errors, for example 13 (thirteen), instead of 30 (thirty).
+
+I S B N 978 -0-34 0- 98 382-9
+
+9 780340 983829
+
+There are a number of different methods used to generate a check digit. Two common methods will be considered here:
+
+### ISBN 13
+
+### Modulo-11
+
+### Example 1: ISBN 13
+
+The check digit in ISBN 13 is the thirteenth digit in the number. We will now consider two different calculations. The first calculation is the generation of the check digit. The second calculation is a verification of the check digit (that is, a recalculation).
+
+Calculation 1 Generation of the check digit from the other 12 digits in a number The following algorithm generates the check digit from the 12 other digits: 1 add all the odd numbered digits together 2 add all the even numbered digits together and multiply the result by 3 3 add the results from 1 and 2 together and divide by 10 4 take the remainder, if it is zero then use this value, otherwise subtract the
+
+</ParagraphContent>

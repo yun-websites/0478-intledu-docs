@@ -1,20 +1,66 @@
 ---
-title: "第 2.1.2 节：Data transmission"
-description: "简要介绍Data transmission的核心概念。"
+title: "数据传输"
+description: "单工、半双工、全双工以及串行和并行数据传输。"
 slug: "2-1-2-data-transmission"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "2-1-2-data-transmission",
-        title: "第 2.1.2 节：Data transmission",
-        content: "本页依据课本第 2.1.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nData transmission can be either over a short distance (for example, computer\nto printer) or over longer distances (for example, from one computer to another\nin a global network). Essentially, three factors need to be considered when\ntransmitting data:\n\n锟� the direction of data transmission (for example, can data transmit in one\n   direction only, or in both directions)\n\n锟� the method of transmission (for example, how many bits can be sent at the\n   same time)\n\n锟� how will data be synchronised (that is, how to make sure the received data is\n   in the correct order).\n\nThese factors are usually considered by a communication protocol.\n\n                                                                                49\n2 Data transmission\n\n                                Simplex, half-duplex and full-duplex\n\n                                                                                            Transmission mode\n\n    Simplex mode  Half-duplex mode                                                                             Full-duplex mode\n\n     Figure 2.8 Transmission modes\n\n    Simplex data transmission\n    Simplex mode occurs when data can be sent in ONE DIRECTION ONLY (for\n    example, from sender to receiver). An example of this would be sending data\n    from a computer to a printer.\n\n    Half-duplex data transmission\n    Half-duplex mode occurs when data is sent in BOTH DIRECTIONS but NOT AT\n    THE SAME TIME (for example, data can be sent from `A' to `B' and from `B' to `A'\n    along the same transmission line, but they can't both be done at the same time).\n    An example of this would be a walkie-talkie where a message can be sent in one\n    direction only at a time; but messages can be both received and sent.\n\n    Full-duplex data transmission\n    Full-duplex mode occurs when data can be sent in BOTH DIRECTIONS AT THE\n    SAME TIME (for example, data can be sent from `A' to `B' and from `B' to `A'\n    along the same transmission line simultaneously). An example of this would be a\n    broadband internet connection.\n\n    Serial and parallel data transmission\n\n                  Types of data\n                  transmission\n\n     Serial data                            Parallel data\n    transmission                            transmission\n\n     Figure 2.9 Types of data transmission\n\n    Serial data transmission occurs when data is sent ONE BIT AT A TIME over a\n    SINGLE WIRE/CHANNEL. Bits are sent one after the other as a single stream.\n\n    Sender        10011011                  Receiver\n\n     Figure 2.10 Serial data transmission\n\n    (Note: Serial data transmission can be simplex, half-duplex or full-duplex.)\n\n    Serial data transmission works well over long distances. However, the data is\n    transmitted at a slower rate than parallel data tran",
-    },
-];
+<ParagraphTitle id="2-1-2-data-transmission">数据传输</ParagraphTitle>
 
-<ParagraphTitle id="2-1-2-data-transmission">第 2.1.2 节：Data transmission</ParagraphTitle>
+<ParagraphContent id="2-1-2-data-transmission">
+数据传输可以在短距离内进行，例如从计算机传输到打印机；也可以跨越较长距离，例如在全球网络中的两台计算机之间传输。传输数据时需要考虑三个因素：
 
-<ParagraphContent id="2-1-2-data-transmission">{"本页依据课本第 2.1.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nData transmission can be either over a short distance (for example, computer\nto printer) or over longer distances (for example, from one computer to another\nin a global network). Essentially, three factors need to be considered when\ntransmitting data:\n\n锟� the direction of data transmission (for example, can data transmit in one\n   direction only, or in both directions)\n\n锟� the method of transmission (for example, how many bits can be sent at the\n   same time)\n\n锟� how will data be synchronised (that is, how to make sure the received data is\n   in the correct order).\n\nThese factors are usually considered by a communication protocol.\n\n                                                                                49\n2 Data transmission\n\n                                Simplex, half-duplex and full-duplex\n\n                                                                                            Transmission mode\n\n    Simplex mode  Half-duplex mode                                                                             Full-duplex mode\n\n     Figure 2.8 Transmission modes\n\n    Simplex data transmission\n    Simplex mode occurs when data can be sent in ONE DIRECTION ONLY (for\n    example, from sender to receiver). An example of this would be sending data\n    from a computer to a printer.\n\n    Half-duplex data transmission\n    Half-duplex mode occurs when data is sent in BOTH DIRECTIONS but NOT AT\n    THE SAME TIME (for example, data can be sent from `A' to `B' and from `B' to `A'\n    along the same transmission line, but they can't both be done at the same time).\n    An example of this would be a walkie-talkie where a message can be sent in one\n    direction only at a time; but messages can be both received and sent.\n\n    Full-duplex data transmission\n    Full-duplex mode occurs when data can be sent in BOTH DIRECTIONS AT THE\n    SAME TIME (for example, data can be sent from `A' to `B' and from `B' to `A'\n    along the same transmission line simultaneously). An example of this would be a\n    broadband internet connection.\n\n    Serial and parallel data transmission\n\n                  Types of data\n                  transmission\n\n     Serial data                            Parallel data\n    transmission                            transmission\n\n     Figure 2.9 Types of data transmission\n\n    Serial data transmission occurs when data is sent ONE BIT AT A TIME over a\n    SINGLE WIRE/CHANNEL. Bits are sent one after the other as a single stream.\n\n    Sender        10011011                  Receiver\n\n     Figure 2.10 Serial data transmission\n\n    (Note: Serial data transmission can be simplex, half-duplex or full-duplex.)\n\n    Serial data transmission works well over long distances. However, the data is\n    transmitted at a slower rate than parallel data tran"}</ParagraphContent>
+- 数据传输的方向，例如数据只能单向传输还是可以双向传输；
+- 传输方式，例如能否同时发送多个二进制位；
+- 如何使数据同步，即确保接收的数据顺序正确。
+
+这些因素通常由**通信协议**规定。
+
+### 单工、半双工和全双工
+
+**单工（simplex）传输**只能沿一个方向发送数据，即从发送方到接收方。例如，计算机向打印机发送数据。
+
+**半双工（half-duplex）传输**可以双向发送数据，但不能同时进行。例如，数据可通过同一条传输线路从 `A` 发送到 `B`，也可从 `B` 发送到 `A`，但同一时刻只能进行其中一个方向的传输。对讲机就是一个例子：它可以收发信息，但一次只能在一个方向上传输。
+
+**全双工（full-duplex）传输**可以同时双向发送数据。例如，数据可在同一条传输线路上同时从 `A` 发送到 `B`，以及从 `B` 发送到 `A`。宽带互联网连接就是一个例子。
+
+### 串行和并行数据传输
+
+**串行数据传输**通过一根导线或一个通道，每次发送一个二进制位；各位构成单一数据流，依次发送。
+
+```text
+发送方       10011011       接收方
+```
+
+串行传输可以是单工、半双工或全双工。它适合长距离传输，但速度低于并行传输。由于只使用一条通道或导线，数据到达目的地时能够完全同步，也就是顺序正确。例如，通过 USB 连接计算机和打印机时会使用串行传输。
+
+**并行数据传输**通过多根导线或多个通道，同时发送多个二进制位，通常一次发送一个字节；每条导线或通道传输其中一个位。
+
+```text
+            1
+            0
+            0
+            1
+发送方       1       接收方
+            0
+            1
+            1
+```
+
+并行传输也可以是单工、半双工或全双工。它适合短距离传输；距离较长时，例如超过 20 米，数据可能发生**时序偏斜**（skew），即各位不同步到达，从而顺序错乱。导线越长，问题越明显。并行传输速度快于串行传输，因此计算机内部电路通常采用并行传输：组件之间距离很短，而且需要高速传输。
+
+### 活动 2.2
+
+1. 解释下列术语：
+   1. 串行半双工数据传输；
+   2. 并行全双工数据传输；
+   3. 串行单工数据传输。
+2. 判断下列描述对应的传输类型：
+   1. 数据每次传输一个位，并且只能单向传输；
+   2. 数据每次传输 8 位，并且只能单向传输；
+   3. 数据每次传输 16 位，并且可同时双向传输；
+   4. 数据每次传输一个位，并且可同时双向传输；
+   5. 数据每次传输 16 位，并且只能单向传输。
+</ParagraphContent>

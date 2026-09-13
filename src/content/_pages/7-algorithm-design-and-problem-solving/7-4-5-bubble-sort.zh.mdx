@@ -1,20 +1,33 @@
 ---
-title: "第 7.4.5 节：Bubble sort"
-description: "简要介绍Bubble sort的核心概念。"
+title: "冒泡排序"
+description: "使用相邻元素交换对列表进行排序。"
 slug: "7-4-5-bubble-sort"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-4-5-bubble-sort",
-        title: "第 7.4.5 节：Bubble sort",
-        content: "本页依据课本第 7.4.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nLists can be more useful if the items are sorted in a meaningful order. For\n                      example, names could be sorted in alphabetical order, or temperatures could\n                      be sorted in ascending or descending order. There are several standard sorting\n                      methods available, but you only need to understand one method for IGCSE\n                      Computer Science.\n\n                      This method of sorting is called a bubble sort. Each element is compared with\n                      the next element and swapped if the elements are in the wrong order, starting\n                      from the first element and finishing with next-to-last element. Once it reaches\n                      the end of the list, we can be sure that the last element is now in the correct\n                      place. However, other items in the list may still be out of order. Each element\n                      in the list is compared again apart from the last one because we know the final\n                      element is in the correct place. This continues to repeat until there is only one\n                      element left to check or no swaps are made.\n\n                                                                                                   275\n7 Algorithm design and problem solving\n\nThe IF..THEN         For example, the bubble sort algorithm can be used to sort a list of ten\ncondition checks     temperatures stored in the array, Temperature[], into ascending order. It\nif temperatures      could be written in pseudocode as:\nare in ascending\norder and swaps        First  1\nthem if they are       Last  10\nnot, using the Temp    REPEAT\nvariable (short for\ntemporary)                Swap  FALSE\n                          FOR Index  First TO Last - 1\n\n                              IF Temperature[Index] > temperature[Index + 1]\n                                  THEN\n                                     Temp  Temperature[Index]\n                                     Temperature[Index]  Temperature[Index + 1]\n                                     Temperature[Index + 1]  Temp\n                                     Swap  TRUE\n\n                              ENDIF\n                          NEXT Index\n                          Last  Last - 1\n                       UNTIL (NOT Swap) OR Last = 1\n\n                  7.5 Validation and verification\n\n                                In order for computer systems to only accept data inputs that are reasonable and\n                                accurate, every item of data needs to be examined before it is accepted by the\n                                system.\n\n                                Two different methods, with very similar sounding names, are used. For\n                                data en",
-    },
-];
+<ParagraphTitle id="7-4-5-bubble-sort">冒泡排序</ParagraphTitle>
 
-<ParagraphTitle id="7-4-5-bubble-sort">第 7.4.5 节：Bubble sort</ParagraphTitle>
+<ParagraphContent id="7-4-5-bubble-sort">
+如果列表中的项目按有意义的顺序排列，使用起来会更方便。例如，姓名可以按字母顺序排列，温度可以按升序或降序排列。**冒泡排序**从第一个元素开始，把每个元素与下一个元素比较；如果顺序错误，就交换它们。到达列表末尾时，最后一个元素必定已经位于正确位置。然后重复这一过程，但不再检查已经排好位置的末尾元素，直到只剩一个元素需要检查，或某一轮没有发生交换。
 
-<ParagraphContent id="7-4-5-bubble-sort">{"本页依据课本第 7.4.5 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nLists can be more useful if the items are sorted in a meaningful order. For\n                      example, names could be sorted in alphabetical order, or temperatures could\n                      be sorted in ascending or descending order. There are several standard sorting\n                      methods available, but you only need to understand one method for IGCSE\n                      Computer Science.\n\n                      This method of sorting is called a bubble sort. Each element is compared with\n                      the next element and swapped if the elements are in the wrong order, starting\n                      from the first element and finishing with next-to-last element. Once it reaches\n                      the end of the list, we can be sure that the last element is now in the correct\n                      place. However, other items in the list may still be out of order. Each element\n                      in the list is compared again apart from the last one because we know the final\n                      element is in the correct place. This continues to repeat until there is only one\n                      element left to check or no swaps are made.\n\n                                                                                                   275\n7 Algorithm design and problem solving\n\nThe IF..THEN         For example, the bubble sort algorithm can be used to sort a list of ten\ncondition checks     temperatures stored in the array, Temperature[], into ascending order. It\nif temperatures      could be written in pseudocode as:\nare in ascending\norder and swaps        First  1\nthem if they are       Last  10\nnot, using the Temp    REPEAT\nvariable (short for\ntemporary)                Swap  FALSE\n                          FOR Index  First TO Last - 1\n\n                              IF Temperature[Index] > temperature[Index + 1]\n                                  THEN\n                                     Temp  Temperature[Index]\n                                     Temperature[Index]  Temperature[Index + 1]\n                                     Temperature[Index + 1]  Temp\n                                     Swap  TRUE\n\n                              ENDIF\n                          NEXT Index\n                          Last  Last - 1\n                       UNTIL (NOT Swap) OR Last = 1\n\n                  7.5 Validation and verification\n\n                                In order for computer systems to only accept data inputs that are reasonable and\n                                accurate, every item of data needs to be examined before it is accepted by the\n                                system.\n\n                                Two different methods, with very similar sounding names, are used. For\n                                data en"}</ParagraphContent>
+下面的伪代码把数组 `Temperature[]` 中的 10 个温度按升序排列：
+
+```text
+First <- 1
+Last <- 10
+REPEAT
+    Swap <- FALSE
+    FOR Index <- First TO Last - 1
+        IF Temperature[Index] > Temperature[Index + 1] THEN
+            Temp <- Temperature[Index]
+            Temperature[Index] <- Temperature[Index + 1]
+            Temperature[Index + 1] <- Temp
+            Swap <- TRUE
+        ENDIF
+    NEXT Index
+    Last <- Last - 1
+UNTIL (NOT Swap) OR Last = 1
+```
+</ParagraphContent>

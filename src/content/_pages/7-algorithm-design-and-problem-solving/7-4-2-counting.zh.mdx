@@ -1,20 +1,33 @@
 ---
-title: "第 7.4.2 节：Counting"
-description: "简要介绍Counting的核心概念。"
+title: "计数"
+description: "使用计数器统计动作发生的次数。"
 slug: "7-4-2-counting"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-4-2-counting",
-        title: "第 7.4.2 节：Counting",
-        content: "本页依据课本第 7.4.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nKeeping a count of the number of times an action is performed is another\n     standard method. For example, counting the number of students that were\n     awarded a pass mark:\n\n     PassCount  0                                   Initialising\n     FOR Counter  1 TO ClassSize                    PassCount to\n                                                    zero\n            INPUT StudentMark\n            IF StudentMark > 50\n\n                   THEN                             Counting the\n                          PassCount  PassCount + 1  number of passes\n\n     NEXT Counter\n     Count  Count + 1\n\n272\n                                                         7.4 Standard methods of solution\n\n                       Counting is also used to count down until a certain value is reached, for example,\n                       checking the number of items in stock in a supermarket:\n\n                       :                                            Counting down\n                       NumberInStock  NumberInStock - 1             items in stock\n                       IF NumberInStock < 20\n\n                              THEN\n                                     CALL Reorder()\n\n                       :",
-    },
-];
+<ParagraphTitle id="7-4-2-counting">计数</ParagraphTitle>
 
-<ParagraphTitle id="7-4-2-counting">第 7.4.2 节：Counting</ParagraphTitle>
+<ParagraphContent id="7-4-2-counting">
+计数是统计某个动作执行次数的标准方法。例如，统计获得及格分数的学生人数：
 
-<ParagraphContent id="7-4-2-counting">{"本页依据课本第 7.4.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nKeeping a count of the number of times an action is performed is another\n     standard method. For example, counting the number of students that were\n     awarded a pass mark:\n\n     PassCount  0                                   Initialising\n     FOR Counter  1 TO ClassSize                    PassCount to\n                                                    zero\n            INPUT StudentMark\n            IF StudentMark > 50\n\n                   THEN                             Counting the\n                          PassCount  PassCount + 1  number of passes\n\n     NEXT Counter\n     Count  Count + 1\n\n272\n                                                         7.4 Standard methods of solution\n\n                       Counting is also used to count down until a certain value is reached, for example,\n                       checking the number of items in stock in a supermarket:\n\n                       :                                            Counting down\n                       NumberInStock  NumberInStock - 1             items in stock\n                       IF NumberInStock < 20\n\n                              THEN\n                                     CALL Reorder()\n\n                       :"}</ParagraphContent>
+```text
+PassCount <- 0
+FOR Counter <- 1 TO ClassSize
+    INPUT StudentMark
+    IF StudentMark > 50 THEN
+        PassCount <- PassCount + 1
+    ENDIF
+NEXT Counter
+```
+
+计数也可用于倒计数，直到达到某个值。例如，检查超市库存数量：
+
+```text
+NumberInStock <- NumberInStock - 1
+IF NumberInStock < 20 THEN
+    CALL Reorder()
+ENDIF
+```
+</ParagraphContent>

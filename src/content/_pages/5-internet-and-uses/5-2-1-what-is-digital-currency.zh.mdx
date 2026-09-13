@@ -1,20 +1,27 @@
 ---
-title: "第 5.2.1 节：What is digital currency?"
-description: "简要介绍What is digital currency的核心概念。"
+title: "什么是数字货币？"
+description: "数字货币、中央化系统和加密货币的基本概念。"
 slug: "5-2-1-what-is-digital-currency"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "5-2-1-what-is-digital-currency",
-        title: "第 5.2.1 节：What is digital currency?",
-        content: "本页依据课本第 5.2.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nDigital currency exists purely in a digital format. It has no physical form unlike\n     conventional fiat currency (for example, $, 锟�, , and 锟�).\n\n     (Note: Fiat is a Latin word meaning `let it be done'; since conventional currency\n     is backed by governments and banks rather than being linked to gold or silver\n     reserves, it is referred to as fiat currency.)\n\n     Digital currency is an accepted form of payment to pay for goods or services.\n     As with cash or credit/debit cards, digital currency can be transferred between\n     various accounts when carrying out transactions. It has made it possible to\n     bank online (for example, using PayPal) or via a smartphone app (for example,\n\n186\n                                          5.2 Digital currency\n\nApple Pay). This is all possible because money only exists as data on a computer\nsystem, but it can be transferred into physical cash if we need it.\n\nDigital currency relies on a central banking system. For example, suppose Nick\nwishes to send Irina some money; Nick uses bank `X' and Irina uses bank `Y':\n\nNick  Bank    Central Bank  Bank   Irina\n       `X'                   'Y'\n\n Figure 5.6 Digital currency\n\nThe problem with centralisation is maintaining confidentiality and security; these\nhave always been issues with digital currency systems. However, one example of\ndigital currency, known as cryptocurrency, has essentially overcome these issues\nby introducing decentralisation:\n\nNick  Nick's  Irina's       Irina\n      wallet  wallet\n\n Figure 5.7 Cryptocurrency and decentralisation\n\n锟� Cryptocurrency uses cryptography to track transactions; it was created to\n   address the problems associated with the centralisation of digital currency.\n\n锟� Traditional digital currencies are regulated by central banks and governments\n   (in much the same way as fiat currencies). This means all transactions and\n   exchange rates are determined by these two bodies. Cryptocurrency has no\n   state control and all the rules are set by the cryptocurrency community itself.\n\n锟� Unlike existing digital currencies, cryptocurrency transactions are publicly\n   available and therefore all transactions can be tracked and the amount of\n   money in the system is monitored.\n\n锟� The cryptocurrency system works by being within a blockchain network which\n   means it is much more secure.",
-    },
-];
+<ParagraphTitle id="5-2-1-what-is-digital-currency">什么是数字货币？</ParagraphTitle>
 
-<ParagraphTitle id="5-2-1-what-is-digital-currency">第 5.2.1 节：What is digital currency?</ParagraphTitle>
+<ParagraphContent id="5-2-1-what-is-digital-currency">
+数字货币只以数字形式存在，与美元、英镑、欧元等传统法定货币不同，它没有实体形态。“法定货币”（fiat currency）一词来自拉丁语，意为“就这样做”；传统货币由政府和银行支持，而不是与金银储备挂钩。
 
-<ParagraphContent id="5-2-1-what-is-digital-currency">{"本页依据课本第 5.2.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nDigital currency exists purely in a digital format. It has no physical form unlike\n     conventional fiat currency (for example, $, 锟�, , and 锟�).\n\n     (Note: Fiat is a Latin word meaning `let it be done'; since conventional currency\n     is backed by governments and banks rather than being linked to gold or silver\n     reserves, it is referred to as fiat currency.)\n\n     Digital currency is an accepted form of payment to pay for goods or services.\n     As with cash or credit/debit cards, digital currency can be transferred between\n     various accounts when carrying out transactions. It has made it possible to\n     bank online (for example, using PayPal) or via a smartphone app (for example,\n\n186\n                                          5.2 Digital currency\n\nApple Pay). This is all possible because money only exists as data on a computer\nsystem, but it can be transferred into physical cash if we need it.\n\nDigital currency relies on a central banking system. For example, suppose Nick\nwishes to send Irina some money; Nick uses bank `X' and Irina uses bank `Y':\n\nNick  Bank    Central Bank  Bank   Irina\n       `X'                   'Y'\n\n Figure 5.6 Digital currency\n\nThe problem with centralisation is maintaining confidentiality and security; these\nhave always been issues with digital currency systems. However, one example of\ndigital currency, known as cryptocurrency, has essentially overcome these issues\nby introducing decentralisation:\n\nNick  Nick's  Irina's       Irina\n      wallet  wallet\n\n Figure 5.7 Cryptocurrency and decentralisation\n\n锟� Cryptocurrency uses cryptography to track transactions; it was created to\n   address the problems associated with the centralisation of digital currency.\n\n锟� Traditional digital currencies are regulated by central banks and governments\n   (in much the same way as fiat currencies). This means all transactions and\n   exchange rates are determined by these two bodies. Cryptocurrency has no\n   state control and all the rules are set by the cryptocurrency community itself.\n\n锟� Unlike existing digital currencies, cryptocurrency transactions are publicly\n   available and therefore all transactions can be tracked and the amount of\n   money in the system is monitored.\n\n锟� The cryptocurrency system works by being within a blockchain network which\n   means it is much more secure."}</ParagraphContent>
+数字货币是可以购买商品或服务的支付方式。与现金或信用卡、借记卡一样，数字货币可以在交易时在不同账户之间转移。由于货币只是计算机系统中的数据，因此可以进行网上银行交易，例如使用 PayPal，也可以使用智能手机应用，例如 Apple Pay；需要时还可以把数字货币兑换成现金。
+
+### 中央化数字货币
+
+数字货币依赖中央银行系统。例如，Nick 想给 Irina 汇款，Nick 使用银行 X，Irina 使用银行 Y，中央银行负责协调这两家银行之间的转账。
+
+中央化系统的问题是如何维护机密性和安全性，这一直是数字货币系统面临的难题。加密货币通过引入去中心化，在很大程度上解决了这些问题：
+
+- 加密货币使用密码学追踪交易，最初就是为解决数字货币中央化带来的问题而建立的；
+- 传统数字货币由中央银行和政府监管，交易和汇率由这两类机构决定；加密货币没有国家控制，规则由加密货币社区自行制定；
+- 加密货币交易公开可见，因此可以追踪所有交易，也可以监控系统中的货币数量；
+- 加密货币运行在区块链网络中，因此系统更加安全。
+</ParagraphContent>

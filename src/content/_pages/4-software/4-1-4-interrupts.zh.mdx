@@ -1,20 +1,28 @@
 ---
-title: "第 4.1.4 节：Interrupts"
-description: "简要介绍Interrupts的核心概念。"
+title: "中断"
+description: "中断的来源、处理过程及缓冲区的作用。"
 slug: "4-1-4-interrupts"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "4-1-4-interrupts",
-        title: "第 4.1.4 节：Interrupts",
-        content: "本页依据课本第 4.1.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAn interrupt is a signal sent from a device or from software to the\n                         microprocessor. This will cause the microprocessor to temporarily stop what it is\n                         doing so that it can service the interrupt. Interrupts can be caused by:\n\n                         锟� a timing signal\n                         锟� an input/output process (for example, a disk drive or printer requiring more\n\n                            data)\n                         锟� a hardware fault (for example, a paper jam in the printer)\n                         锟� user interaction (for example, the user presses a key (or keys) on a keyboard,\n\n                            such as <CTRL><ALT><BREAK>, which causes the system to be interrupted)\n                         锟� software errors that cause a problem (for example, an .exe file that cannot be\n\n                            found to initiate the execution of a program, two processes trying to access\n                            the same memory location, or an attempt to divide by zero).\n\n                         Once the interrupt signal is received, the microprocessor either carries on with\n                         what it was doing or stops to service the device or program that caused the\n                         interrupt. The computer needs to identify the interrupt type and also establish\n                         the level of interrupt priority.\n\n                         Interrupts allow computers to carry out many tasks or to have several windows\n                         open at the same time. An example would be downloading a file from the\n                         internet at the same time as listening to some music from a library. Interrupts\n                         allow these two functions to co-exist and the user has the impression that both\n                         functions are being carried out simultaneously. In reality, data is being passed\n                         in and out of memory very rapidly allowing both functions to be serviced. This\n                         can all be achieved by using an area in memory known as a buffer. A buffer is a\n                         memory area that stores data temporarily (see Figure 4.12). For example, buffers\n\n                                                                                   161\n4 Software\n\n            are used when downloading a movie from the internet to compensate for the\n            difference between download speeds and the data requirements of the receiving\n            device. The data transmission rate of the movie file from the web server to the\n            buffer must be greater than the rate at which data is transmitted from buffer to\n            media player. Without buffers, the movie would frequently `freeze'.",
-    },
-];
+<ParagraphTitle id="4-1-4-interrupts">中断</ParagraphTitle>
 
-<ParagraphTitle id="4-1-4-interrupts">第 4.1.4 节：Interrupts</ParagraphTitle>
+<ParagraphContent id="4-1-4-interrupts">
+**中断**是设备或软件发送给微处理器的信号。微处理器收到信号后会暂时停止当前工作，以处理产生中断的设备或程序。
 
-<ParagraphContent id="4-1-4-interrupts">{"本页依据课本第 4.1.4 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nAn interrupt is a signal sent from a device or from software to the\n                         microprocessor. This will cause the microprocessor to temporarily stop what it is\n                         doing so that it can service the interrupt. Interrupts can be caused by:\n\n                         锟� a timing signal\n                         锟� an input/output process (for example, a disk drive or printer requiring more\n\n                            data)\n                         锟� a hardware fault (for example, a paper jam in the printer)\n                         锟� user interaction (for example, the user presses a key (or keys) on a keyboard,\n\n                            such as <CTRL><ALT><BREAK>, which causes the system to be interrupted)\n                         锟� software errors that cause a problem (for example, an .exe file that cannot be\n\n                            found to initiate the execution of a program, two processes trying to access\n                            the same memory location, or an attempt to divide by zero).\n\n                         Once the interrupt signal is received, the microprocessor either carries on with\n                         what it was doing or stops to service the device or program that caused the\n                         interrupt. The computer needs to identify the interrupt type and also establish\n                         the level of interrupt priority.\n\n                         Interrupts allow computers to carry out many tasks or to have several windows\n                         open at the same time. An example would be downloading a file from the\n                         internet at the same time as listening to some music from a library. Interrupts\n                         allow these two functions to co-exist and the user has the impression that both\n                         functions are being carried out simultaneously. In reality, data is being passed\n                         in and out of memory very rapidly allowing both functions to be serviced. This\n                         can all be achieved by using an area in memory known as a buffer. A buffer is a\n                         memory area that stores data temporarily (see Figure 4.12). For example, buffers\n\n                                                                                   161\n4 Software\n\n            are used when downloading a movie from the internet to compensate for the\n            difference between download speeds and the data requirements of the receiving\n            device. The data transmission rate of the movie file from the web server to the\n            buffer must be greater than the rate at which data is transmitted from buffer to\n            media player. Without buffers, the movie would frequently `freeze'."}</ParagraphContent>
+中断可能由以下原因产生：
+
+- 定时信号；
+- 输入/输出过程，例如磁盘驱动器或打印机需要更多数据；
+- 硬件故障，例如打印机卡纸；
+- 用户操作，例如按下键盘组合键 `<CTRL><ALT><BREAK>`；
+- 软件错误，例如找不到用于启动程序的 `.exe` 文件、两个进程试图访问同一内存位置，或尝试除以零。
+
+收到中断信号后，微处理器会判断中断类型和优先级，然后继续原来的工作，或停止并处理产生中断的设备或程序。
+
+中断让计算机能够执行多个任务，或同时打开多个窗口。例如，用户可以在下载文件的同时播放音乐。实际上，计算机通过非常快速地向内存传入和传出数据，使两个任务交替得到服务，因此用户感觉它们在同时运行。
+
+这通常借助内存中的**缓冲区**实现。缓冲区是暂时保存数据的内存区域。例如，下载电影时，缓冲区可以弥补下载速度与播放设备数据需求之间的差异；从服务器到缓冲区的数据传输速度必须高于从缓冲区到播放器的速度，否则电影会频繁“卡住”。
+</ParagraphContent>

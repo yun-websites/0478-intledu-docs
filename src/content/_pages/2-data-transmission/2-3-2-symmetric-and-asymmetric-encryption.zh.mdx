@@ -1,20 +1,59 @@
 ---
-title: "第 2.3.2 节：Symmetric and asymmetric encryption"
-description: "简要介绍Symmetric and asymmetric encryption的核心概念。"
+title: "对称和非对称加密"
+description: "对称加密与使用公钥、私钥的非对称加密。"
 slug: "2-3-2-symmetric-and-asymmetric-encryption"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "2-3-2-symmetric-and-asymmetric-encryption",
-        title: "第 2.3.2 节：Symmetric and asymmetric encryption",
-        content: "本页依据课本第 2.3.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nSymmetric encryption\n\n                                 Symmetric encryption uses an encryption key; the same key is used to encrypt\n                                 and decrypt the encoded message. First of all, consider a simple system that\n                                 uses a 10-digit denary encryption key (this gives 1 锟� 1010 possible codes); and a\n                                 decryption key. Suppose our encryption key is:\n\n                                                                        4291362856\n\n                                 which means every letter in a word is shifted across the alphabet +4, +2, +9, +1,\n                                 and so on, places. For example, here is the message COMPUTER SCIENCE IS\n                                 EXCITING (plaintext on the top line of Figure 2.19) before and after applying\n                                 the encryption key (forming the ciphertext shown on the bottom line of\n                                 Figure 2.19):\n\n                                 COMPU T E R             SC I ENCE                  IS  E XC I T I NG\n                                 42913628                5642913                    62  85642913\n                                 GQ V Q X ZGZ            X I MGWDH                  OU  MC I MV RO J\n\n                                  Figure 2.19 Plaintext into ciphertext using 10-digit encryption key\n\n                                                                                                                  63\n2 Data transmission\n\n      Find out more     To get back to the original message, it will be necessary to apply the same\n                        decryption key; that is, 4 2 9 1 3 6 2 8 5 6. But in this case, the decryption\nOne of the ways of      process would be the reverse of encryption and each letter would be shifted 锟�4,\nmitigating the risk of  锟�2, 锟�9, 锟�1, and so on. For example, `G' `C', `Q' `O', `V' `M', `Q' `P', and\nsymmetric keys falling  so on.\ninto the wrong hands\n(known as the key       However, modern computers could `crack' this encryption key in a matter of\ndistribution problem)   seconds. To try to combat this, we now use 256-bit binary encryption keys that\nis to use a system      give 2256 (approximately, 1.2 锟� 1077) possible combinations. (Even this may not be\nbased on modulo-11,     enough as we head towards quantum computers.)\nwhere both sender and\nreceiver can calculate  The real difficulty is keeping the encryption key a secret (for example, it needs\nthe encryption key      to be sent in an email or a text message which can be intercepted). Therefore,\nwithout it actually     the issue of security is always the main drawback of symmetrical encryption,\nbeing exchanged in any  since a single encryption key is required for both se",
-    },
-];
+<ParagraphTitle id="2-3-2-symmetric-and-asymmetric-encryption">对称和非对称加密</ParagraphTitle>
 
-<ParagraphTitle id="2-3-2-symmetric-and-asymmetric-encryption">第 2.3.2 节：Symmetric and asymmetric encryption</ParagraphTitle>
+<ParagraphContent id="2-3-2-symmetric-and-asymmetric-encryption">
+### 加密的目的
 
-<ParagraphContent id="2-3-2-symmetric-and-asymmetric-encryption">{"本页依据课本第 2.3.2 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nSymmetric encryption\n\n                                 Symmetric encryption uses an encryption key; the same key is used to encrypt\n                                 and decrypt the encoded message. First of all, consider a simple system that\n                                 uses a 10-digit denary encryption key (this gives 1 锟� 1010 possible codes); and a\n                                 decryption key. Suppose our encryption key is:\n\n                                                                        4291362856\n\n                                 which means every letter in a word is shifted across the alphabet +4, +2, +9, +1,\n                                 and so on, places. For example, here is the message COMPUTER SCIENCE IS\n                                 EXCITING (plaintext on the top line of Figure 2.19) before and after applying\n                                 the encryption key (forming the ciphertext shown on the bottom line of\n                                 Figure 2.19):\n\n                                 COMPU T E R             SC I ENCE                  IS  E XC I T I NG\n                                 42913628                5642913                    62  85642913\n                                 GQ V Q X ZGZ            X I MGWDH                  OU  MC I MV RO J\n\n                                  Figure 2.19 Plaintext into ciphertext using 10-digit encryption key\n\n                                                                                                                  63\n2 Data transmission\n\n      Find out more     To get back to the original message, it will be necessary to apply the same\n                        decryption key; that is, 4 2 9 1 3 6 2 8 5 6. But in this case, the decryption\nOne of the ways of      process would be the reverse of encryption and each letter would be shifted 锟�4,\nmitigating the risk of  锟�2, 锟�9, 锟�1, and so on. For example, `G' `C', `Q' `O', `V' `M', `Q' `P', and\nsymmetric keys falling  so on.\ninto the wrong hands\n(known as the key       However, modern computers could `crack' this encryption key in a matter of\ndistribution problem)   seconds. To try to combat this, we now use 256-bit binary encryption keys that\nis to use a system      give 2256 (approximately, 1.2 锟� 1077) possible combinations. (Even this may not be\nbased on modulo-11,     enough as we head towards quantum computers.)\nwhere both sender and\nreceiver can calculate  The real difficulty is keeping the encryption key a secret (for example, it needs\nthe encryption key      to be sent in an email or a text message which can be intercepted). Therefore,\nwithout it actually     the issue of security is always the main drawback of symmetrical encryption,\nbeing exchanged in any  since a single encryption key is required for both se"}</ParagraphContent>
+数据通过任何公共网络（有线或无线）传输时，都可能被黑客截获。在这种情况下，黑客常被称为**窃听者**（eavesdropper）。加密不能阻止数据被截获，但会把数据转换为非预期接收者无法理解的形式，从而降低风险。这对信用卡或银行资料、病历和法律文件等敏感或机密数据尤其重要。
+
+原始待发送的数据称为**明文**（plaintext）。明文经过加密算法后会生成**密文**（ciphertext）；接收方使用解密算法和相应密钥把密文还原为明文。
+
+### 对称加密
+
+**对称加密**使用加密密钥，并使用同一个密钥来加密和解密编码后的消息。
+
+例如，假设使用 10 位十进制加密密钥 `4291362856`。这表示单词中每个字母分别在字母表中移动 `+4`、`+2`、`+9`、`+1` 等位数。对明文 `COMPUTER SCIENCE IS EXCITING` 应用该密钥后，可得到密文：
+
+```text
+COMPU T E R     SC I ENCE     IS  E XC I T I NG
+42913628        5642913       62  85642913
+GQ V Q X ZGZ    X I MGWDH     OU  MC I MV RO J
+```
+
+要还原原始消息，需要使用同一组解密密钥 `4 2 9 1 3 6 2 8 5 6`，但以相反方向移动字母，例如分别移动 `-4`、`-2`、`-9`、`-1`。例如 `G` 还原为 `C`，`Q` 还原为 `O`。
+
+现代计算机可以在几秒内破解上述简单密钥，因此通常使用 256 位二进制加密密钥，可形成 `2^256` 种可能组合，约为 `1.2 x 10^77`。
+
+对称加密的主要难点是必须保守密钥秘密。密钥可能需要通过电子邮件或短信发送，而这些通信可能被截获。这种**密钥分发问题**是对称加密的主要安全缺点，因为发送方和接收方必须使用同一个密钥。
+
+### 非对称加密
+
+**非对称加密**用于解决对称加密的安全问题。它使用一对密钥：
+
+- **公钥**（public key）：向所有人公开；
+- **私钥**（private key）：只由计算机用户本人掌握。
+
+加密和解密消息时都需要这两类密钥。
+
+假设 Tom 和 Jane 在同一家公司，Tom 要向 Jane 发送一份机密文件：
+
+1. Jane 使用算法生成一对匹配的私钥和公钥，并将其保存在自己的计算机上。两把密钥在数学上相关，但不能由其中一把推导出另一把；
+2. Jane 将自己的公钥发送给 Tom；
+3. Tom 使用 Jane 的公钥加密要发送的文件，再将加密后的文件，即密文，发送给 Jane；
+4. Jane 使用与该公钥配对的私钥解锁并解密文件。由于公钥和私钥是 Jane 的计算机生成的一对匹配密钥，Jane 不能用公钥解密这条消息。
+
+Jane 可以把自己的公钥分享给公司中的任意多位同事。其他人使用 Jane 的公钥加密信息，Jane 则使用自己的私钥解密。如果所有人员都需要双向通信，每个人都必须生成各自的一对公钥和私钥，并交换公钥；每个人都用自己的私钥解密发送给自己的信息。
+
+### 活动 2.8
+
+1. Jane 目前只能接收 Tom 发来的加密文件。说明 Jane 需要如何做，才能向 Tom 发送加密文件。
+2. 解释为什么这种方法比对称加密安全得多。
+</ParagraphContent>

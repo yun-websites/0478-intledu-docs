@@ -1,20 +1,28 @@
 ---
-title: "第 3.3.1 节：Primary memory"
-description: "简要介绍Primary memory的核心概念。"
+title: "主存储器"
+description: "RAM、ROM、DRAM 和 SRAM 的用途与特性。"
 slug: "3-3-1-primary-memory"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "3-3-1-primary-memory",
-        title: "第 3.3.1 节：Primary memory",
-        content: "本页依据课本第 3.3.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nPrimary memory is the part of the computer memory which can be accessed\n            directly from the CPU; this includes random access memory (RAM) and read-\n            only memory (ROM) memory chips. Primary memory allows the CPU to access\n            applications and services temporarily stored in memory locations. The structure\n            of primary memory is shown in Figure 3.59.\n\n                                                                   Primary memory\n\n                       RAM                                  ROM\n\n            SRAM            DRAM\n\n             Figure 3.59 Primary memory\n\n            Random access memory (RAM)\n\n            All computer systems come with some form of RAM. These memory devices are\n            not really random; this refers to the fact that any memory location in RAM can\n            be accessed independent of which memory location was last used. When you run\n            an application or program, data is retrieved from secondary storage and placed\n            temporarily into RAM. Access time to locate data is much faster in RAM than in\n            secondary or off-line devices. Features of RAM include:\n\n            锟� can be written to or read from, and the data can be changed by the user or\n               the computer (i.e. it is a temporary memory)\n                                                                                                                  3.3 Data storage\n\n                   锟� used to store data, files, part of an application or part of the operating\n                      system currently in use\n\n                   锟� it is volatile, which means memory contents are lost when powering off the\n                      computer.\n\n                   In general, the larger the size of RAM the faster the computer will operate. In\n                   reality, RAM never runs out of memory; it continues to operate but just becomes\n                   slower and slower as more data is stored. As RAM becomes `full', the CPU has to\n                   continually access the secondary data storage devices to overwrite old data on\n                   RAM with new data. By increasing the RAM size, the number of times this has to\n                   be done is considerably reduced; thus making the computer operate more quickly.\n\n                   There are currently two types of RAM technology:\n\n                   锟� dynamic RAM (DRAM)\n                   锟� static RAM (SRAM).\n\n                   Dynamic RAM (DRAM)\n\n Figure 3.61 SRAM   Figure 3.60 DRAM\n\n                   Each DRAM chip consists of transistors and capacitors. Each of these parts is tiny\n                   since a single RAM chip will contain millions of transistors and capacitors. The\n                   function of each part is:",
-    },
-];
+<ParagraphTitle id="3-3-1-primary-memory">主存储器</ParagraphTitle>
 
-<ParagraphTitle id="3-3-1-primary-memory">第 3.3.1 节：Primary memory</ParagraphTitle>
+<ParagraphContent id="3-3-1-primary-memory">
+**主存储器**是 CPU 可以直接访问的存储器，包括随机存取存储器（RAM）和只读存储器（ROM）。CPU 可通过主存储器访问暂时存放在内存位置中的应用程序和服务。
 
-<ParagraphContent id="3-3-1-primary-memory">{"本页依据课本第 3.3.1 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nPrimary memory is the part of the computer memory which can be accessed\n            directly from the CPU; this includes random access memory (RAM) and read-\n            only memory (ROM) memory chips. Primary memory allows the CPU to access\n            applications and services temporarily stored in memory locations. The structure\n            of primary memory is shown in Figure 3.59.\n\n                                                                   Primary memory\n\n                       RAM                                  ROM\n\n            SRAM            DRAM\n\n             Figure 3.59 Primary memory\n\n            Random access memory (RAM)\n\n            All computer systems come with some form of RAM. These memory devices are\n            not really random; this refers to the fact that any memory location in RAM can\n            be accessed independent of which memory location was last used. When you run\n            an application or program, data is retrieved from secondary storage and placed\n            temporarily into RAM. Access time to locate data is much faster in RAM than in\n            secondary or off-line devices. Features of RAM include:\n\n            锟� can be written to or read from, and the data can be changed by the user or\n               the computer (i.e. it is a temporary memory)\n                                                                                                                  3.3 Data storage\n\n                   锟� used to store data, files, part of an application or part of the operating\n                      system currently in use\n\n                   锟� it is volatile, which means memory contents are lost when powering off the\n                      computer.\n\n                   In general, the larger the size of RAM the faster the computer will operate. In\n                   reality, RAM never runs out of memory; it continues to operate but just becomes\n                   slower and slower as more data is stored. As RAM becomes `full', the CPU has to\n                   continually access the secondary data storage devices to overwrite old data on\n                   RAM with new data. By increasing the RAM size, the number of times this has to\n                   be done is considerably reduced; thus making the computer operate more quickly.\n\n                   There are currently two types of RAM technology:\n\n                   锟� dynamic RAM (DRAM)\n                   锟� static RAM (SRAM).\n\n                   Dynamic RAM (DRAM)\n\n Figure 3.61 SRAM   Figure 3.60 DRAM\n\n                   Each DRAM chip consists of transistors and capacitors. Each of these parts is tiny\n                   since a single RAM chip will contain millions of transistors and capacitors. The\n                   function of each part is:"}</ParagraphContent>
+### 随机存取存储器（RAM）
+
+RAM 中任意内存位置都能被直接访问，不依赖于上一次访问的位置。运行应用程序时，数据会从辅助存储器取出并暂时放入 RAM；RAM 的访问速度远快于辅助或离线存储设备。
+
+RAM 的特点：
+
+- 可以读写，数据可由用户或计算机改变；
+- 保存当前正在使用的数据、文件、应用程序的一部分或操作系统的一部分；
+- 是**易失性**存储器，计算机关机后内容会丢失。
+
+通常 RAM 容量越大，计算机运行越快。RAM 接近满载时，CPU 必须频繁访问辅助存储器，用新数据覆盖 RAM 中较早的数据，导致系统变慢；增加 RAM 可减少这种交换操作。
+
+RAM 主要有两种技术：动态 RAM（DRAM）和静态 RAM（SRAM）。
+</ParagraphContent>

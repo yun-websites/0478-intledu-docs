@@ -7,14 +7,114 @@ version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "8-3-2-using-files",
-        title: "Using files",
-        content: "Every file is identified by its filename. In this section, we are going to look at\nhow to read and write a line of text or a single item of data to a file.\nHere are examples of writing a line of text to a file and reading the line of text\nback from the file. The pseudocode algorithm has comments to explain each\nstage of the task.\npseudocode\n\n  DECLARE TextLine : STRING // variables are declared as normal\n  DECLARE MyFile : STRING\n  MyFile  \"MyText.txt\"\n  // writing the line of text to the file\n  OPEN MyFile FOR WRITE // opens file for writing\n\n         OUTPUT \"Please enter a line of text\"\n         INPUT TextLine\n         WRITEFILE, TextLine // writes a line of text to the file\n  CLOSEFILE(MyFile) // closes the file\n  // reading the line of text from the file\n  OUTPUT \"The file contains this line of text:\"\n  OPEN MyFile FOR READ // opens file for reading\n         READFILE, TextLine // reads a line of text from the file\n         OUTPUT TextLine\n  CLOSEFILE(MyFile) // closes the file\n\n                                                                                                                                           333\n8 Programming\n\n               Python\n\n                 # writing to and reading a line of text from a file\n                 MyFile = open (\"MyText.txt\",\"w\")\n                 TextLine = input(\"Please enter a line of text \")\n                 MyFile.write(TextLine)\n                 Myfile.close()\n                 print(\"The file contains this line of text\")\n                 MyFile = open (\"MyText.txt\",\"r\")\n                 TextLine = MyFile.read()\n                 print(TextLine)\n                 Myfile.close()\n\n               Visual Basic\n\n                 'writing to and reading from a text file\n                 Imports System.IO\n                 Module Module1\n\n                        Sub Main()\n                               Dim textLn As String\n                               Dim objMyFileWrite As StreamWriter\n                               Dim objMyFileRead As StreamReader\n                               objMyFileWrite = New StreamWriter(\"textFile.txt\")\n                               Console.Write(\"Please enter a line of text \")\n                               textLn = Console.ReadLine()\n                               objMyFileWrite.WriteLine(textLn)\n                               objMyFileWrite.Close()\n                               Console.WriteLine(\"The line of text is \")\n                               objMyFileRead = New StreamReader(\"textFile.txt\")\n                               textLn = objMyFileRead.ReadLine\n                               Console.WriteLine(textLn)\n                               objMyFileRead.Close()\n                               Console.ReadLine()\n\n                        End Sub\n                 End Module",
-    },
-];
-
 <ParagraphTitle id="8-3-2-using-files">Using files</ParagraphTitle>
 
-<ParagraphContent id="8-3-2-using-files">{"Every file is identified by its filename. In this section, we are going to look at\nhow to read and write a line of text or a single item of data to a file.\nHere are examples of writing a line of text to a file and reading the line of text\nback from the file. The pseudocode algorithm has comments to explain each\nstage of the task.\npseudocode\n\n  DECLARE TextLine : STRING // variables are declared as normal\n  DECLARE MyFile : STRING\n  MyFile  \"MyText.txt\"\n  // writing the line of text to the file\n  OPEN MyFile FOR WRITE // opens file for writing\n\n         OUTPUT \"Please enter a line of text\"\n         INPUT TextLine\n         WRITEFILE, TextLine // writes a line of text to the file\n  CLOSEFILE(MyFile) // closes the file\n  // reading the line of text from the file\n  OUTPUT \"The file contains this line of text:\"\n  OPEN MyFile FOR READ // opens file for reading\n         READFILE, TextLine // reads a line of text from the file\n         OUTPUT TextLine\n  CLOSEFILE(MyFile) // closes the file\n\n                                                                                                                                           333\n8 Programming\n\n               Python\n\n                 # writing to and reading a line of text from a file\n                 MyFile = open (\"MyText.txt\",\"w\")\n                 TextLine = input(\"Please enter a line of text \")\n                 MyFile.write(TextLine)\n                 Myfile.close()\n                 print(\"The file contains this line of text\")\n                 MyFile = open (\"MyText.txt\",\"r\")\n                 TextLine = MyFile.read()\n                 print(TextLine)\n                 Myfile.close()\n\n               Visual Basic\n\n                 'writing to and reading from a text file\n                 Imports System.IO\n                 Module Module1\n\n                        Sub Main()\n                               Dim textLn As String\n                               Dim objMyFileWrite As StreamWriter\n                               Dim objMyFileRead As StreamReader\n                               objMyFileWrite = New StreamWriter(\"textFile.txt\")\n                               Console.Write(\"Please enter a line of text \")\n                               textLn = Console.ReadLine()\n                               objMyFileWrite.WriteLine(textLn)\n                               objMyFileWrite.Close()\n                               Console.WriteLine(\"The line of text is \")\n                               objMyFileRead = New StreamReader(\"textFile.txt\")\n                               textLn = objMyFileRead.ReadLine\n                               Console.WriteLine(textLn)\n                               objMyFileRead.Close()\n                               Console.ReadLine()\n\n                        End Sub\n                 End Module"}</ParagraphContent>
+<ParagraphContent id="8-3-2-using-files">
+
+Every file is identified by its filename. In this section, we are going to look at how to read and write a line of text or a single item of data to a file. Here are examples of writing a line of text to a file and reading the line of text back from the file. The pseudocode algorithm has comments to explain each stage of the task.
+
+### pseudocode
+
+```text
+DECLARE TextLine : STRING // variables are declared as normal
+DECLARE MyFile : STRING
+```
+
+MyFile "MyText.txt" // writing the line of text to the file
+
+```text
+OPEN MyFile FOR WRITE // opens file for writing
+```
+
+```text
+OUTPUT "Please enter a line of text"
+INPUT TextLine
+```
+
+WRITEFILE, TextLine // writes a line of text to the file
+
+### CLOSEFILE(MyFile) // closes the file
+
+// reading the line of text from the file
+
+```text
+OUTPUT "The file contains this line of text:"
+OPEN MyFile FOR READ // opens file for reading
+```
+
+READFILE, TextLine // reads a line of text from the file
+
+```text
+OUTPUT TextLine
+```
+
+### CLOSEFILE(MyFile) // closes the file
+
+### Python
+
+# writing to and reading a line of text from a file
+
+```text
+MyFile = open ("MyText.txt","w")
+TextLine = input("Please enter a line of text ")
+```
+
+### MyFile.write(TextLine)
+
+### Myfile.close()
+
+print("The file contains this line of text")
+
+```text
+MyFile = open ("MyText.txt","r")
+TextLine = MyFile.read()
+```
+
+print(TextLine)
+
+### Myfile.close()
+
+### Visual Basic
+
+'writing to and reading from a text file
+
+### Imports System.IO
+
+### Module Module1
+
+### Sub Main()
+
+### Dim textLn As String
+
+### Dim objMyFileWrite As StreamWriter
+
+### Dim objMyFileRead As StreamReader
+
+```text
+objMyFileWrite = New StreamWriter("textFile.txt")
+```
+
+Console.Write("Please enter a line of text ")
+
+```text
+textLn = Console.ReadLine()
+```
+
+objMyFileWrite.WriteLine(textLn) objMyFileWrite.Close() Console.WriteLine("The line of text is ")
+
+```text
+objMyFileRead = New StreamReader("textFile.txt")
+textLn = objMyFileRead.ReadLine
+```
+
+### Console.WriteLine(textLn)
+
+objMyFileRead.Close()
+
+### Console.ReadLine()
+
+### End Sub
+
+### End Module
+
+</ParagraphContent>

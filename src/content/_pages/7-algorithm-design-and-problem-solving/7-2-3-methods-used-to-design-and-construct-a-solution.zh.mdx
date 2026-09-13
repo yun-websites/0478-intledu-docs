@@ -1,20 +1,32 @@
 ---
-title: "第 7.2.3 节：Methods used to design and construct a solution"
-description: "简要介绍Methods used to design and construct a solution的核心概念。"
+title: "设计和构建解决方案的方法"
+description: "结构图、流程图和伪代码在算法设计中的用途。"
 slug: "7-2-3-methods-used-to-design-and-construct-a-solution"
 chapter: "computer-science"
 version: "2025"
 updateAt: "2025-01-13"
 ---
 
-export const paragraphs = [
-    {
-        id: "7-2-3-methods-used-to-design-and-construct-a-solution",
-        title: "第 7.2.3 节：Methods used to design and construct a solution",
-        content: "本页依据课本第 7.2.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nto a problem\n\nSolutions to problems need to be designed and developed rigorously. The use of\nformal methods enables the process to be clearly shown for others to understand\nthe proposed solution. The following methods need to be used by IGCSE\nComputer Science students:\n\n锟� structure diagrams\n锟� flowcharts\n锟� pseudocode.\n\nStructure diagrams\nStructure diagrams can be used to show top-down design in a diagrammatic\nform. Structure diagrams are hierarchical, showing how a computer system\nsolution can be divided into sub-systems with each level giving a more detailed\nbreakdown. If necessary, each sub-system can be further divided.\n\n                                                          System\n\nSub-system 1    Sub-system 2         Sub-system 3\n\nSub-system 1.1  Sub-system 1.2\n\n Figure 7.2 Basic structure diagram\n\n                                                   261\n7 Algorithm design and problem solving\n\n                                Example 2: Alarm app for a smart phone\n\n                          Consider the alarm app computer system for a smart phone; this could be divided\n                          into three sub-systems, setting the alarm, checking for the alarm time, sounding the\n                          alarm. These sub-systems could then be further sub-divided; a structure diagram\n                          makes the process clearer.\n\n                                                                                           Alarm app\n\n      Find out more                 Set alarm               Check time       Sound alarm\n\nDraw a structure          Set time  Turn alarm on/off  Play sound for two    Check off/snooze  Reset/clear alarm\ndiagram for cleaning                                         minutes\nyour teeth. If you are\nbrave enough ask           Figure 7.3 Structure diagram for alarm app\nanother student to try\nout the system to see if\nit works.\n\n                           Activity 7.2\n\n                            Break down the `Check time' sub-system from the smart phone alarm app into\n                            further sub-systems.\n\n                          Flowcharts\n                          A flowchart shows diagrammatically the steps required to complete a task and\n                          the order that they are to be performed. These steps, together with the order, are\n                          called an algorithm. Flowcharts are an effective way to communicate how the\n                          algorithm that makes up a system or sub-system works.\n\n                                Example 3: Checking for the alarm time\n\n                          Have a look at a flowchart showing how the checking for the alarm time sub-system\n                          works.\n\n                                       START",
-    },
-];
+<ParagraphTitle id="7-2-3-methods-used-to-design-and-construct-a-solution">设计和构建解决方案的方法</ParagraphTitle>
 
-<ParagraphTitle id="7-2-3-methods-used-to-design-and-construct-a-solution">第 7.2.3 节：Methods used to design and construct a solution</ParagraphTitle>
+<ParagraphContent id="7-2-3-methods-used-to-design-and-construct-a-solution">
+问题的解决方案需要经过严谨设计和开发。使用正式方法可以清楚地表达过程，使其他人理解提出的方案。IGCSE 计算机科学要求使用以下方法：
 
-<ParagraphContent id="7-2-3-methods-used-to-design-and-construct-a-solution">{"本页依据课本第 7.2.3 节整理，保留关键定义、过程与例题背景，便于按分知识点复习。\n\nto a problem\n\nSolutions to problems need to be designed and developed rigorously. The use of\nformal methods enables the process to be clearly shown for others to understand\nthe proposed solution. The following methods need to be used by IGCSE\nComputer Science students:\n\n锟� structure diagrams\n锟� flowcharts\n锟� pseudocode.\n\nStructure diagrams\nStructure diagrams can be used to show top-down design in a diagrammatic\nform. Structure diagrams are hierarchical, showing how a computer system\nsolution can be divided into sub-systems with each level giving a more detailed\nbreakdown. If necessary, each sub-system can be further divided.\n\n                                                          System\n\nSub-system 1    Sub-system 2         Sub-system 3\n\nSub-system 1.1  Sub-system 1.2\n\n Figure 7.2 Basic structure diagram\n\n                                                   261\n7 Algorithm design and problem solving\n\n                                Example 2: Alarm app for a smart phone\n\n                          Consider the alarm app computer system for a smart phone; this could be divided\n                          into three sub-systems, setting the alarm, checking for the alarm time, sounding the\n                          alarm. These sub-systems could then be further sub-divided; a structure diagram\n                          makes the process clearer.\n\n                                                                                           Alarm app\n\n      Find out more                 Set alarm               Check time       Sound alarm\n\nDraw a structure          Set time  Turn alarm on/off  Play sound for two    Check off/snooze  Reset/clear alarm\ndiagram for cleaning                                         minutes\nyour teeth. If you are\nbrave enough ask           Figure 7.3 Structure diagram for alarm app\nanother student to try\nout the system to see if\nit works.\n\n                           Activity 7.2\n\n                            Break down the `Check time' sub-system from the smart phone alarm app into\n                            further sub-systems.\n\n                          Flowcharts\n                          A flowchart shows diagrammatically the steps required to complete a task and\n                          the order that they are to be performed. These steps, together with the order, are\n                          called an algorithm. Flowcharts are an effective way to communicate how the\n                          algorithm that makes up a system or sub-system works.\n\n                                Example 3: Checking for the alarm time\n\n                          Have a look at a flowchart showing how the checking for the alarm time sub-system\n                          works.\n\n                                       START"}</ParagraphContent>
+- 结构图；
+- 流程图；
+- 伪代码。
+
+### 结构图
+
+结构图以图示方式展示自顶向下设计。它具有层次结构，说明计算机系统解决方案如何划分为子系统，每一层都提供更详细的分解，必要时还可以继续分解。
+
+例如，智能手机闹钟应用可以分为设置闹钟、检查时间和响铃三个子系统；“设置闹钟”还可以分为设置时间和开关闹钟，“响铃”可以分为播放两分钟声音、关闭或贪睡以及重置或清除闹钟。
+
+### 流程图
+
+流程图以图示方式表示完成任务所需的步骤及其执行顺序。这些步骤和顺序合起来称为算法。流程图是交流系统或子系统算法工作方式的有效工具。
+
+### 伪代码
+
+伪代码使用接近自然语言的结构描述算法，不依赖某一种高级编程语言，便于设计、讨论和转换为程序代码。
+</ParagraphContent>
